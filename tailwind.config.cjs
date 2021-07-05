@@ -20,7 +20,7 @@ const config = {
 		extend: {
 			colors: {
 				// Palette: https://coolors.co/191e24-2e3238-eeeeee-b53389
-				accent: colors.purple[400],
+				accent: { DEFAULT: colors.purple[400], dark: colors.purple[500] },
 				light: { DEFAULT: '#EEEEEE', alt: colors.white },
 				dark: { DEFAULT: '#191E24', alt: '#2E3238' },
 			},

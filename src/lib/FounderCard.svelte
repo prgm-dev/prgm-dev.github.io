@@ -16,7 +16,9 @@
 		class="rounded-lg w-full h-full bg-light-alt dark:bg-dark-alt p-4 shadow-lg dark:shadow-none"
 	>
 		<!-- Centered rounded image -->
-		<div class="mx-auto w-3/4 rounded-full overflow-hidden border">
+		<div
+			class="mx-auto w-3/4 rounded-full overflow-hidden border dark:border-dark"
+		>
 			<div class="aspect-w-1 aspect-h-1">
 				<img src={imageSrc} alt={imageAlt} />
 			</div>

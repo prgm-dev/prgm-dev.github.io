@@ -42,7 +42,9 @@
 </script>
 
 <!-- Top bar -->
-<div class="w-full sticky top-0 h-20 px-4 py-2 bg-light dark:bg-dark border-b">
+<div
+	class="w-full sticky top-0 h-20 px-4 py-2 bg-light dark:bg-dark border-b dark:border-dark-alt"
+>
 	<div
 		class="mx-auto max-w-screen-md w-full h-full flex items-center justify-between"
 	>
@@ -74,7 +76,7 @@
 			<!-- Note: Email is encoded to avoid spam bots -->
 			<a
 				href="&#109;&#65;&#105;&#108;&#84;&#79;&#58;&#99;&#111;&#110;&#116;&#97;&#99;&#116;&#64;&#112;&#114;&#103;&#109;&#46;&#100;&#101;&#118;&#63;&#115;&#117;&#98;&#106;&#101;&#99;&#116;&#61;&#72;&#101;&#108;&#108;&#111;&#37;&#50;&#49;"
-				class="block w-max bg-accent rounded-lg py-3 px-4 text-xl sm:text-2xl font-medium text-white"
+				class="block w-max bg-accent dark:bg-accent rounded-lg py-3 px-4 text-xl sm:text-2xl font-medium text-white dark:text-dark"
 				>Work with us!</a
 			>
 		</div>
