@@ -56,7 +56,7 @@
 	</div>
 </div>
 
-<main>
+<main class="z-0">
 	<!-- Heading -->
 	<section class="mx-auto w-full max-w-screen-md flex px-4 md:px-5 my-10 z-40">
 		<div class="w-11/12 sm:w-9/12 flex flex-col space-y-3 px-5">
