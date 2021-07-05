@@ -1,4 +1,10 @@
 <script context="module" lang="ts">
+	// Remove JS when not in DEV (only on this page)
+	import { dev } from '$app/env';
+	export const router = dev;
+	export const hydrate = dev;
+
+	// Ensure content is pre-rendered
 	export const prerender = true;
 </script>
 
@@ -39,7 +45,8 @@
 	>
 		<h2 class="text-sm">
 			PRGM DEV <br />
-			9 rue des colonnes, 75002 Paris
+			SAS au capital de 999,99&nbsp;€ <br />
+			9, rue des Colonnes, 75002 Paris
 		</h2>
 		<h3 class="text-sm">
 			<span class="whitespace-nowrap">&copy;&nbsp;{copyrightString} PRGM DEV SAS.</span>
