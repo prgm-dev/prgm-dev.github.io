@@ -14,19 +14,23 @@
 </script>
 
 <!-- Top bar -->
-<div class="w-full sticky top-0 h-20">
-	<div class="mx-auto max-w-screen-md w-full h-full flex items-center justify-between py-2 px-4">
+<div class="w-full sticky top-0 h-20 px-4 py-2">
+	<div class="mx-auto max-w-screen-md w-full h-full flex items-center justify-between">
 		<Logo />
 		<div />
 		<nav>
-			<button>Blog</button>
+			<button disabled>Blog</button>
 		</nav>
 	</div>
 </div>
 
 <!-- Body -->
 <main>
-	<div />
+	<section class="mx-auto w-full max-w-screen-md flex px-4 md:px-10 my-5">
+		<div class="w-10/12 sm:w-2/3">
+			<h1 class="text-3xl font-semibold">We make software.</h1>
+		</div>
+	</section>
 </main>
 
 <footer class="mt-20 mb-10 opacity-25 w-full">
@@ -43,3 +47,9 @@
 		</h3>
 	</div>
 </footer>
+
+<style lang="postcss">
+	button:disabled {
+		@apply opacity-25 cursor-not-allowed;
+	}
+</style>
