@@ -30,6 +30,9 @@ const config = {
 		// hydrate the <div id="svelte"> element in src/app.html
 		adapter: adapter(),
 		target: '#svelte',
+		// Use a trailing slash as GitHub pages
+		// redirects `/abc` to `/abc/` if it's a folder.
+		trailingSlash: 'always',
 		vite: viteConfig,
 	},
 };

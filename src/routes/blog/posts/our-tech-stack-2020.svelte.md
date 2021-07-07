@@ -13,7 +13,7 @@ run our code on **Google Cloud**, and use MongoDB as our Database of choice.
 
 Want to know how it worked out for us? Read on!
 
-**Note:** We've **updated our tech stack for 2021**, and we also wrote [an article about it](./our-tech-stack-2021)
+**Note:** We've **updated our tech stack for 2021**, and we also wrote [an article about it](../our-tech-stack-2021)
 
 ## Code
 
