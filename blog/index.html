@@ -8,21 +8,25 @@
 
 		
 
-		<link rel="modulepreload" href="/./_app/start-44f85ec0.js">
+		<link rel="modulepreload" href="/./_app/start-39cf1e1b.js">
 		<link rel="modulepreload" href="/./_app/chunks/vendor-a7ad7a2b.js">
-		<link rel="modulepreload" href="/./_app/chunks/preload-helper-9f12a5fd.js">
 		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-4a97725d.js">
 		<link rel="modulepreload" href="/./_app/chunks/stores-18905b20.js">
 		<link rel="modulepreload" href="/./_app/pages/blog/__layout.svelte-f98c7336.js">
 		<link rel="modulepreload" href="/./_app/chunks/Logo-36fa4ee2.js">
-		<link rel="modulepreload" href="/./_app/pages/blog/index.svelte-441e856f.js">
+		<link rel="modulepreload" href="/./_app/pages/blog/index.svelte-d77e8e2e.js">
+		<link rel="modulepreload" href="/./_app/pages/blog/posts/our-tech-stack-2021.svelte.md-3b9bfd6c.js">
+		<link rel="modulepreload" href="/./_app/chunks/BlogLayout-db986608.js">
+		<link rel="modulepreload" href="/./_app/pages/blog/posts/our-tech-stack-2020.svelte.md-623172c8.js">
+		<link rel="modulepreload" href="/./_app/pages/blog/posts/understanding-cardano-rewards.svelte.md-f05b2ed1.js">
 		<link rel="stylesheet" href="/./_app/assets/start-0826e215.css">
 		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-aa3e5a17.css">
 		<link rel="stylesheet" href="/./_app/assets/pages/blog/__layout.svelte-1be26e1a.css">
 		<link rel="stylesheet" href="/./_app/assets/pages/blog/index.svelte-0fc30bf3.css">
+		<link rel="stylesheet" href="/./_app/assets/BlogLayout-d1695055.css">
 
 		<script type="module">
-			import { start } from "/./_app/start-44f85ec0.js";
+			import { start } from "/./_app/start-39cf1e1b.js";
 			start({
 				target: document.querySelector("#svelte"),
 				paths: {"base":"","assets":"/."},
@@ -37,7 +41,7 @@
 					nodes: [
 						import("/./_app/pages/__layout.svelte-4a97725d.js"),
 						import("/./_app/pages/blog/__layout.svelte-f98c7336.js"),
-						import("/./_app/pages/blog/index.svelte-441e856f.js")
+						import("/./_app/pages/blog/index.svelte-d77e8e2e.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -49,8 +53,8 @@
 			});
 		</script>
 	</head>
-	<body>
-		<div id="svelte">
+	<body id="svelte">
+		
 
 
 
@@ -68,12 +72,21 @@
 <span class="whitespace-nowrap">what we’re working on</span>,
 <span class="whitespace-nowrap">and how we’re building it.</span></h2>
 
-	<div class="mt-5 h-screen"><div class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div></div>
+	<div class="mt-5 h-screen"><div class="grid grid-cols-1 sm:grid-cols-2 gap-4"><a sveltekit:prefetch href="/blog/posts/our-tech-stack-2021" class="w-full h-full p-4 bg-light-alt dark:bg-dark-alt rounded-lg hover:shadow-lg transition-shadow duration-300 flex flex-col svelte-5y32d7"><h2 class="text-xl font-semibold">Our tech stack for 2021</h2>
+<p class="mt-2 text-sm opacity-60">Through our experience building many projects in the span of a few months, we’ve completely revamped our 2020 stack to improve our efficiency at testing new ideas faster than before.</p>
+<div class="flex-grow"></div>
+<p class="mt-2 highlight-on-hover svelte-5y32d7">Read on...</p></a><a sveltekit:prefetch href="/blog/posts/our-tech-stack-2020" class="w-full h-full p-4 bg-light-alt dark:bg-dark-alt rounded-lg hover:shadow-lg transition-shadow duration-300 flex flex-col svelte-5y32d7"><h2 class="text-xl font-semibold">Our tech stack for 2020</h2>
+<p class="mt-2 text-sm opacity-60">We learned a lot of new technologies this year. Here are the technologies we used this year to build our products.</p>
+<div class="flex-grow"></div>
+<p class="mt-2 highlight-on-hover svelte-5y32d7">Read on...</p></a><a sveltekit:prefetch href="/blog/posts/understanding-cardano-rewards" class="w-full h-full p-4 bg-light-alt dark:bg-dark-alt rounded-lg hover:shadow-lg transition-shadow duration-300 flex flex-col svelte-5y32d7"><h2 class="text-xl font-semibold">On Cardano staking rewards...</h2>
+<p class="mt-2 text-sm opacity-60">Debunking the complex dynamics behind Cardano staking rewards through the protocol’s formulas.</p>
+<div class="flex-grow"></div>
+<p class="mt-2 highlight-on-hover svelte-5y32d7">Read on...</p></a></div></div>
 </div>
 
 
 
 	
-</div>
+
 	</body>
 </html>
