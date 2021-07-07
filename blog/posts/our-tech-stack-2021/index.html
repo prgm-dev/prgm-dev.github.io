@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>PRGM Dev</title><meta name="title" content="PRGM Dev" data-svelte="svelte-f8t0s4"><meta name="description" content="Official website of PRGM Dev, a Paris-based company crafting delightful software." data-svelte="svelte-f8t0s4"><meta name="keywords" content="PRGM Dev, PRGM Dev SAS, Software Design, Paris" data-svelte="svelte-f8t0s4"><meta name="robots" content="index, follow" data-svelte="svelte-f8t0s4"><script defer data-domain="prgm.dev" src="https://plausible.io/js/plausible.js" data-svelte="svelte-f8t0s4"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous" data-svelte="svelte-1369zbe">
+
+		
+
+		<link rel="modulepreload" href="/./_app/start-9027fc08.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-a7ad7a2b.js">
+		<link rel="modulepreload" href="/./_app/chunks/preload-helper-9f12a5fd.js">
+		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-4a97725d.js">
+		<link rel="modulepreload" href="/./_app/chunks/stores-18905b20.js">
+		<link rel="modulepreload" href="/./_app/pages/blog/__layout.svelte-f84ee699.js">
+		<link rel="modulepreload" href="/./_app/chunks/Logo-fdb9b460.js">
+		<link rel="modulepreload" href="/./_app/pages/blog/posts/our-tech-stack-2021.svelte.md-296292e2.js">
+		<link rel="modulepreload" href="/./_app/chunks/BlogLayout-db986608.js">
+		<link rel="stylesheet" href="/./_app/assets/start-0826e215.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-aa3e5a17.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/blog/__layout.svelte-1be26e1a.css">
+		<link rel="stylesheet" href="/./_app/assets/BlogLayout-d1695055.css">
+
+		<script type="module">
+			import { start } from "/./_app/start-9027fc08.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":"/."},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/./_app/pages/__layout.svelte-4a97725d.js"),
+						import("/./_app/pages/blog/__layout.svelte-f84ee699.js"),
+						import("/./_app/pages/blog/posts/our-tech-stack-2021.svelte.md-296292e2.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/blog/posts/our-tech-stack-2021",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+
+
+
+
+
+<div class="w-full sticky top-0 h-20 px-4 py-2 bg-light dark:bg-dark shadow-none z-40 transition-all"><div class="mx-auto max-w-screen-md w-full h-full flex items-center justify-between"><a sveltekit:prefetch href="/" class="text-xl font-semibold"><span class="tracking-wide uppercase">PRGM</span><span class="text-accent tracking-tight uppercase text-base">.dev</span></a>
+<div></div>
+<nav class="svelte-180cmrq"><a href="/blog" class="svelte-180cmrq selected">Blog</a></nav></div></div>
+
+
+
+<div class="mx-auto w-full max-w-screen-md z-0">
+	<div class="flex flex-wrap-reverse w-full max-w-screen-lg"><div class="article-container"><article class="pt-5 pb-20 prose prose-sm md:prose numbered"><h1>Our tech stack for 2021</h1>
+		<p class="text-sm"><span class="font-normal">July 6, 2021</span></p>
+		<p><strong>TL;DR:</strong> This year, we are trying <strong>Apollo GraphQL</strong> on the Backend, and <strong>Svelte Kit</strong> on the Frontend,
+both with <strong>Typescript</strong>.</p>
+<p>Want to know how it’s working out for us? Read on!</p>
+<p><strong>Note:</strong> If you’re more into REST APIs, our tech stack last year achieved that very efficiently with Python’s <strong>FastAPI</strong>.
+See our <a href="./our-tech-stack-2020">article here</a></p>
+<h2 id="backend-graphql--apollo-server">Backend: GraphQL + Apollo Server<a href="#backend-graphql--apollo-server"><span class="anchor-sign"></span></a></h2>
+<p>In our quest to find a faster way to build Backend APIs, we came across
+<a href="https://www.apollographql.com" rel="nofollow">Apollo GraphQL</a>.</p>
+<p><a href="https://graphql.org" rel="nofollow">GraphQL</a> is great because it allows you to build your APIs in a schema-first manner.
+This allows you to describe all of your data models (and their relationships) in one place,
+which is great for backend and frontend developers alike as it provides a clear and concise reference
+of all the data your API will expose.</p>
+<p>Additionally, GraphQL allows you to <strong>organize your data in a way that makes sense to you</strong>,
+rather than trying to shoe-horn it into your database.</p>
+<p>GraphQL also <strong>works very well with the type system of Typescript</strong>, improving developer
+experience with tools like auto-completion, auto-documentation, and type-checkers,
+helping to catch bugs and design errors early.</p>
+<p><a href="https://www.apollographql.com/docs/apollo-server/" rel="nofollow">Apollo Server</a>
+is great too, because it provides a developer-efficient way of implementing resolvers.
+Resolvers are the actual functions that take in a GraphQL query and return the appropriate data.
+Apollo allows you to organize your resolvers in a modular way. It then figures out relationships
+in your schema, <strong>implements the boring boilerplate resolvers for you</strong> and lets you implement the few complex
+one, all while making it super easy to test them.</p>
+<p>Similarly to a REST API backend, the bulk of your GraphQL implementation will be in your resolvers,
+which makes Apollo Server feel like a breath of fresh air.</p>
+<h2 id="frontend-sveltekit">Frontend: SvelteKit<a href="#frontend-sveltekit"><span class="anchor-sign"></span></a></h2>
+<p>Nuxt.JS from <a href="./our-tech-stack-2020">our stack last year</a> was great, but we wanted something faster to iterate.</p>
+<p>We are eagerly <a href="https://unofficial-nuxt3-countdown.netlify.app" rel="nofollow">waiting for Nuxt 3 to come out</a>,
+as it would leverage the many improvements of Vue 3, like the improved
+support for Typescript. Unfortunately, at the time of writing (July 2021), it’s not even in Beta yet.</p>
+<p>After researching and trying different alternatives, we found <a href="https://kit.svelte.dev" rel="nofollow">SvelteKit</a>,
+which is a framework around <a href="https://svelte.dev" rel="nofollow">Svelte</a>.</p>
+<p>The promise of Svelte is to provide the developer with an experience to the likes of reactive frameworks like
+Vue and React, but instead of relying on a virtual DOM like its counterpart, <strong>Svelte applies diffing algorithms
+directly on the Browser’s DOM</strong>, using vanilla JS and human-readable HTML and CSS.</p>
+<p>While the speed improvements are noticeable sometimes and appreciable, they were not our main
+concern as Nuxt, and more particularly Vue was already quite efficient. But Svelte conquered us
+through its very elegant design, requiring code that more closely resembles native JS,
+which means less documentation to read, less edge cases, and simpler developer onboarding.</p>
+<h2 id="whats-next">What’s next<a href="#whats-next"><span class="anchor-sign"></span></a></h2>
+<p>We’re lucky to have many projects to try many different technologies, and
+so far this year, this is what we have decided to go with. We’ll keep this article updated
+as we get more familiar with the technologies.</p>
+<p>In the meantime, you can find out more about our <a href="./our-tech-stack-2020">2020 Tech Stack</a>, which focuses on REST APIs
+and uses Nuxt.JS on the frontend.</p></article></div></div>
+</div>
+
+
+
+	
+</div>
+	</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>PRGM Dev</title><meta name="title" content="PRGM Dev" data-svelte="svelte-f8t0s4"><meta name="description" content="Official website of PRGM Dev, a Paris-based company crafting delightful software." data-svelte="svelte-f8t0s4"><meta name="keywords" content="PRGM Dev, PRGM Dev SAS, Software Design, Paris" data-svelte="svelte-f8t0s4"><meta name="robots" content="index, follow" data-svelte="svelte-f8t0s4"><script defer data-domain="prgm.dev" src="https://plausible.io/js/plausible.js" data-svelte="svelte-f8t0s4"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous" data-svelte="svelte-1369zbe">
+
+		
+
+		<link rel="modulepreload" href="/./_app/start-9027fc08.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-a7ad7a2b.js">
+		<link rel="modulepreload" href="/./_app/chunks/preload-helper-9f12a5fd.js">
+		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-4a97725d.js">
+		<link rel="modulepreload" href="/./_app/chunks/stores-18905b20.js">
+		<link rel="modulepreload" href="/./_app/pages/blog/__layout.svelte-f84ee699.js">
+		<link rel="modulepreload" href="/./_app/chunks/Logo-fdb9b460.js">
+		<link rel="modulepreload" href="/./_app/pages/blog/posts/our-tech-stack-2020.svelte.md-06e14f5e.js">
+		<link rel="modulepreload" href="/./_app/chunks/BlogLayout-db986608.js">
+		<link rel="stylesheet" href="/./_app/assets/start-0826e215.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-aa3e5a17.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/blog/__layout.svelte-1be26e1a.css">
+		<link rel="stylesheet" href="/./_app/assets/BlogLayout-d1695055.css">
+
+		<script type="module">
+			import { start } from "/./_app/start-9027fc08.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":"/."},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/./_app/pages/__layout.svelte-4a97725d.js"),
+						import("/./_app/pages/blog/__layout.svelte-f84ee699.js"),
+						import("/./_app/pages/blog/posts/our-tech-stack-2020.svelte.md-06e14f5e.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/blog/posts/our-tech-stack-2020",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+
+
+
+
+
+<div class="w-full sticky top-0 h-20 px-4 py-2 bg-light dark:bg-dark shadow-none z-40 transition-all"><div class="mx-auto max-w-screen-md w-full h-full flex items-center justify-between"><a sveltekit:prefetch href="/" class="text-xl font-semibold"><span class="tracking-wide uppercase">PRGM</span><span class="text-accent tracking-tight uppercase text-base">.dev</span></a>
+<div></div>
+<nav class="svelte-180cmrq"><a href="/blog" class="svelte-180cmrq selected">Blog</a></nav></div></div>
+
+
+
+<div class="mx-auto w-full max-w-screen-md z-0">
+	<div class="flex flex-wrap-reverse w-full max-w-screen-lg"><div class="article-container"><article class="pt-5 pb-20 prose prose-sm md:prose numbered"><h1>Our tech stack for 2020</h1>
+		<p class="text-sm"><span class="font-normal">November 14, 2020</span>
+				<span class="font-light"> (last updated on
+					July 2, 2021)</span></p>
+		<p><strong>TL;DR:</strong> We use <strong>FastAPI</strong> with <strong>Python</strong> on the Backend, <strong>Nuxt.JS</strong> with <strong>Typescript</strong> on the Frontend,
+run our code on <strong>Google Cloud</strong>, and use MongoDB as our Database of choice.</p>
+<p>Want to know how it worked out for us? Read on!</p>
+<p><strong>Note:</strong> We’ve <strong>updated our tech stack for 2021</strong>, and we also wrote <a href="./our-tech-stack-2021">an article about it</a></p>
+<h2 id="code">Code<a href="#code"><span class="anchor-sign"></span></a></h2>
+<h3 id="backend-python--fastapi--mongodb">Backend: Python + FastAPI + MongoDB<a href="#backend-python--fastapi--mongodb"><span class="anchor-sign"></span></a></h3>
+<p>At <a href="/">PRGM.dev</a>, we have a common history of Data Science work. As such, Python is our de-facto language,
+and the common denominator between us all.
+We chose Python for our Backend as it meant we could all be quite efficient at it</p>
+<p>We use <a href="https://fastapi.tiangolo.com" rel="nofollow">FastAPI</a> for our Backend, using MongoDB as its storage layer.
+It is a simpler, more modern approach to REST API designs in Python.
+Its use of type annotation makes it very elegant, and an excellent match with MyPy that we integrated in
+our CI/CD pipelines. Basically, you define Python classes with their expected fields and types,
+provide them as arguments to your endpoints, and FastAPI performs automatic validation of inputs,
+error formatting, and just reduces the amount of boilerplate code you have to write.</p>
+<p>On server start, FastAPI compiles and exposes an <a href="https://www.openapis.org" rel="nofollow">OpenAPI</a>
+specification that we then use as documentation for frontend development,
+or use to straight up generate client code for many client-side languages
+like TypeScript or Swift, using tools like <a href="https://openapi-generator.tech" rel="nofollow">OpenAPI generator</a>.</p>
+<p>In all, <strong>FastAPI allowed us to design and experiment with new ideas faster</strong>, while keeping a
+clean and unambiguous specification that everyone could follow,
+making for a nice development pace.</p>
+<h2 id="frontend-nuxtjs--typescript">Frontend: Nuxt.JS + Typescript<a href="#frontend-nuxtjs--typescript"><span class="anchor-sign"></span></a></h2>
+<p>We chose <a href="https://nuxtjs.org" rel="nofollow">Nuxt.JS</a> as our Frontend framework
+as it combines many of the good parts from <a href="https://vuejs.org" rel="nofollow">Vue.js</a>
+and <a href="https://reactjs.org" rel="nofollow">React</a>
+– namely, their reactive state management –
+while avoiding their limitations and pitfalls.</p>
+<p><a href="https://nuxtjs.org" rel="nofollow">Nuxt.JS</a> is mostly just <a href="https://vuejs.org" rel="nofollow">Vue.js</a>,
+but with a much better integration with
+server-side rendering for SEO/speed, and with support for ES6 modules out of the box.</p>
+<p>On top of that, it allows you to easily integrate with Vue’s native app-wide store, [Vuex],
+and integrates with other packages like <a href="https://axios-http.com" rel="nofollow">Axios</a>, that our OpenAPI generator
+outputed when provided with our FastAPI-built specification.
+Overall, Nuxt provides a lot of flexibility when it comes to the design of your application,
+while natively implementing boilerplate stuff like a service-worker, a progress bar
+when navigating in the web app, and even a progressive web app that could work offline.</p>
+<p>On top of that, we use Typescript to check our code for
+undefined variables and other common mistakes, while providing the types
+that are essential to writing fast and efficient code.</p>
+<p>When we’re experimenting with rapidly changing API data models, TypeScript’s type system
+offers a nice safety net.</p>
+<h2 id="devops">DevOps<a href="#devops"><span class="anchor-sign"></span></a></h2>
+<h3 id="code-management-gitlab">Code management: GitLab<a href="#code-management-gitlab"><span class="anchor-sign"></span></a></h3>
+<p>We use <a href="https://about.gitlab.com/features/" rel="nofollow">GitLab</a> for our source code management
+(SCM).</p>
+<p>Even on the free starter plan, GitLab has a lot of great features, including:</p>
+<ul><li><strong>A built in CI/CD pipeline</strong> We can test our code locally before pushing it,
+and also automatically deploy our code on every pull request.</li>
+<li><strong>An issue tracker</strong> We use it to keep track of bugs, feature requests, and
+other issues that we want to tackle in the future.</li>
+<li><strong>A wiki</strong> We use it to store documentation about our project,
+as well as for some snippets of our code.</li>
+<li><strong>A place where we can ask questions</strong> We use it to discuss our code, and
+ask for help if needed.</li>
+<li><strong>It’s open source</strong> GitLab is open-source and we can host our own instance if we wish to.</li></ul>
+<h3 id="code-quality-mypy">Code Quality: MyPy<a href="#code-quality-mypy"><span class="anchor-sign"></span></a></h3>
+<p>This year, we integrated a static type checker for Python
+in all our CI/CD pipelines.
+At the time of writing, we’re using <a href="https://github.com/python/mypy" rel="nofollow">MyPy</a>,
+a static type checker that works with our code.</p>
+<p>The major benefit of a static type checker is that it allows us to catch
+many common mistakes at compile time,
+like undefined variables or incorrect arguments passed to functions.</p>
+<p>These errors can be caught when they happen, and the tests will fail,
+avoiding a lot of headaches later.
+With MyPy, we can also get some nice typesafety in Python, computers understand us better,
+and auto-completion in IDEs is just all the more relevant.</p>
+<p>And although MyPy does not avoid all the issues, it does catch a lot of them,
+while not slowing down the development process.</p>
+<h3 id="servers-google-cloud">Servers: Google Cloud<a href="#servers-google-cloud"><span class="anchor-sign"></span></a></h3>
+<p>This year, we finally gave a try to the serverless world.
+The idea is to be able to scale dynamically, so that you don’t have to provision servers and
+then resize them later.
+Instead, you can just define your code, its dependencies, and some properties,
+and Google Cloud will handle the rest.</p>
+<p>Here are some of the benefits we observed:</p>
+<ul><li><strong>“It’s cheaper.”</strong> Thanks to the autoscaling and the free tier,
+we don’t need to worry about the cost of our servers.
+This means we can focus more on the code, and not worry about raising
+funds to pay for servers every month. This is ideal for MVPs, and means
+we can deploy as many previews of the code we want,
+improving our review feedback efficiency.</li>
+<li><strong>“The deployment process is faster.”</strong> Since we don’t need to rely on
+a DevOps person to deploy our code, we can deploy it on every pull request.</li>
+<li><strong>“It allows us to focus more on the code.”</strong> As we don’t need to worry about
+the servers, we can focus on the code by writing more tests, and
+integrating with libraries like FastAPI directly in the application.</li></ul>
+<h3 id="databases-mongo-on-cloud-atlas">Databases: Mongo on Cloud Atlas<a href="#databases-mongo-on-cloud-atlas"><span class="anchor-sign"></span></a></h3>
+<p>We use MongoDB as our database of choice, as it is simple, easy to use, and
+really efficient in the way it stores data. We also use it for its high availability
+and scalability features.</p>
+<p>We’ve used a lot of other databases, and while they often have more advanced features,
+MongoDB is the one that works best for us.</p>
+<h2 id="conclusion">Conclusion<a href="#conclusion"><span class="anchor-sign"></span></a></h2>
+<p>We’ve been using all these tools for the past year, and we’re really happy with them.</p>
+<p>We’re now more productive than ever, and we’re working on new projects that will allow us to
+increase our growth rate even further.</p>
+<p>There’s a lot about our stack that we were not able to touch on,
+so if you want to know more about how we did it, or simply want to get in touch,
+you can reach us at <a href="mailto:contact@prgm.dev">contact@prgm.dev</a>.</p></article></div></div>
+</div>
+
+
+
+	
+</div>
+	</body>
+</html>
