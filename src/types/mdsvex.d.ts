@@ -1,12 +1,3 @@
-export interface MetadataT {
-	title?: string;
-	longTitle?: string;
-	dateCreated?: string;
-	dateLastUpdated?: string;
-	description?: string;
-	tags?: string[];
-}
-
 declare module '*.svelte.md' {
-	export const metadata: MetadataT;
+	export const metadata: import('./blog-posts').MetadataT;
 }

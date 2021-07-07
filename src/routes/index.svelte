@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	import type { Founder } from '$/types';
+	import type { Founder } from '$/types/founder';
 	import { routesOrdered } from '$/globals/routes';
 
 	// Remove JS when not in DEV (only on this page)

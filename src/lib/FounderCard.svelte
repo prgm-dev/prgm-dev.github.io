@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Founder } from '$/types';
+	import type { Founder } from '$/types/founder';
 
 	export let founder: Founder | null = null;
 

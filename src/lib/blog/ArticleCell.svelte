@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	import type { MetadataT } from '$/types/mdsvex';
+	import type { MetadataT } from '$/types/blog-posts';
 
 	export interface PostMetadata extends MetadataT {
 		slug: string;
