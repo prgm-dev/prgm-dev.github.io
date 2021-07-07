@@ -6,7 +6,7 @@
 	const imageSrc: string =
 		'src' in founder.image
 			? founder.image.src
-			: `https://www.gravatar.com/avatar/${founder.image.gravatarHash}?size=256`;
+			: `https://www.gravatar.com/avatar/${founder.image.gravatarHash}?size=384`;
 	const imageAlt: string =
 		founder.image.alt ?? `Picture of ${founder.name.first}`;
 </script>

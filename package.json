@@ -30,6 +30,7 @@
 		"husky": "^7.0.0",
 		"lint-staged": "^11.0.0",
 		"mdsvex": "^0.9.8",
+		"nprogress": "^0.2.0",
 		"postcss": "^8.2.13",
 		"postcss-load-config": "^3.0.1",
 		"prettier": "~2.3.2",

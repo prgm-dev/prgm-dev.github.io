@@ -1,3 +1,9 @@
+@import 'nprogress/nprogress.css';
+
+:root {
+	color-scheme: light dark;
+}
+
 @tailwind base;
 
 body {
@@ -9,6 +15,27 @@ body {
 		font-variant: small-caps;
 	}
 }
-
 @tailwind components;
 @tailwind utilities;
+
+/* Progress bar settings */
+#nprogress .bar {
+	@apply bg-accent;
+}
+
+/* Article Dark mode override */
+
+article.prose,
+article.prose h1,
+article.prose h2,
+article.prose h3,
+article.prose h4,
+article.prose h5,
+article.prose code,
+article.prose strong {
+	@apply dark:text-light-alt;
+}
+
+article.prose a {
+	@apply text-accent dark:text-accent;
+}

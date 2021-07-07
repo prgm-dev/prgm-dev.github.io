@@ -1,5 +1,6 @@
 <script context="module" lang="ts">
 	import type { Founder } from '$/types';
+	import { routesOrdered } from '$/globals/routes';
 
 	// Remove JS when not in DEV (only on this page)
 	import { dev } from '$app/env';
@@ -9,8 +10,9 @@
 	// Ensure content is pre-rendered
 	export const prerender = true;
 
-	// Founders
-	const founders: Founder[] = [
+	// Constants
+	export const copyrightStartYear = 2021;
+	export const founders: Founder[] = [
 		{
 			name: { first: 'Sébastien', last: 'Ohleyer' },
 			title: 'CEO',
@@ -24,7 +26,7 @@
 		{
 			name: { first: 'Tristan', last: 'Stérin' },
 			title: 'COO',
-			image: { src: '/img/tristan.jpg' },
+			image: { src: '/img/tristan-512.jpg' },
 		},
 	];
 </script>
@@ -33,7 +35,6 @@
 	import FounderCard from '$lib/FounderCard.svelte';
 	import Logo from '$lib/Logo.svelte';
 
-	const copyrightStartYear = 2021;
 	const currentYear = new Date().getFullYear();
 	const copyrightString =
 		currentYear === copyrightStartYear
@@ -51,7 +52,9 @@
 		<Logo />
 		<div />
 		<nav>
-			<button disabled>Blog</button>
+			{#each routesOrdered as { href, name }}
+				<a {href}>{name}</a>
+			{/each}
 		</nav>
 	</div>
 </div>
@@ -76,7 +79,7 @@
 			<!-- Note: Email is encoded to avoid spam bots -->
 			<a
 				href="&#109;&#65;&#105;&#108;&#84;&#79;&#58;&#99;&#111;&#110;&#116;&#97;&#99;&#116;&#64;&#112;&#114;&#103;&#109;&#46;&#100;&#101;&#118;&#63;&#115;&#117;&#98;&#106;&#101;&#99;&#116;&#61;&#72;&#101;&#108;&#108;&#111;&#37;&#50;&#49;"
-				class="block w-max bg-accent dark:bg-accent rounded-lg py-3 px-4 text-xl sm:text-2xl font-medium text-white dark:text-dark"
+				class="block w-max bg-accent rounded-lg py-3 px-4 text-xl sm:text-2xl font-medium text-white dark:text-dark"
 				>Work with us!</a
 			>
 		</div>
@@ -114,11 +117,17 @@
 </footer>
 
 <style lang="postcss">
-	button:disabled {
-		@apply opacity-25 cursor-not-allowed;
-	}
-
 	section > h2 {
 		@apply text-3xl ml-5 mb-5;
+	}
+
+	/* Navigation links: add a `/` before each link */
+	nav > a::before {
+		@apply scale-125 font-bold opacity-40 transition-opacity duration-300;
+		content: '/';
+	}
+
+	nav > a:hover:before {
+		@apply opacity-100;
 	}
 </style>
