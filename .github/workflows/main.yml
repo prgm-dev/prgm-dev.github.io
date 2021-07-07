@@ -45,5 +45,5 @@ jobs:
           clean: true
           clean-exclude: |
             .nojekyll
-          git-config-name: "GitHub Actions"
-          git-config-email: "github-actions@prgm.dev"
+          git-config-name: 'GitHub Actions'
+          git-config-email: 'github-actions@prgm.dev'

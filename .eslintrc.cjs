@@ -1,19 +1,13 @@
 module.exports = {
 	root: true,
 	parser: '@typescript-eslint/parser',
-	parserOptions: {
-		// add these parser options
-		tsconfigRootDir: __dirname,
-		project: ['./tsconfig.json'],
-		extraFileExtensions: ['.svelte'],
-	},
 	extends: [
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
 		'prettier',
 	],
 	plugins: ['svelte3', '@typescript-eslint'],
-	ignorePatterns: ['*.cjs'],
+	ignorePatterns: ['*.cjs', '*.config.js'],
 	overrides: [
 		{
 			files: ['*.svelte'],

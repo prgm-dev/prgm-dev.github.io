@@ -1,14 +1,14 @@
 {
-    "recommendations": [
-        "svelte.svelte-vscode",
-        "fivethree.vscode-svelte-snippets",
-        "ardenivanov.svelte-intellisense",
-        "bradlc.vscode-tailwindcss",
-        "ms-vscode.vscode-typescript-tslint-plugin",
-        "editorconfig.editorconfig",
-        "davidanson.vscode-markdownlint",
-        "bpruitt-goddard.mermaid-markdown-syntax-highlighting",
-        "esbenp.prettier-vscode",
-        "visualstudioexptteam.vscodeintellicode"
-    ]
+	"recommendations": [
+		"svelte.svelte-vscode",
+		"fivethree.vscode-svelte-snippets",
+		"ardenivanov.svelte-intellisense",
+		"bradlc.vscode-tailwindcss",
+		"ms-vscode.vscode-typescript-tslint-plugin",
+		"editorconfig.editorconfig",
+		"davidanson.vscode-markdownlint",
+		"bpruitt-goddard.mermaid-markdown-syntax-highlighting",
+		"esbenp.prettier-vscode",
+		"visualstudioexptteam.vscodeintellicode"
+	]
 }

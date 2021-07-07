@@ -38,7 +38,7 @@
 	const currentYear = new Date().getFullYear();
 	const copyrightString =
 		currentYear === copyrightStartYear
-			? '' + copyrightStartYear
+			? `${copyrightStartYear}`
 			: `${copyrightStartYear} — ${currentYear}`;
 </script>
 
