@@ -1,41 +1,33 @@
 <script context="module" lang="ts">
 	// Ensure content is pre-rendered
 	export const prerender = true;
+
+	// Import articles
+	import { metadata as cardanoArticle } from '../blog/posts/understanding-cardano-rewards.svelte.md';
+	import { metadata as ourTechStack2020Article } from '../blog/posts/our-tech-stack-2020.svelte.md';
+	import { metadata as ourTechStack2021Article } from '../blog/posts/our-tech-stack-2021.svelte.md';
+
+	/** Maps Article Slugs to imported articles metadata */
+	export const slugMapping = [
+		{ slug: 'our-tech-stack-2021', metadata: ourTechStack2021Article },
+		{ slug: 'our-tech-stack-2020', metadata: ourTechStack2020Article },
+		{ slug: 'understanding-cardano-rewards', metadata: cardanoArticle },
+	];
 </script>
 
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import type { MetadataT } from '$/types/mdsvex';
 	import type { PostMetadata } from '$lib/blog/ArticleCell.svelte';
 	import ArticleCell from '$lib/blog/ArticleCell.svelte';
 
-	/** References the slug to the article in the `posts/` folder. */
-	const articleSlugs = [
-		'our-tech-stack-2021',
-		'our-tech-stack-2020',
-		'understanding-cardano-rewards',
-	];
+	let posts: { [k: string]: PostMetadata } = Object.fromEntries(
+		slugMapping.map(({ slug, metadata }) => [
+			slug,
+			// Add slug to each metadata object
+			{ slug, ...metadata },
+		])
+	);
 
-	let posts: { [k: string]: PostMetadata } = {};
 	let postsOrdered: PostMetadata[] = [];
-
-	onMount(async () => {
-		// Import all articles
-		const articleImports = articleSlugs.map(
-			async (slug): Promise<[string, MetadataT]> => [
-				slug,
-				(await import(`./posts/${slug}.svelte.md`)).metadata,
-			]
-		);
-		posts = Object.fromEntries(
-			(await Promise.all(articleImports)).map(([slug, metadata]) => [
-				slug,
-				// Add slug to each metadata object
-				{ slug, ...metadata },
-			])
-		);
-	});
-
 	$: postsOrdered = Object.values(posts);
 </script>
 
