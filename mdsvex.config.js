@@ -1,11 +1,12 @@
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 
-export const mdsvexConfig = {
+/** @type {Parameters<typeof import('mdsvex').mdsvex>[0]} */
+const mdsvexConfig = {
 	extensions: ['.svelte.md', '.md', '.svx'],
-	layout: 'src/lib/BlogLayout.svelte',
+	layout: './src/lib/blog/BlogLayout.svelte',
 	smartypants: {
-		dashes: 'oldschool'
+		dashes: 'oldschool',
 	},
 	remarkPlugins: [require('remark-math'), require('remark-abbr')],
 	rehypePlugins: [
@@ -20,9 +21,11 @@ export const mdsvexConfig = {
 					type: 'element',
 					tagName: 'span',
 					properties: { className: ['anchor-sign'] },
-					children: []
-				}
-			}
-		]
-	]
+					children: [],
+				},
+			},
+		],
+	],
 };
+
+export { mdsvexConfig };

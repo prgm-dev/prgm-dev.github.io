@@ -1,11 +1,18 @@
 <script>
 	export let longTitle;
 	export let title;
-	export let lastUpdated;
+	export let dateCreated;
+	export let dateLastUpdated;
 
-	const lastUpdatedFormatted = new Date(lastUpdated).toLocaleDateString('en', {
-		dateStyle: 'long'
+	$: dataCreatedFormatted = new Date(dateCreated).toLocaleDateString('en', {
+		dateStyle: 'long',
 	});
+	$: dateLastUpdatedFormatted =
+		dateLastUpdated && dateLastUpdated !== dataCreatedFormatted
+			? new Date(dateLastUpdated).toLocaleDateString('en', {
+					dateStyle: 'long',
+			  })
+			: null;
 </script>
 
 <svelte:head>
@@ -17,15 +24,19 @@
 	/>
 </svelte:head>
 
-<div class="mx-auto w-full max-w-screen-md">
+<div class="mx-auto w-full max-w-screen-md z-0">
 	<!-- Page content with ToC on the side -->
 	<div class="flex flex-wrap-reverse w-full max-w-screen-lg">
 		<div class="article-container">
-			<article class="pt-5 prose prose-sm md:prose numbered">
+			<article class="pt-5 pb-20 prose prose-sm md:prose numbered">
 				<h1>{longTitle || title}</h1>
 				<p class="text-sm">
-					Last updated:
-					<span class="font-light">{lastUpdatedFormatted}</span>.
+					<span class="font-normal">{dataCreatedFormatted}</span
+					>{#if dateLastUpdatedFormatted}
+						<span class="font-light">
+							&nbsp;(last updated on
+							{dateLastUpdatedFormatted})</span
+						>{/if}
 				</p>
 				<slot />
 			</article>
@@ -46,17 +57,21 @@
 	.prose h4 > a {
 		text-decoration: none !important;
 	}
-	.prose h2:hover > a > span.anchor-sign {
+	.prose h2:hover > a > span.anchor-sign,
+	.prose h3:hover > a > span.anchor-sign {
 		@apply opacity-100;
 	}
-	.prose h2 > a > span.anchor-sign::before {
+	.prose h2 > a > span.anchor-sign::before,
+	.prose h3 > a > span.anchor-sign::before {
+		@apply z-0;
 		content: '#';
 	}
-	.prose h2 > a > span.anchor-sign {
+	.prose h2 > a > span.anchor-sign,
+	.prose h3 > a > span.anchor-sign {
 		@apply ml-2 no-underline text-accent opacity-0 transition-opacity;
 	}
 
-	.dark .prose h2 > a > span.anchor-sign {
+	.prose h2 > a > span.anchor-sign {
 		@apply text-accent;
 	}
 </style>

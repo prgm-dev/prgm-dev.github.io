@@ -1,6 +1,12 @@
 module.exports = {
 	root: true,
 	parser: '@typescript-eslint/parser',
+	parserOptions: {
+		// add these parser options
+		tsconfigRootDir: __dirname,
+		project: ['./tsconfig.json'],
+		extraFileExtensions: ['.svelte'],
+	},
 	extends: [
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
@@ -8,9 +14,17 @@ module.exports = {
 	],
 	plugins: ['svelte3', '@typescript-eslint'],
 	ignorePatterns: ['*.cjs'],
-	overrides: [{ files: ['*.svelte'], processor: 'svelte3/svelte3' }],
+	overrides: [
+		{
+			files: ['*.svelte'],
+			processor: 'svelte3/svelte3',
+		},
+	],
 	settings: {
 		'svelte3/typescript': () => require('typescript'),
+		// Due to PostCSS, style-linting is not very reliable
+		// https://github.com/sveltejs/eslint-plugin-svelte3#svelte3ignore-styles
+		'svelte3/ignore-styles': () => true,
 	},
 	parserOptions: {
 		sourceType: 'module',
