@@ -44,6 +44,7 @@
 
 <!-- Top bar -->
 <div
+	role="banner"
 	class="w-full sticky top-0 h-20 px-4 py-2 bg-light dark:bg-dark border-b dark:border-dark-alt"
 >
 	<div
@@ -61,16 +62,20 @@
 
 <main class="z-0">
 	<!-- Heading -->
-	<section class="mx-auto w-full max-w-screen-md flex px-4 md:px-5 my-10 z-40">
+	<section
+		class="mx-auto w-full max-w-screen-md flex px-4 md:px-5 my-10 z-40"
+		aria-labelledby="slogan"
+		aria-describedby="slogan-description"
+	>
 		<div class="w-11/12 sm:w-9/12 flex flex-col space-y-3 px-5">
-			<h1 class="text-4xl sm:text-5xl font-semibold">
+			<h1 id="slogan" class="text-4xl sm:text-5xl font-semibold">
 				Let's build something <span class="sm:whitespace-nowrap"
 					><span class="text-5xl sm:text-6xl small-caps text-accent font-bold"
 						>big</span
 					> together</span
 				>.
 			</h1>
-			<p class="text-sm sm:text-base">
+			<p id="slogan-description" class="text-sm sm:text-base">
 				We are committed to producing excellent quality interactive software. We
 				specialise in developing real time solutions for real world problems
 				with a strong focus on software reliability and user experience.
@@ -86,8 +91,11 @@
 	</section>
 
 	<!-- Founders -->
-	<section class="mx-auto w-full max-w-screen-md my-5 px-4 md:px-5">
-		<h2>Our founders</h2>
+	<section
+		class="mx-auto w-full max-w-screen-md my-5 px-4 md:px-5"
+		aria-labelledby="founders-heading"
+	>
+		<h2 id="founders-heading">Our founders</h2>
 		<div
 			class="mx-auto w-3/4 sm:w-full grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-3 md:gap-x-8"
 		>
