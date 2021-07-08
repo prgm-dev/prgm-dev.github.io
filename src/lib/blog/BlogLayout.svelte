@@ -3,6 +3,7 @@
 	export let title;
 	export let dateCreated;
 	export let dateLastUpdated;
+	export let usesKatex = false;
 
 	$: dataCreatedFormatted = new Date(dateCreated).toLocaleDateString('en', {
 		dateStyle: 'long',
@@ -16,12 +17,14 @@
 </script>
 
 <svelte:head>
-	<link
-		rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css"
-		integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc"
-		crossorigin="anonymous"
-	/>
+	{#if usesKatex}
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css"
+			integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc"
+			crossorigin="anonymous"
+		/>
+	{/if}
 </svelte:head>
 
 <div class="mx-auto w-full max-w-screen-md z-0">

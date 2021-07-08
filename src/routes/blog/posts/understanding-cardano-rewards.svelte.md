@@ -4,6 +4,7 @@ longTitle: Understanding the math behind Cardano staking rewards.
 dateCreated: 2021-06-21
 description: 'Debunking the complex dynamics behind Cardano
 							staking rewards through the protocol’s formulas.'
+usesKatex: true
 ---
 
 ## Foreword
