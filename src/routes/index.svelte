@@ -76,9 +76,8 @@
 				with a strong focus on software reliability and user experience.
 			</p>
 			<!-- Call to action with email -->
-			<!-- Note: Email is encoded to avoid spam bots -->
 			<a
-				href="&#109;&#65;&#105;&#108;&#84;&#79;&#58;&#99;&#111;&#110;&#116;&#97;&#99;&#116;&#64;&#112;&#114;&#103;&#109;&#46;&#100;&#101;&#118;&#63;&#115;&#117;&#98;&#106;&#101;&#99;&#116;&#61;&#72;&#101;&#108;&#108;&#111;&#37;&#50;&#49;"
+				href="mailto:contact@prgm.dev?subject=Hello%21"
 				class="block w-max bg-accent rounded-lg py-3 px-4 text-xl sm:text-2xl font-medium text-white dark:text-dark"
 				>Work with us!</a
 			>
