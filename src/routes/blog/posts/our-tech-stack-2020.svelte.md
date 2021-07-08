@@ -1,7 +1,7 @@
 ---
 title: Our tech stack for 2020
 dateCreated: 2020-11-14
-dateLastUpdated: 2021-07-02
+dateLastUpdated: 2021-07-06
 description: "We learned a lot of new technologies this year.
 Here are the technologies we used this year to build our products."
 tags:
@@ -51,7 +51,7 @@ while avoiding their limitations and pitfalls.
 but with a much better integration with
 server-side rendering for SEO/speed, and with support for ES6 modules out of the box.
 
-On top of that, it allows you to easily integrate with Vue's native app-wide store, [Vuex],
+On top of that, it allows you to easily integrate with Vue's native app-wide store, Vuex,
 and integrates with other packages like [Axios](https://axios-http.com), that our OpenAPI generator
 outputed when provided with our FastAPI-built specification.
 Overall, Nuxt provides a lot of flexibility when it comes to the design of your application,
