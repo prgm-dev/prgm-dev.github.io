@@ -13,13 +13,14 @@
 		// Full list: https://github.com/rstacruz/nprogress#configuration
 		minimum: 0.2,
 		showSpinner: false,
+		trickleSpeed: 100,
 	});
 
 	$: {
 		if ($navigating) {
 			// Schedule the progress bar to start with a little delay if we're still navigating
 			setTimeout(() => {
-				if ($navigating) NProgress.set(0.4);
+				if ($navigating) NProgress.start();
 			}, 100);
 		} else NProgress.done();
 	}
