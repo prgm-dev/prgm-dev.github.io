@@ -26,10 +26,18 @@
 
 <div class="mx-auto w-full max-w-screen-md z-0">
 	<!-- Page content with ToC on the side -->
-	<div class="flex flex-wrap-reverse w-full max-w-screen-lg">
-		<div class="article-container">
-			<article class="pt-5 pb-20 prose prose-sm md:prose numbered">
-				<h1>{longTitle || title}</h1>
+	<div class="w-full max-w-screen-lg px-5 sm:px-2 lg:px-0 pt-5 pb-20">
+		<a href="/blog" class="text-sm block text-accent hover:underline w-max"
+			>&#8592;&nbsp;See all articles</a
+		>
+		<article class="prose numbered">
+			<div
+				id="article-header"
+				role="heading"
+				aria-labelledby="article-title"
+				class="mt-2"
+			>
+				<h1 id="article-title">{longTitle || title}</h1>
 				<p class="text-sm">
 					<span class="font-normal">{dataCreatedFormatted}</span
 					>{#if dateLastUpdatedFormatted}
@@ -38,13 +46,22 @@
 							{dateLastUpdatedFormatted})</span
 						>{/if}
 				</p>
-				<slot />
-			</article>
-		</div>
+			</div>
+			<slot />
+		</article>
 	</div>
 </div>
 
 <style lang="postcss" global>
+	/* Set up the header margins to override Prose's defaults */
+	.prose #article-header p {
+		@apply my-0;
+	}
+
+	.prose #article-header h1 {
+		@apply mt-0 mb-2;
+	}
+
 	/* Offset ID scrolling */
 	.prose [id]::before {
 		@apply block -mt-24 h-24 invisible;
