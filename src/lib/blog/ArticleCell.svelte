@@ -16,7 +16,7 @@
 	<a
 		sveltekit:prefetch
 		href="/blog/posts/{post.slug}"
-		class="w-full h-full p-4 bg-light-alt dark:bg-dark-alt rounded-lg hover:shadow-lg transition-shadow duration-300 flex flex-col"
+		class="w-full h-full p-4 bg-light-alt dark:bg-dark-alt rounded-lg hoverable:hover:shadow-lg transition-shadow duration-300 flex flex-col"
 	>
 		<h2 class="text-xl font-semibold">{formattedTitle}</h2>
 		{#if post.description}

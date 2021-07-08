@@ -18,6 +18,10 @@ const config = {
 	},
 	theme: {
 		extend: {
+			screens: {
+				hoverable: { raw: '(hover: hover)' },
+				// => @media (orientation: portrait) { ... }
+			},
 			colors: {
 				// Palette: https://coolors.co/191e24-2e3238-eeeeee-b53389
 				accent: { DEFAULT: colors.purple[400], dark: colors.purple[500] },
@@ -25,9 +29,6 @@ const config = {
 				dark: { DEFAULT: '#191E24', alt: '#2E3238' },
 			},
 		},
-	},
-	variants: {
-		extend: {},
 	},
 	darkMode: 'media',
 	plugins: [
