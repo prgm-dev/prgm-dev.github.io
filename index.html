@@ -8,11 +8,42 @@
 
 		
 
+		<link rel="modulepreload" href="/./_app/start-946a0c15.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-a7ad7a2b.js">
+		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-f0febc9c.js">
+		<link rel="modulepreload" href="/./_app/chunks/stores-18905b20.js">
+		<link rel="modulepreload" href="/./_app/pages/index.svelte-4632d73a.js">
+		<link rel="modulepreload" href="/./_app/chunks/Logo-36fa4ee2.js">
 		<link rel="stylesheet" href="/./_app/assets/start-0826e215.css">
 		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-3b7c11ac.css">
 		<link rel="stylesheet" href="/./_app/assets/pages/index.svelte-ea9602c7.css">
 
-		
+		<script type="module">
+			import { start } from "/./_app/start-946a0c15.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":"/."},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "always",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/./_app/pages/__layout.svelte-f0febc9c.js"),
+						import("/./_app/pages/index.svelte-4632d73a.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
 	</head>
 	<body id="svelte">
 		
@@ -33,8 +64,7 @@
 		with a strong focus on software reliability and user experience.
 	</p>
 	
-	
-	<a href="mAilTO:contact@prgm.dev?subject=Hello%21" class="block w-max bg-accent rounded-lg py-3 px-4 text-xl sm:text-2xl font-medium text-white dark:text-dark">Work with us!</a></div></section>
+	<a href="mailto:contact@prgm.dev?subject=Hello%21" class="block w-max bg-accent rounded-lg py-3 px-4 text-xl sm:text-2xl font-medium text-white dark:text-dark">Work with us!</a></div></section>
 
 	
 	<section class="mx-auto w-full max-w-screen-md my-5 px-4 md:px-5 svelte-sts7pi" aria-labelledby="founders-heading"><h2 id="founders-heading" class="svelte-sts7pi">Our founders</h2>
