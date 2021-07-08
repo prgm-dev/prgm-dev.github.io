@@ -2,11 +2,6 @@
 	import type { Founder } from '$/types/founder';
 	import { routesOrdered } from '$/globals/routes';
 
-	// Remove JS when not in DEV (only on this page)
-	import { dev } from '$app/env';
-	export const router = dev;
-	export const hydrate = dev;
-
 	// Ensure content is pre-rendered
 	export const prerender = true;
 
