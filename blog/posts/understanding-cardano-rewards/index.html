@@ -8,22 +8,22 @@
 
 		
 
-		<link rel="modulepreload" href="/./_app/start-e0bd5f06.js">
+		<link rel="modulepreload" href="/./_app/start-3afd8f63.js">
 		<link rel="modulepreload" href="/./_app/chunks/vendor-a7ad7a2b.js">
 		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-a56f8719.js">
 		<link rel="modulepreload" href="/./_app/chunks/stores-18905b20.js">
-		<link rel="modulepreload" href="/./_app/pages/blog/__layout.svelte-2d202a62.js">
+		<link rel="modulepreload" href="/./_app/pages/blog/__layout.svelte-260e97e2.js">
 		<link rel="modulepreload" href="/./_app/chunks/Logo-066388be.js">
 		<link rel="modulepreload" href="/./_app/chunks/routes-c138df12.js">
-		<link rel="modulepreload" href="/./_app/pages/blog/posts/understanding-cardano-rewards.svelte.md-3129fbb3.js">
-		<link rel="modulepreload" href="/./_app/chunks/BlogLayout-dcc11c65.js">
+		<link rel="modulepreload" href="/./_app/pages/blog/posts/understanding-cardano-rewards.svelte.md-474eaafd.js">
+		<link rel="modulepreload" href="/./_app/chunks/BlogLayout-2772b09c.js">
 		<link rel="stylesheet" href="/./_app/assets/start-0826e215.css">
 		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-38e0b81d.css">
 		<link rel="stylesheet" href="/./_app/assets/pages/blog/__layout.svelte-1be26e1a.css">
 		<link rel="stylesheet" href="/./_app/assets/BlogLayout-6e2e385d.css">
 
 		<script type="module">
-			import { start } from "/./_app/start-e0bd5f06.js";
+			import { start } from "/./_app/start-3afd8f63.js";
 			start({
 				target: document.querySelector("#svelte"),
 				paths: {"base":"","assets":"/."},
@@ -37,8 +37,8 @@
 					error: null,
 					nodes: [
 						import("/./_app/pages/__layout.svelte-a56f8719.js"),
-						import("/./_app/pages/blog/__layout.svelte-2d202a62.js"),
-						import("/./_app/pages/blog/posts/understanding-cardano-rewards.svelte.md-3129fbb3.js")
+						import("/./_app/pages/blog/__layout.svelte-260e97e2.js"),
+						import("/./_app/pages/blog/posts/understanding-cardano-rewards.svelte.md-474eaafd.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -59,7 +59,7 @@
 
 
 
-<div class="w-full sticky top-0 h-20 px-4 py-2 bg-light dark:bg-dark shadow-none z-40 transition-all"><div class="mx-auto max-w-screen-md w-full h-full flex items-center justify-between"><a sveltekit:prefetch href="/" class="text-xl font-semibold"><span class="tracking-wide uppercase">PRGM</span><span class="text-accent tracking-tight uppercase text-base">.dev</span></a>
+<div role="banner" class="w-full sticky top-0 h-20 px-4 py-2 bg-light dark:bg-dark shadow-none z-40 transition-all"><div class="mx-auto max-w-screen-md w-full h-full flex items-center justify-between"><a sveltekit:prefetch href="/" class="text-xl font-semibold"><span class="tracking-wide uppercase">PRGM</span><span class="text-accent tracking-tight uppercase text-base">.dev</span></a>
 <div></div>
 <nav class="svelte-180cmrq"><a href="/blog/" class="svelte-180cmrq selected">Blog</a></nav></div></div>
 
@@ -69,10 +69,10 @@
 	<div class="w-full max-w-screen-lg px-5 sm:px-2 lg:px-0 pt-5 pb-20"><nav id="path-nav" aria-label="Path navigation" class="text-3xl font-bold"><a href="/blog/">Blog
 <span>Posts
 <a href="/blog/posts/understanding-cardano-rewards/">
-</a></span></a>
+<br>
+	<h1 id="article-title" class="text-4xl font-bold">Understanding the math behind Cardano staking rewards.</h1></a></span></a>
 </nav>
-<a href="/blog/posts/understanding-cardano-rewards/" id="article-title" class="text-4xl font-bold">Understanding the math behind Cardano staking rewards.</a>
-<article class="prose numbered"><div id="article-header" role="heading" aria-labelledby="article-title" class="mt-2"><p class="text-sm"><span class="font-normal">June 21, 2021</span></p></div>
+<article class="prose numbered" aria-labelledby="article-title"><div id="article-header" role="heading" aria-labelledby="article-title" class="mt-2"><p class="text-sm"><span class="font-normal">June 21, 2021</span></p></div>
 	<h2 id="foreword">Foreword<a href="#foreword"><span class="anchor-sign"></span></a></h2>
 <p>The goal of this post is to inform clients of <a href="/">Stake.Green</a> staking service or of any other staking service on how staking rewards are calculated and distributed on the Cardano (ADA) blockchain.</p>
 <p>First of all, it is worth mentioning that reward computation and distribution is fully <strong>automatised</strong> by the Cardano blockchain. It means that by delegating your ADA to a pool you are <strong>100%</strong> assured to receive you share of the mining rewards that the pool is entitled to.</p>
