@@ -18,6 +18,7 @@
 <script lang="ts">
 	import type { PostMetadata } from '$lib/blog/ArticleCell.svelte';
 	import ArticleCell from '$lib/blog/ArticleCell.svelte';
+	import NavigationPath from '$lib/NavigationPath.svelte';
 
 	let posts: { [k: string]: PostMetadata } = Object.fromEntries(
 		slugMapping.map(({ slug, metadata }) => [
@@ -32,10 +33,8 @@
 </script>
 
 <!-- Centered container -->
-<div class="mx-auto max-w-screen-md px-4 md:px-1 my-5">
-	<a class="blog-title" href="/blog">
-		<h1 class="text-3xl font-bold">Blog</h1>
-	</a>
+<div class="mx-auto max-w-screen-md px-4 md:px-0 my-5">
+	<NavigationPath />
 	<h2 class="mt-2 text-xl opacity-60 w-full md:w-4/6">
 		<span class="whitespace-nowrap">What we think</span>,
 		<span class="whitespace-nowrap">what we’re working on</span>,
@@ -50,14 +49,3 @@
 		</div>
 	</div>
 </div>
-
-<style lang="postcss">
-	.blog-title {
-		@apply relative;
-	}
-
-	.blog-title > h1::before {
-		@apply lg:absolute lg:top-0 lg:-translate-x-4 -translate-y-1 scale-125 text-accent hidden lg:inline;
-		content: '/';
-	}
-</style>

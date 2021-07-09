@@ -20,6 +20,7 @@
 
 <!-- Top bar -->
 <div
+	role="banner"
 	class="w-full sticky top-0 h-20 px-4 py-2 bg-light dark:bg-dark {scrollY <= 0
 		? 'shadow-none'
 		: 'shadow-md'} z-40 transition-all"

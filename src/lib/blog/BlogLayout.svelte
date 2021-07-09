@@ -1,4 +1,8 @@
 <script>
+	import { page } from '$app/stores';
+
+	import NavigationPath from '$lib/NavigationPath.svelte';
+
 	export let longTitle;
 	export let title;
 	export let dateCreated;
@@ -30,17 +34,19 @@
 <div class="mx-auto w-full max-w-screen-md z-0">
 	<!-- Page content with ToC on the side -->
 	<div class="w-full max-w-screen-lg px-5 sm:px-2 lg:px-0 pt-5 pb-20">
-		<a href="/blog" class="text-sm block text-accent hover:underline w-max"
-			>&#8592;&nbsp;See all articles</a
+		<NavigationPath removeLast={1} keepTrailingSlash={true}
+			><br />
+			<h1 id="article-title" class="text-4xl font-bold">
+				{longTitle || title}
+			</h1></NavigationPath
 		>
-		<article class="prose numbered">
+		<article class="prose numbered" aria-labelledby="article-title">
 			<div
 				id="article-header"
 				role="heading"
 				aria-labelledby="article-title"
 				class="mt-2"
 			>
-				<h1 id="article-title">{longTitle || title}</h1>
 				<p class="text-sm">
 					<span class="font-normal">{dataCreatedFormatted}</span
 					>{#if dateLastUpdatedFormatted}
