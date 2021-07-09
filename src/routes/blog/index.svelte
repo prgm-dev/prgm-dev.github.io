@@ -3,9 +3,9 @@
 	export const prerender = true;
 
 	// Import articles
-	import { metadata as cardanoArticle } from '../blog/posts/understanding-cardano-rewards.svelte.md';
-	import { metadata as ourTechStack2020Article } from '../blog/posts/our-tech-stack-2020.svelte.md';
-	import { metadata as ourTechStack2021Article } from '../blog/posts/our-tech-stack-2021.svelte.md';
+	import { metadata as cardanoArticle } from './posts/understanding-cardano-rewards.svelte.md';
+	import { metadata as ourTechStack2020Article } from './posts/our-tech-stack-2020.svelte.md';
+	import { metadata as ourTechStack2021Article } from './posts/our-tech-stack-2021.svelte.md';
 
 	/** Maps Article Slugs to imported articles metadata */
 	export const slugMapping = [
