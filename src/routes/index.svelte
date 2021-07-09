@@ -30,12 +30,25 @@
 	import FounderCard from '$lib/FounderCard.svelte';
 	import Logo from '$lib/Logo.svelte';
 
+	const pageTitle = 'PRGM Dev';
 	const currentYear = new Date().getFullYear();
 	const copyrightString =
 		currentYear === copyrightStartYear
 			? `${copyrightStartYear}`
 			: `${copyrightStartYear} — ${currentYear}`;
 </script>
+
+<svelte:head>
+	<title>{pageTitle}</title>
+	<meta name="title" property="title" content={pageTitle} />
+	<meta property="og:title" content={pageTitle} />
+
+	<meta
+		name="description"
+		property="og:description"
+		content="Official website of PRGM Dev, a Paris-based company crafting delightful software."
+	/>
+</svelte:head>
 
 <!-- Top bar -->
 <div

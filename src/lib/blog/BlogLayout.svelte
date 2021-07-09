@@ -5,10 +5,14 @@
 
 	export let longTitle;
 	export let title;
+	export let description;
 	export let dateCreated;
 	export let dateLastUpdated;
 	export let usesKatex = false;
 
+	const pageTitle = `PRGM Dev / Blog / ${title}`;
+
+	$: dateCreatedISO = dateCreated ? new Date(dateCreated).toISOString() : null;
 	$: dataCreatedFormatted = new Date(dateCreated).toLocaleDateString('en', {
 		dateStyle: 'long',
 	});
@@ -21,6 +25,16 @@
 </script>
 
 <svelte:head>
+	<title>{title} | PRGM Dev</title>
+	<meta name="title" property="title" content={pageTitle} />
+	<meta property="og:title" content={pageTitle} />
+	<meta property="og:type" content="article" />
+	{#if description}
+		<meta name="description" property="og:description" content={description} />
+	{/if}
+	{#if dateCreatedISO}
+		<meta property="og:article:published_time" content={dateCreatedISO} />
+	{/if}
 	{#if usesKatex}
 		<link
 			rel="stylesheet"

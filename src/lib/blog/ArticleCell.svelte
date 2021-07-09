@@ -16,14 +16,22 @@
 	<a
 		sveltekit:prefetch
 		href="/blog/posts/{post.slug}/"
+		aria-labelledby="{post.slug}-title"
+		aria-describedby="{post.slug}-description"
 		class="w-full h-full p-4 bg-light-alt dark:bg-dark-alt rounded-lg hoverable:hover:shadow-lg transition-shadow duration-300 flex flex-col"
 	>
-		<h2 class="text-xl font-semibold">{formattedTitle}</h2>
+		<h2 id="{post.slug}-title" class="text-xl font-semibold">
+			{formattedTitle}
+		</h2>
 		{#if post.description}
-			<p class="mt-2 text-sm opacity-60">{post.description}</p>
+			<p id="{post.slug}-description" class="mt-2 text-sm opacity-60">
+				{post.description}
+			</p>
 		{/if}
 		<div class="flex-grow" />
-		<p class="mt-2 highlight-on-hover">Read on...</p>
+		<a href="/blog/posts/{post.slug}/" class="mt-2 highlight-on-hover"
+			>Read on...</a
+		>
 	</a>
 {/if}
 

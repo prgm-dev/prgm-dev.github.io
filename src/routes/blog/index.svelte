@@ -20,6 +20,7 @@
 	import ArticleCell from '$lib/blog/ArticleCell.svelte';
 	import NavigationPath from '$lib/NavigationPath.svelte';
 
+	const pageTitle = 'PRGM Dev / Blog';
 	let posts: { [k: string]: PostMetadata } = Object.fromEntries(
 		slugMapping.map(({ slug, metadata }) => [
 			slug,
@@ -31,6 +32,18 @@
 	let postsOrdered: PostMetadata[] = [];
 	$: postsOrdered = Object.values(posts);
 </script>
+
+<svelte:head>
+	<title>{pageTitle}</title>
+	<meta name="title" property="title" content={pageTitle} />
+	<meta property="og:title" content={pageTitle} />
+	<meta property="og:type" content="website" />
+	<meta
+		name="description"
+		property="og:description"
+		content="Official blog of PRGM Dev, a Paris-based company crafting delightful software."
+	/>
+</svelte:head>
 
 <!-- Centered container -->
 <div class="mx-auto max-w-screen-md px-4 md:px-0 my-5">

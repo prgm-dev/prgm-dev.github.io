@@ -9,6 +9,7 @@
 	export let removeLast: number = 0;
 	export let keepTrailingSlash: boolean = false;
 
+	// Split path into path components, removing empty components
 	$: stringPathComponents = $page.path.split('/').filter((s) => s.length > 0);
 
 	let pathComponents: {
@@ -27,6 +28,7 @@
 			})
 		);
 
+		// For each path component, compute the full path to the component
 		let fullPath = '/';
 		partialPathComponents.forEach(({ pathComponent }, idx) => {
 			fullPath += pathComponent + '/';
@@ -61,7 +63,7 @@
 	}));
 </script>
 
-<nav id="path-nav" aria-label="Path navigation" class="text-3xl font-bold">
+<nav id="path-nav" aria-label={$page.path} class="text-3xl font-bold">
 	<RecursiveAnchor {links}>
 		<slot />
 	</RecursiveAnchor>

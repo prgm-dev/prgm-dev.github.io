@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	// Import global CSS
 	import '../app.postcss';
 
@@ -6,7 +7,7 @@
 	import NProgress from 'nprogress';
 	import { navigating } from '$app/stores';
 
-	const pageTitle = 'PRGM Dev';
+	const websiteTitle = 'PRGM Dev';
 
 	// Configure NProgress
 	NProgress.configure({
@@ -27,17 +28,18 @@
 </script>
 
 <svelte:head>
-	<title>{pageTitle}</title>
-	<meta name="title" content={pageTitle} />
-	<meta
-		name="description"
-		content="Official website of PRGM Dev, a Paris-based company crafting delightful software."
-	/>
+	<title>{websiteTitle}</title>
+
+	<!-- Constant meta tags -->
 	<meta
 		name="keywords"
 		content="PRGM Dev, PRGM Dev SAS, Software Design, Paris"
 	/>
 	<meta name="robots" content="index, follow" />
+
+	<!-- OpenGraph constants -->
+	<meta property="og:site_name" content={websiteTitle} />
+	<meta property="og:url" content="https://prgm.dev{$page.path}" />
 
 	<!-- Cookie-free, privacy-preserving analytics by https://plausible.io -->
 	<script
