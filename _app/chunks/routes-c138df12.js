@@ -1,0 +1,1 @@
+const e=[{name:"Blog",href:"/blog/"}];function n(e){return function(e){return e.replace(/\/$/,"")}(e).toLocaleLowerCase()}Object.fromEntries(e.map((e=>[e.name,e])));const r=new Set(e.map((({href:e})=>e)).map(n));function t(e){return r.has(n(e))}export{n,t as p,e as r};

@@ -8,21 +8,22 @@
 
 		
 
-		<link rel="modulepreload" href="/./_app/start-592c9b32.js">
+		<link rel="modulepreload" href="/./_app/start-e0bd5f06.js">
 		<link rel="modulepreload" href="/./_app/chunks/vendor-a7ad7a2b.js">
-		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-f0febc9c.js">
+		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-a56f8719.js">
 		<link rel="modulepreload" href="/./_app/chunks/stores-18905b20.js">
-		<link rel="modulepreload" href="/./_app/pages/blog/__layout.svelte-f98c7336.js">
-		<link rel="modulepreload" href="/./_app/chunks/Logo-36fa4ee2.js">
-		<link rel="modulepreload" href="/./_app/pages/blog/posts/our-tech-stack-2020.svelte.md-8a42dbe7.js">
-		<link rel="modulepreload" href="/./_app/chunks/BlogLayout-75ee0ab0.js">
+		<link rel="modulepreload" href="/./_app/pages/blog/__layout.svelte-2d202a62.js">
+		<link rel="modulepreload" href="/./_app/chunks/Logo-066388be.js">
+		<link rel="modulepreload" href="/./_app/chunks/routes-c138df12.js">
+		<link rel="modulepreload" href="/./_app/pages/blog/posts/our-tech-stack-2020.svelte.md-5c26f20b.js">
+		<link rel="modulepreload" href="/./_app/chunks/BlogLayout-dcc11c65.js">
 		<link rel="stylesheet" href="/./_app/assets/start-0826e215.css">
-		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-3b7c11ac.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-38e0b81d.css">
 		<link rel="stylesheet" href="/./_app/assets/pages/blog/__layout.svelte-1be26e1a.css">
-		<link rel="stylesheet" href="/./_app/assets/BlogLayout-c1211860.css">
+		<link rel="stylesheet" href="/./_app/assets/BlogLayout-6e2e385d.css">
 
 		<script type="module">
-			import { start } from "/./_app/start-592c9b32.js";
+			import { start } from "/./_app/start-e0bd5f06.js";
 			start({
 				target: document.querySelector("#svelte"),
 				paths: {"base":"","assets":"/."},
@@ -35,9 +36,9 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/./_app/pages/__layout.svelte-f0febc9c.js"),
-						import("/./_app/pages/blog/__layout.svelte-f98c7336.js"),
-						import("/./_app/pages/blog/posts/our-tech-stack-2020.svelte.md-8a42dbe7.js")
+						import("/./_app/pages/__layout.svelte-a56f8719.js"),
+						import("/./_app/pages/blog/__layout.svelte-2d202a62.js"),
+						import("/./_app/pages/blog/posts/our-tech-stack-2020.svelte.md-5c26f20b.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -60,14 +61,18 @@
 
 <div class="w-full sticky top-0 h-20 px-4 py-2 bg-light dark:bg-dark shadow-none z-40 transition-all"><div class="mx-auto max-w-screen-md w-full h-full flex items-center justify-between"><a sveltekit:prefetch href="/" class="text-xl font-semibold"><span class="tracking-wide uppercase">PRGM</span><span class="text-accent tracking-tight uppercase text-base">.dev</span></a>
 <div></div>
-<nav class="svelte-180cmrq"><a href="/blog" class="svelte-180cmrq selected">Blog</a></nav></div></div>
+<nav class="svelte-180cmrq"><a href="/blog/" class="svelte-180cmrq selected">Blog</a></nav></div></div>
 
 
 
 <div class="mx-auto w-full max-w-screen-md z-0">
-	<div class="w-full max-w-screen-lg px-5 sm:px-2 lg:px-0 pt-5 pb-20"><a href="/blog" class="text-sm block text-accent hover:underline w-max">← See all articles</a>
-<article class="prose numbered"><div id="article-header" role="heading" aria-labelledby="article-title" class="mt-2"><h1 id="article-title">Our tech stack for 2020</h1>
-		<p class="text-sm"><span class="font-normal">November 14, 2020</span>
+	<div class="w-full max-w-screen-lg px-5 sm:px-2 lg:px-0 pt-5 pb-20"><nav id="path-nav" aria-label="Path navigation" class="text-3xl font-bold"><a href="/blog/">Blog
+<span>Posts
+<a href="/blog/posts/our-tech-stack-2020/">
+</a></span></a>
+</nav>
+<a href="/blog/posts/our-tech-stack-2020/" id="article-title" class="text-4xl font-bold">Our tech stack for 2020</a>
+<article class="prose numbered"><div id="article-header" role="heading" aria-labelledby="article-title" class="mt-2"><p class="text-sm"><span class="font-normal">November 14, 2020</span>
 				<span class="font-light"> (last updated on
 					July 6, 2021)</span></p></div>
 	<p><strong>TL;DR:</strong> We use <strong>FastAPI</strong> with <strong>Python</strong> on the Backend, <strong>Nuxt.JS</strong> with <strong>Typescript</strong> on the Frontend,
