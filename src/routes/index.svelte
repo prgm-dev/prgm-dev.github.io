@@ -1,29 +1,12 @@
 <script context="module" lang="ts">
-	import type { Founder } from '$/types/founder';
 	import { routesOrdered } from '$/globals/routes';
 
 	// Ensure content is pre-rendered
 	export const prerender = true;
 
 	// Constants
-	export const copyrightStartYear = 2021;
-	export const founders: Founder[] = [
-		{
-			name: { first: 'Sébastien', last: 'Ohleyer' },
-			title: 'CEO',
-			image: { src: '/img/sebastien.jpg' },
-		},
-		{
-			name: { first: 'Alexandre', last: 'Jouandin' },
-			title: 'CTO',
-			image: { gravatarHash: 'daf8a0f2457da63e3c2e15cc2e4319e3' },
-		},
-		{
-			name: { first: 'Tristan', last: 'Stérin' },
-			title: 'COO',
-			image: { src: '/img/tristan-512.jpg' },
-		},
-	];
+	import { copyrightStartYear } from '$/globals/constants';
+	import { founders } from '$/globals/founders';
 </script>
 
 <script lang="ts">

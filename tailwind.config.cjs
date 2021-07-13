@@ -1,4 +1,5 @@
 const { tailwindExtractor } = require('tailwindcss/lib/lib/purgeUnusedStyles');
+const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
 
 const config = {
@@ -17,6 +18,11 @@ const config = {
 		},
 	},
 	theme: {
+		screens: {
+			xxs: '350px',
+			xs: '475px',
+			...defaultTheme.screens,
+		},
 		extend: {
 			screens: {
 				hoverable: { raw: '(hover: hover)' },

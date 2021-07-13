@@ -11,7 +11,8 @@
 </script>
 
 {#if founder}
-	<div
+	<a
+		href="/{founder.identifier}"
 		aria-labelledby="founderLabel{founder.name.last}"
 		aria-describedby="founderDescription{founder.name.last}"
 		class="rounded-lg w-full h-full bg-light-alt dark:bg-dark-alt p-4 shadow-lg dark:shadow-none"
@@ -39,5 +40,5 @@
 				<span class="uppercase">{founder.title}</span>
 			</h2>
 		</div>
-	</div>
+	</a>
 {/if}
