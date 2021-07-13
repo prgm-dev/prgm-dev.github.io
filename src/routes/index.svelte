@@ -27,8 +27,18 @@
 </script>
 
 <script lang="ts">
-	import FounderCard from '$lib/FounderCard.svelte';
+	// Components
+	import Fa from 'svelte-fa/src/fa.svelte';
+	import FounderCard from '$lib/landing-page/FounderCard.svelte';
+	import SkillCard from '$lib/landing-page/SkillCard.svelte';
 	import Logo from '$lib/Logo.svelte';
+
+	// Icons
+	import {
+		faBrain,
+		faCode,
+		faDraftingCompass,
+	} from '@fortawesome/free-solid-svg-icons';
 
 	const pageTitle = 'PRGM Dev';
 	const currentYear = new Date().getFullYear();
@@ -97,12 +107,60 @@
 		</div>
 	</section>
 
+	<!-- Expertise -->
+	<section
+		class="mx-auto w-full max-w-screen-md my-5 px-4 md:px-5"
+		aria-labelledby="expertise-heading"
+		aria-describedby="expertise-subheading"
+	>
+		<h2 id="expertise-heading" class="text-3xl ml-5 mb-2">Our expertise</h2>
+		<h4 id="expertise-subheading" class="text-base ml-5 mb-5 w-3/4">
+			At PRGM.dev, we are like minded engineers and researchers who share the
+			same passion for technological challenge.
+		</h4>
+		<div
+			class="mx-auto w-3/4 sm:w-full grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-3 md:gap-x-6"
+		>
+			<SkillCard>
+				<svelte:fragment slot="title">Coding</svelte:fragment>
+				<svelte:fragment slot="icon">
+					<Fa icon={faCode} size="1.2x" />
+				</svelte:fragment>
+
+				We have very high standards with regards to code. Our code is backed by
+				robust theory, follows the best practices from various industries, is
+				tested in real-world conditions, and scales appropriately.
+			</SkillCard>
+			<SkillCard>
+				<svelte:fragment slot="title">Artificial Intelligence</svelte:fragment>
+				<svelte:fragment slot="icon">
+					<Fa icon={faBrain} size="1.2x" />
+				</svelte:fragment>
+
+				We have expertise in multiple AI fields, such as computer vision,
+				natural language processing, and machine learning. Our experience is
+				extensive, and we leverage it to solve real world problem.
+			</SkillCard>
+			<SkillCard>
+				<svelte:fragment slot="title">Product design</svelte:fragment>
+				<svelte:fragment slot="icon">
+					<Fa icon={faDraftingCompass} size="1.2x" />
+				</svelte:fragment>
+
+				We have built multiple products, with our own funds and from the ground
+				up, learning product design, testing and evaluation. We have a deep
+				understanding of product design, and how to make our products reach
+				their potential.
+			</SkillCard>
+		</div>
+	</section>
+
 	<!-- Founders -->
 	<section
 		class="mx-auto w-full max-w-screen-md my-5 px-4 md:px-5"
 		aria-labelledby="founders-heading"
 	>
-		<h2 id="founders-heading">Our founders</h2>
+		<h2 id="founders-heading" class="text-3xl ml-5 mb-5">Our founders</h2>
 		<div
 			class="mx-auto w-3/4 sm:w-full grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-3 md:gap-x-8"
 		>
@@ -120,7 +178,8 @@
 		<h2 class="text-sm">
 			PRGM DEV <br />
 			SAS au capital de 999,99&nbsp;€ <br />
-			9, rue des Colonnes, 75002 Paris
+			9, rue des Colonnes, 75002 Paris <br />
+			901 331 264 R.C.S. PARIS
 		</h2>
 		<h3 class="text-sm">
 			<span class="whitespace-nowrap"
@@ -132,10 +191,6 @@
 </footer>
 
 <style lang="postcss">
-	section > h2 {
-		@apply text-3xl ml-5 mb-5;
-	}
-
 	/* Navigation links: add a `/` before each link */
 	nav > a::before {
 		@apply scale-125 font-bold opacity-40 transition-opacity duration-300;
