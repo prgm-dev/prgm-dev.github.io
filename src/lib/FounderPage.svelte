@@ -5,8 +5,16 @@
 	import Fa from 'svelte-fa/src/fa.svelte';
 	import Logo from './Logo.svelte';
 
+	// Svelte
+	import { fly, fade } from 'svelte/transition';
+	import { onMount } from 'svelte';
+
 	// Icons
-	import { faAt } from '@fortawesome/free-solid-svg-icons';
+	import {
+		faAt,
+		faDownload,
+		faIdCard,
+	} from '@fortawesome/free-solid-svg-icons';
 	import {
 		faGithub,
 		faGitlab,
@@ -14,32 +22,60 @@
 		faLinkedin as faLinkedin,
 	} from '@fortawesome/free-brands-svg-icons';
 
+	import { imageURLForFounder } from '$/globals/founders';
+	import { generateVCard } from '$/helpers/vcard';
+	import type { VCardT } from '$/helpers/vcard';
+
 	// Props
 	export let founder: Founder | null = null;
+	let businessCardGenerating = false;
+	let businessCard: VCardT | null = null;
 
 	// Computed properties
 	const pageTitle = !!founder
 		? `${founder.name.first} ${founder.name.last} | ${founder.title} @ PRGM.dev`
 		: 'Founder profile @ PRGM.dev';
-	const imageSrc: string =
-		'src' in founder.image
-			? founder.image.src
-			: `https://www.gravatar.com/avatar/${founder.image.gravatarHash}?size=1024`;
-	const fullImageSrc: string =
-		'src' in founder.image
-			? `https://prgm.dev${founder.image.src}`
-			: `https://www.gravatar.com/avatar/${founder.image.gravatarHash}?size=1024`;
+	const imageSrc = imageURLForFounder(founder, 1024);
+	const fullImageSrc = imageURLForFounder(founder, 1024, true);
 	const imageAlt: string = founder.image.alt ?? founder.name.first;
+	const delays = {
+		image: 200,
+		header: 500,
+		links: 750,
+	};
+
+	// Methods
+	async function loadBusinessCard() {
+		const founder_ = founder;
+		if (!founder_ || businessCardGenerating) return;
+
+		businessCardGenerating = true;
+		try {
+			businessCard = await generateVCard(founder_);
+			console.log('Business card string:', {
+				contentType: businessCard.getContentType(),
+				filename: businessCard.getFilename(),
+				fileExtension: businessCard.getFileExtension(),
+			});
+		} finally {
+			businessCardGenerating = false;
+		}
+	}
+
+	onMount(() => {
+		// On load of the component, generate a business card
+		loadBusinessCard();
+	});
 </script>
 
 <svelte:head>
-	<title>{founder.name.first} {founder.name.last} | PRGM.dev</title>
 	<meta name="title" property="title" content={pageTitle} />
 	<meta property="og:title" content={pageTitle} />
 	<meta property="og:image" content={fullImageSrc} />
 	<meta property="og:type" content="profile" />
 
 	{#if founder}
+		<title>{founder.name.first} {founder.name.last} | PRGM.dev</title>
 		<meta
 			name="description"
 			property="og:description"
@@ -53,116 +89,173 @@
 </svelte:head>
 
 <div class="mx-auto w-full max-w-screen-sm p-5 sm:p-0">
-	<div class="mx-auto w-max" role="banner">
+	<div class="mx-auto w-max sm:pt-5" role="banner">
 		<Logo />
 	</div>
 
 	<main
-		class="w-full flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-5 mb-10"
+		class="w-full"
 		aria-label="{founder.name.first}'s virtual business card"
 	>
 		{#if founder}
-			<!-- Photo -->
+			<!-- Card -->
 			<div
+				class="w-full flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-5 mb-10"
 				role="presentation"
-				class="mx-auto my-3 w-10/12 xxs:w-9/12 xs:w-8/12 sm:w-4/12 flex-shrink-0 rounded-xl overflow-hidden border dark:border-dark"
 			>
-				<div role="presentation" class="aspect-w-1 aspect-h-1">
-					<img src={imageSrc} alt={imageAlt} />
-				</div>
-			</div>
-
-			<div class="flex-grow flex flex-col space-y-4 justify-around">
-				<!-- Name & Title -->
+				<!-- Photo -->
 				<div
-					class="flex-shrink-0"
-					aria-labelledby="{founder.identifier}-name"
-					aria-describedby="{founder.identifier}-title"
+					role="presentation"
+					class="mx-auto my-3 w-10/12 xxs:w-9/12 xs:w-8/12 sm:w-4/12 flex-shrink-0 rounded-xl overflow-hidden border dark:border-dark"
+					in:fly={{ y: 50, duration: 250, delay: delays.image }}
 				>
-					<h1
-						id="{founder.identifier}-name"
-						class="text-2xl xxs:text-4xl sm:text-2xl"
-					>
-						{founder.name.first}
-						<span class="small-caps">
-							{founder.name.last}
-						</span>
-					</h1>
-					<h2
-						id="{founder.identifier}-title"
-						class="text-lg xxs:text-2xl sm:text-lg opacity-50"
-					>
-						{founder.title} at <a href="/" class="hover:underline">prgm.dev</a>
-					</h2>
+					<div role="presentation" class="aspect-w-1 aspect-h-1">
+						<img src={imageSrc} alt={imageAlt} />
+					</div>
 				</div>
 
-				<!-- Social Media Links -->
-				<div
-					aria-label="Contact & Social media links"
-					class="flex-shrink-0 grid grid-flow-row grid-cols-1 sm:grid-cols-2 gap-2 text-base xxs:text-lg sm:text-base"
-				>
-					<a href="mailto:{founder.identifier}@prgm.dev">
-						<Fa icon={faAt} fw class="inline" />
-						<span
-							><span>{founder.identifier}</span><span class="low-contrast"
-								>@prgm.dev</span
-							></span
-						>
-					</a>
-					<a
-						title="LinkedIn profile"
-						href="https://www.linkedin.com/in/{founder.social.linkedIn}/"
-						target="_blank"
-						rel="noopener noreferrer"
+				<div class="flex-grow flex flex-col space-y-4 justify-around">
+					<!-- Name & Title -->
+					<div
+						class="flex-shrink-0 w-full flex flex-row justify-start items-center"
+						aria-labelledby="{founder.identifier}-name"
+						aria-describedby="{founder.identifier}-title"
+						in:fade={{ duration: 250, delay: delays.header }}
 					>
-						<Fa icon={faLinkedin} fw class="inline" />
-						<span
-							><span class="low-contrast">/</span>{founder.social
-								.linkedIn}</span
-						>
-					</a>
-					{#if founder.social.github}
+						<div class="flex-shrink-0">
+							<h1
+								id="{founder.identifier}-name"
+								class="text-2xl xxs:text-3xl sm:text-2xl"
+							>
+								{founder.name.first}
+								<span class="small-caps">
+									{founder.name.last}
+								</span>
+							</h1>
+							<h2
+								id="{founder.identifier}-title"
+								class="text-lg xxs:text-2xl sm:text-lg opacity-50"
+							>
+								{founder.title} at
+								<a href="/" class="hover:underline">prgm.dev</a>
+							</h2>
+						</div>
+						<div class="flex-grow" />
+						<div class="flex-shrink-0 block hoverable:hidden">
+							{#if !businessCard}
+								<button
+									class="bg-light-alt dark:bg-dark-alt rounded-md disabled:opacity-50 transition-opacity w-max h-full p-2"
+									disabled={businessCardGenerating}
+									on:click={loadBusinessCard}
+									><Fa icon={faIdCard} fw class="inline" /></button
+								>
+							{:else}
+								<a
+									class="bg-light-alt dark:bg-dark-alt rounded-md block w-max h-full p-2"
+									download="{founder.name.first}_{founder.name
+										.last}.{businessCard.getFileExtension()}"
+									href="data:{businessCard.getContentType()};charset=utf-8,{encodeURI(
+										businessCard.toString()
+									)}"><Fa icon={faDownload} fw class="inline" /></a
+								>
+							{/if}
+						</div>
+					</div>
+
+					<!-- Social Media Links -->
+					<div
+						aria-label="Contact & Social media links"
+						class="flex-shrink-0 grid grid-flow-row grid-cols-1 sm:grid-cols-2 gap-2 text-base xxs:text-lg sm:text-base"
+					>
 						<a
-							title="GitHub profile"
-							href="https://github.com/{founder.social.github}/"
-							target="_blank"
-							rel="noopener noreferrer"
+							href="mailto:{founder.identifier}@prgm.dev"
+							in:fade={{ duration: 250, delay: delays.links }}
 						>
-							<Fa icon={faGithub} fw class="inline" />
+							<Fa icon={faAt} fw class="inline" />
 							<span
-								><span class="low-contrast">@</span>{founder.social
-									.github}</span
+								><span>{founder.identifier}</span><span class="low-contrast"
+									>@prgm.dev</span
+								></span
 							>
 						</a>
-					{/if}
-					{#if founder.social.gitlab}
 						<a
-							title="GitLab profile"
-							href="https://gitlab.com/{founder.social.gitlab}/"
+							title="LinkedIn profile"
+							href="https://www.linkedin.com/in/{founder.social.linkedIn}/"
 							target="_blank"
 							rel="noopener noreferrer"
+							in:fade={{ duration: 250, delay: delays.links }}
 						>
-							<Fa icon={faGitlab} fw class="inline" />
-							<span
-								><span class="low-contrast">@</span>{founder.social
-									.gitlab}</span
-							>
-						</a>
-					{/if}
-					{#if founder.social.keybase}
-						<a
-							title="Keybase profile"
-							href="https://keybase.io/{founder.social.keybase}/"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<Fa icon={faKeybase} fw class="inline" />
+							<Fa icon={faLinkedin} fw class="inline" />
 							<span
 								><span class="low-contrast">/</span>{founder.social
-									.keybase}</span
+									.linkedIn}</span
 							>
 						</a>
-					{/if}
+						{#if founder.social.github}
+							<a
+								title="GitHub profile"
+								href="https://github.com/{founder.social.github}/"
+								target="_blank"
+								rel="noopener noreferrer"
+								in:fade={{ duration: 250, delay: delays.links }}
+							>
+								<Fa icon={faGithub} fw class="inline" />
+								<span
+									><span class="low-contrast">@</span>{founder.social
+										.github}</span
+								>
+							</a>
+						{/if}
+						{#if founder.social.gitlab}
+							<a
+								title="GitLab profile"
+								href="https://gitlab.com/{founder.social.gitlab}/"
+								target="_blank"
+								rel="noopener noreferrer"
+								in:fade={{ duration: 250, delay: delays.links }}
+							>
+								<Fa icon={faGitlab} fw class="inline" />
+								<span
+									><span class="low-contrast">@</span>{founder.social
+										.gitlab}</span
+								>
+							</a>
+						{/if}
+						{#if founder.social.keybase}
+							<a
+								title="Keybase profile"
+								href="https://keybase.io/{founder.social.keybase}/"
+								target="_blank"
+								rel="noopener noreferrer"
+								in:fade={{ duration: 250, delay: delays.links }}
+							>
+								<Fa icon={faKeybase} fw class="inline" />
+								<span
+									><span class="low-contrast">/</span>{founder.social
+										.keybase}</span
+								>
+							</a>
+						{/if}
+						{#if !!businessCard}
+							<a
+								download="{founder.name.first}_{founder.name
+									.last}.{businessCard.getFileExtension()}"
+								href="data:{businessCard.getContentType()};charset=utf-8,{encodeURI(
+									businessCard.toString()
+								)}"
+								class="hidden hoverable:inline"
+								in:fade={{ duration: 250, delay: delays.links }}
+							>
+								<Fa icon={faIdCard} fw class="inline" />
+								<span
+									>{founder.name.first}<span class="low-contrast">_</span
+									>{founder.name.last}<span class="low-contrast"
+										>.{businessCard.getFileExtension()}</span
+									></span
+								>
+							</a>
+						{/if}
+					</div>
 				</div>
 			</div>
 		{/if}
