@@ -32,3 +32,26 @@ export const tristan: Founder = {
 
 export const founders: Founder[] = [sebastien, alexandre, tristan];
 export const foundersMapping = new Map(founders.map((f) => [f.identifier, f]));
+
+// Helper functions
+
+/**
+ *	Generate an image URL from a founder object.
+ *
+ * @param founder The founder for which the image URL should be generated
+ * @param size For gravatar images, what size should we link to.
+ * @param forceAbsoluteURL If `true`, the returned URL will be absolute.
+ * @returns A URL to the image, that can be as `src` in an `<img>` element.
+ */
+export function imageURLForFounder(
+	founder: Pick<Founder, 'image'>,
+	size = 1024,
+	forceAbsoluteURL = false
+): string {
+	if ('src' in founder.image)
+		return forceAbsoluteURL
+			? `https://prgm.dev${founder.image.src}`
+			: founder.image.src;
+	else
+		return `https://www.gravatar.com/avatar/${founder.image.gravatarHash}?size=${size}`;
+}
