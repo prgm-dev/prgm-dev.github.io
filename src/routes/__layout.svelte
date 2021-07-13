@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { dev } from '$app/env';
 	import { page } from '$app/stores';
 	// Import global CSS
 	import '../app.postcss';
@@ -41,11 +42,13 @@
 	<meta property="og:site_name" content={websiteTitle} />
 	<meta property="og:url" content="https://prgm.dev{$page.path}" />
 
-	<!-- Cookie-free, privacy-preserving analytics by https://plausible.io -->
-	<script
-		defer
-		data-domain="prgm.dev"
-		src="https://plausible.io/js/plausible.js"></script>
+	{#if !dev}
+		<!-- Cookie-free, privacy-preserving analytics by https://plausible.io -->
+		<script
+			defer
+			data-domain="prgm.dev"
+			src="https://plausible.io/js/plausible.js"></script>
+	{/if}
 </svelte:head>
 
 <slot />
