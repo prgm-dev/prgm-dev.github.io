@@ -86,9 +86,8 @@
 	}
 
 	/* Offset ID scrolling */
-	.prose [id]::before {
-		@apply block -mt-24 h-24 invisible;
-		content: '';
+	.prose [id] {
+		scroll-margin-top: 6rem;
 	}
 
 	/* Add a '#' sign next to all links, and undo underline */

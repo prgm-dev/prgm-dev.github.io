@@ -183,4 +183,9 @@
 	nav > a:hover:before {
 		@apply opacity-100;
 	}
+
+	[id] {
+		scroll-margin-top: 6rem;
+		scroll-snap-margin-top: 6rem;
+	}
 </style>
