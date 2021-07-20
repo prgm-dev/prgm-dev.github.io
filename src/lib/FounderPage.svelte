@@ -101,10 +101,13 @@
 				<!-- Photo -->
 				<div
 					role="presentation"
-					class="mx-auto my-3 w-10/12 xxs:w-9/12 xs:w-8/12 sm:w-4/12 flex-shrink-0 rounded-xl overflow-hidden border dark:border-dark"
+					class="mx-auto my-3 w-10/12 xxs:w-9/12 xs:w-8/12 sm:w-4/12 flex-shrink-0"
 					in:fly={{ y: 50, duration: 250, delay: delays.image }}
 				>
-					<div role="presentation" class="aspect-w-1 aspect-h-1">
+					<div
+						role="presentation"
+						class="aspect-w-1 aspect-h-1 rounded-xl overflow-hidden border dark:border-dark"
+					>
 						<img src={imageSrc} alt={imageAlt} />
 					</div>
 				</div>
@@ -173,10 +176,14 @@
 								></span
 							>
 						</a>
+						<!-- FIXME: the `whitespace-nowrap` is a workaround for Tristan's LinkedIn
+												profile name that is too long, and breaks only if the screen width
+												is close to the `md` screen size. -->
 						<a
 							title="LinkedIn profile"
 							href="https://www.linkedin.com/in/{founder.social.linkedIn}/"
 							target="_blank"
+							class="whitespace-nowrap"
 							rel="noopener noreferrer"
 							in:fade={{ duration: 250, delay: delays.links }}
 						>
