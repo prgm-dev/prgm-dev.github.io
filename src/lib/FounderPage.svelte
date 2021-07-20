@@ -52,11 +52,6 @@
 		businessCardGenerating = true;
 		try {
 			businessCard = await generateVCard(founder_);
-			console.log('Business card string:', {
-				contentType: businessCard.getContentType(),
-				filename: businessCard.getFilename(),
-				fileExtension: businessCard.getFileExtension(),
-			});
 		} finally {
 			businessCardGenerating = false;
 		}
