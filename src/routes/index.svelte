@@ -15,6 +15,7 @@
 	import FounderCard from '$lib/landing-page/FounderCard.svelte';
 	import SkillCard from '$lib/landing-page/SkillCard.svelte';
 	import Logo from '$lib/Logo.svelte';
+	import ProjectCell from '$lib/landing-page/ProjectCell.svelte';
 
 	// Icons
 	import {
@@ -46,7 +47,7 @@
 <!-- Top bar -->
 <div
 	role="banner"
-	class="w-full sticky top-0 h-20 px-4 py-2 bg-light dark:bg-dark border-b dark:border-dark-alt"
+	class="w-full sticky top-0 h-20 px-4 py-2 z-40 bg-light dark:bg-dark border-b dark:border-dark-alt"
 >
 	<div
 		class="mx-auto max-w-screen-md w-full h-full flex items-center justify-between"
@@ -64,7 +65,8 @@
 <main class="z-0">
 	<!-- Heading -->
 	<section
-		class="mx-auto w-full max-w-screen-md flex px-4 md:px-5 my-10 z-40"
+		id="hello"
+		class="mx-auto w-full max-w-screen-md flex px-4 md:px-5 my-10"
 		aria-labelledby="slogan"
 		aria-describedby="slogan-description"
 	>
@@ -97,10 +99,10 @@
 		aria-describedby="expertise-subheading"
 	>
 		<h2 id="expertise-heading" class="text-3xl ml-5 mb-2">Our expertise</h2>
-		<h4 id="expertise-subheading" class="text-base ml-5 mb-5 w-3/4">
+		<h3 id="expertise-subheading" class="text-base ml-5 mb-5 w-3/4">
 			At PRGM.dev, we are like minded engineers and researchers who share the
 			same passion for technological challenge.
-		</h4>
+		</h3>
 		<div
 			class="mx-auto w-3/4 sm:w-full grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-3 md:gap-x-6"
 		>
@@ -135,6 +137,47 @@
 				understanding of product design, and how to make our products reach
 				their potential.
 			</SkillCard>
+		</div>
+	</section>
+
+	<!-- Sister projects -->
+	<section class="mx-auto w-full max-w-screen-md my-5 px-4 md:px-5 z-0">
+		<h2 class="text-3xl ml-5 mb-2">Our brainchilds</h2>
+		<h3 class="text-base ml-5 mb-5 w-3/4">
+			Aside from our consulting work, we like to work on projects of our own.
+			They have enabled us to deepen our knowledge of modern technologies, and
+			taught us about many non-technical aspects of business projects.
+		</h3>
+		<div class="w-full flex flex-row flex-wrap items-start justify-around">
+			<ProjectCell href="https://surveyhouse.app">
+				<span slot="title">SurveyHouse</span>
+				<span slot="description">Building surveying software</span>
+			</ProjectCell>
+			<ProjectCell href="https://stake.green">
+				<span slot="title">Stake.Green</span>
+				<span slot="description">
+					Energy-friendly
+					<span class="whitespace-nowrap">cryptocurrency mining</span>
+				</span>
+			</ProjectCell>
+			<ProjectCell href="https://codepro.ie/revision">
+				<span slot="title">Codepro Revision</span>
+				<span slot="description"
+					>Online Revision Courses for students in Maths and Chemistry</span
+				>
+			</ProjectCell>
+			<ProjectCell href="https://joule.host">
+				<span slot="title">Joule.Host</span>
+				<span slot="description">AI-Dataset hosting made simple</span>
+			</ProjectCell>
+			<ProjectCell href="#hello" opensInNewTab={false}>
+				<span slot="title" class="opacity-40">Your Project?</span>
+				<span slot="description" class="opacity-40">
+					<span class="whitespace-nowrap">
+						Let's add another one to that list.
+					</span> <span class="whitespace-nowrap">Get in touch with us!</span>
+				</span>
+			</ProjectCell>
 		</div>
 	</section>
 

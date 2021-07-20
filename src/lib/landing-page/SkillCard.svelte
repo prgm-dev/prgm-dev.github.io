@@ -22,12 +22,12 @@
 				<slot name="icon" />
 			</div>
 		</div>
-		<h3
+		<h4
 			id="{componentID}-title"
 			class="text-lg font-semibold col-span-5 flex-grow"
 		>
 			<slot name="title" />
-		</h3>
+		</h4>
 	</div>
 	<div class="flex flex-row w-full space-x-1" role="presentation">
 		<div class="w-1/6 flex-shrink-0" aria-hidden="true" role="presentation" />
