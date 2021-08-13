@@ -28,7 +28,9 @@
 	<div
 		class="mx-auto max-w-screen-md w-full h-full flex items-center justify-between"
 	>
-		<Logo />
+		<span class="text-3xl" role="presentation">
+			<Logo />
+		</span>
 		<div />
 		<nav>
 			{#each routesOrderedAugmented as { href, active, name }}

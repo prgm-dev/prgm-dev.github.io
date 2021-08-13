@@ -33,8 +33,8 @@
 
 	// Computed properties
 	const pageTitle = !!founder
-		? `${founder.name.first} ${founder.name.last} | ${founder.title} @ PRGM.dev`
-		: 'Founder profile @ PRGM.dev';
+		? `${founder.name.first} ${founder.name.last} | ${founder.title} @ prgm.dev`
+		: 'Founder profile @ prgm.dev';
 	const imageSrc = imageURLForFounder(founder, 1024);
 	const fullImageSrc = imageURLForFounder(founder, 1024, true);
 	const imageAlt: string = founder.image.alt ?? founder.name.first;
@@ -70,12 +70,12 @@
 	<meta property="og:type" content="profile" />
 
 	{#if founder}
-		<title>{founder.name.first} {founder.name.last} | PRGM.dev</title>
+		<title>{founder.name.first} {founder.name.last} | prgm.dev</title>
 		<meta
 			name="description"
 			property="og:description"
 			content="{founder.name.first} {founder.name
-				.last} is {founder.title} at PRGM Dev, a Paris-based company crafting delightful software."
+				.last} is {founder.title} at prgm.dev, a Paris-based company crafting delightful software."
 		/>
 		<meta property="og:profile:username" content={founder.identifier} />
 		<meta property="og:profile:first_name" content={founder.name.first} />
@@ -84,7 +84,10 @@
 </svelte:head>
 
 <div class="mx-auto w-full max-w-screen-sm p-5 sm:p-0">
-	<div class="mx-auto w-max sm:pt-5" role="banner">
+	<div
+		class="mx-auto text-2xl xxs:text-4xl xs:text-4xl w-max sm:pt-5"
+		role="banner"
+	>
 		<Logo />
 	</div>
 

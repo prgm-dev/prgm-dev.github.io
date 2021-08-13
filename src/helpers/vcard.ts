@@ -32,7 +32,7 @@ export async function generateVCard(founder: Founder): Promise<VCard> {
 			undefined,
 			'France'
 		)
-		.addCompany('PRGM Dev')
+		.addCompany('prgm.dev')
 		.addJobtitle(founder.title)
 		.addEmail(`${founder.identifier}@prgm.dev`, 'WORK')
 		.addURL(`https://${founder.identifier}.prgm.dev/`, 'WORK');

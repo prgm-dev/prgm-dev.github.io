@@ -16,13 +16,21 @@ html {
 
 @tailwind base;
 
-body {
-	@apply bg-light dark:bg-dark dark:text-light dark:border-dark-alt;
-}
-
 @layer base {
+	body {
+		@apply bg-light dark:bg-dark text-dark dark:text-light dark:border-dark-alt;
+	}
+
 	.small-caps {
 		font-variant: small-caps;
+	}
+
+	@font-face {
+		font-family: 'Brahma Rounded Bold';
+		src: local('Brahma Rounded Bold'),
+			url('/fonts/BrahmaRoundedBold/font.woff2') format('woff2'),
+			url('/fonts/BrahmaRoundedBold/font.woff') format('woff');
+		font-display: swap;
 	}
 }
 @tailwind components;

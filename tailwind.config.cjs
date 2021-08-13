@@ -18,6 +18,11 @@ const config = {
 		},
 	},
 	theme: {
+		fontFamily: {
+			...defaultTheme.fontFamily,
+			sans: ['Roboto', 'sans-serif'],
+			rounded: ['Brahma Rounded Bold', 'Roboto', 'sans-serif'],
+		},
 		screens: {
 			xxs: '350px',
 			xs: '475px',
@@ -29,10 +34,10 @@ const config = {
 				// => @media (orientation: portrait) { ... }
 			},
 			colors: {
-				// Palette: https://coolors.co/191e24-2e3238-eeeeee-b53389
-				accent: { DEFAULT: colors.purple[400], dark: colors.purple[500] },
+				// Palette: https://coolors.co/5ed394-1c2335-334061-eeeeee-ffffff
+				accent: { DEFAULT: '#5ED394', dark: '#5ED394' },
 				light: { DEFAULT: '#EEEEEE', alt: colors.white },
-				dark: { DEFAULT: '#191E24', alt: '#2E3238' },
+				dark: { DEFAULT: '#334061', alt: '#1C2335' },
 			},
 		},
 	},

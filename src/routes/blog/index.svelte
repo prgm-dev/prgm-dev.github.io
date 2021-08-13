@@ -20,7 +20,7 @@
 	import ArticleCell from '$lib/blog/ArticleCell.svelte';
 	import NavigationPath from '$lib/NavigationPath.svelte';
 
-	const pageTitle = 'PRGM Dev / Blog';
+	const pageTitle = 'prgm.dev / Blog';
 	let posts: { [k: string]: PostMetadata } = Object.fromEntries(
 		slugMapping.map(({ slug, metadata }) => [
 			slug,
@@ -41,7 +41,7 @@
 	<meta
 		name="description"
 		property="og:description"
-		content="Official blog of PRGM Dev, a Paris-based company crafting delightful software."
+		content="Official blog of prgm.dev, a Paris-based company crafting delightful software."
 	/>
 </svelte:head>
 

@@ -10,7 +10,7 @@
 	export let dateLastUpdated;
 	export let usesKatex = false;
 
-	const pageTitle = `PRGM Dev / Blog / ${title}`;
+	const pageTitle = `prgm.dev / Blog / ${title}`;
 
 	$: dateCreatedISO = dateCreated ? new Date(dateCreated).toISOString() : null;
 	$: dataCreatedFormatted = new Date(dateCreated).toLocaleDateString('en', {
@@ -25,7 +25,7 @@
 </script>
 
 <svelte:head>
-	<title>{title} | PRGM Dev</title>
+	<title>{title} | prgm.dev</title>
 	<meta name="title" property="title" content={pageTitle} />
 	<meta property="og:title" content={pageTitle} />
 	<meta property="og:type" content="article" />

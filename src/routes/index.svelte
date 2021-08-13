@@ -24,12 +24,14 @@
 		faDraftingCompass,
 	} from '@fortawesome/free-solid-svg-icons';
 
-	const pageTitle = 'PRGM Dev';
+	const pageTitle = 'prgm.dev';
 	const currentYear = new Date().getFullYear();
 	const copyrightString =
 		currentYear === copyrightStartYear
 			? `${copyrightStartYear}`
 			: `${copyrightStartYear} — ${currentYear}`;
+
+	let scrollY = 0;
 </script>
 
 <svelte:head>
@@ -40,19 +42,25 @@
 	<meta
 		name="description"
 		property="og:description"
-		content="Official website of PRGM Dev, a Paris-based company crafting delightful software."
+		content="Official website of prgm.dev, a Paris-based company crafting delightful software."
 	/>
 </svelte:head>
+
+<svelte:window bind:scrollY />
 
 <!-- Top bar -->
 <div
 	role="banner"
-	class="w-full sticky top-0 h-20 px-4 py-2 z-40 bg-light dark:bg-dark border-b dark:border-dark-alt"
+	class="w-full sticky top-0 h-20 px-4 py-2 bg-light dark:bg-dark {scrollY <= 0
+		? 'shadow-none'
+		: 'shadow-md'} z-40 transition-all"
 >
 	<div
 		class="mx-auto max-w-screen-md w-full h-full flex items-center justify-between"
 	>
-		<Logo />
+		<span class="text-3xl" role="presentation">
+			<Logo />
+		</span>
 		<div />
 		<nav>
 			{#each routesOrdered as { href, name }}
@@ -70,13 +78,13 @@
 		aria-labelledby="slogan"
 		aria-describedby="slogan-description"
 	>
-		<div class="w-11/12 sm:w-9/12 flex flex-col space-y-3 px-5">
-			<h1 id="slogan" class="text-4xl sm:text-5xl font-semibold">
-				Let's build something <span class="sm:whitespace-nowrap"
-					><span class="text-5xl sm:text-6xl small-caps text-accent font-bold"
-						>big</span
-					> together</span
-				>.
+		<div class="w-full xs:w-11/12 sm:w-10/12 flex flex-col space-y-8 px-5">
+			<h1 id="slogan" class="text-4xl sm:text-5xl font-rounded">
+				Let’s build something
+				<span class="sm:whitespace-nowrap">
+					<span class="text-5xl sm:text-6xl small-caps text-accent"> big </span>
+					together.
+				</span>
 			</h1>
 			<p id="slogan-description" class="text-sm sm:text-base">
 				We are committed to producing excellent quality interactive software. We
@@ -86,7 +94,7 @@
 			<!-- Call to action with email -->
 			<a
 				href="mailto:contact@prgm.dev?subject=Hello%21"
-				class="block w-max bg-accent rounded-lg py-3 px-4 text-xl sm:text-2xl font-medium text-white dark:text-dark"
+				class="block w-max bg-accent rounded-lg py-3 px-4 text-xl sm:text-2xl font-rounded text-dark dark:text-dark"
 				>Work with us!</a
 			>
 		</div>
@@ -98,9 +106,11 @@
 		aria-labelledby="expertise-heading"
 		aria-describedby="expertise-subheading"
 	>
-		<h2 id="expertise-heading" class="text-3xl ml-5 mb-2">Our expertise</h2>
+		<h2 id="expertise-heading" class="text-3xl font-rounded ml-5 mb-2">
+			Our expertise
+		</h2>
 		<h3 id="expertise-subheading" class="text-base ml-5 mb-5 w-3/4">
-			At PRGM.dev, we are like minded engineers and researchers who share the
+			At prgm.dev, we are like minded engineers and researchers who share the
 			same passion for technological challenge.
 		</h3>
 		<div
@@ -142,7 +152,7 @@
 
 	<!-- Sister projects -->
 	<section class="mx-auto w-full max-w-screen-md my-5 px-4 md:px-5 z-0">
-		<h2 class="text-3xl ml-5 mb-2">Our brainchilds</h2>
+		<h2 class="text-3xl font-rounded ml-5 mb-2">Our brainchildren</h2>
 		<h3 class="text-base ml-5 mb-5 w-3/4">
 			Aside from our consulting work, we like to work on projects of our own.
 			They have enabled us to deepen our knowledge of modern technologies, and
@@ -186,7 +196,9 @@
 		class="mx-auto w-full max-w-screen-md my-5 px-4 md:px-5"
 		aria-labelledby="founders-heading"
 	>
-		<h2 id="founders-heading" class="text-3xl ml-5 mb-5">Our founders</h2>
+		<h2 id="founders-heading" class="text-3xl font-rounded ml-5 mb-5">
+			Our founders
+		</h2>
 		<div
 			class="mx-auto w-3/4 sm:w-full grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-3 md:gap-x-8"
 		>

@@ -8,7 +8,7 @@
 	import NProgress from 'nprogress';
 	import { navigating } from '$app/stores';
 
-	const websiteTitle = 'PRGM Dev';
+	const websiteTitle = 'prgm.dev';
 
 	// Configure NProgress
 	NProgress.configure({
@@ -34,7 +34,7 @@
 	<!-- Constant meta tags -->
 	<meta
 		name="keywords"
-		content="PRGM Dev, PRGM Dev SAS, Software Design, Paris"
+		content="prgm.dev, PRGM DEV SAS, Software Design, Paris"
 	/>
 	<meta name="robots" content="index, follow" />
 

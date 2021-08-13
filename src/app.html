@@ -2,7 +2,37 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="/favicon-colored-dark-32x32.png" />
+		<link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />
+		<!-- Safari pinned icon doesn't work well in dark mode -->
+		<!-- <link rel="mask-icon" href="/favicon/mask-icon.svg" color="#334061" /> -->
+		<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
+		<!-- Note: the `favicon` is not referenced and will be found automatically by browsers -->
+		<!--       See: https://dev.to/masakudamatsu/favicon-nightmare-how-to-maintain-sanity-3al7 -->
+
+		<!-- Fonts preload/pre-connect -->
+		<link
+			rel="preload"
+			as="font"
+			href="/fonts/BrahmaRoundedBold/font.woff2"
+			type="font/woff2"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="preload"
+			as="font"
+			href="/fonts/BrahmaRoundedBold/font.woff"
+			type="font/woff"
+			crossorigin="anonymous"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+		<!-- Roboto Web Font -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%svelte.head%
 	</head>

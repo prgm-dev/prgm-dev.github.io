@@ -19,7 +19,7 @@ Want to know how it worked out for us? Read on!
 
 ### Backend: Python + FastAPI + MongoDB
 
-At [PRGM.dev](/), we have a common history of Data Science work. As such, Python is our de-facto language,
+At [prgm.dev](/), we have a common history of Data Science work. As such, Python is our de-facto language,
 and the common denominator between us all.
 We chose Python for our Backend as it meant we could all be quite efficient at it
 
