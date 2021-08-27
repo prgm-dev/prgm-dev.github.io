@@ -1,33 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="/favicon-colored-dark-32x32.png" />
+		<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+		<link rel="icon" type="image/png" href="/favicon/high-res-favicon.png" />
+		<!-- Safari pinned icon doesn't work well in dark mode -->
+		<!-- <link rel="mask-icon" href="/favicon/mask-icon.svg" color="#334061" /> -->
+		<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
+		<!-- Note: the `favicon.ico` is not referenced and will be found automatically by browsers
+							 See https://dev.to/masakudamatsu/favicon-nightmare-how-to-maintain-sanity-3al7
+		-->
+
+		<!-- Fonts preload/pre-connect -->
+		<link
+			rel="preload"
+			as="font"
+			href="/fonts/BrahmaRoundedBold/font.woff2"
+			type="font/woff2"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="preload"
+			as="font"
+			href="/fonts/BrahmaRoundedBold/font.woff"
+			type="font/woff"
+			crossorigin="anonymous"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+		<!-- Roboto Web Font -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Our tech stack for 2021 | PRGM Dev</title><meta name="keywords" content="PRGM Dev, PRGM Dev SAS, Software Design, Paris" data-svelte="svelte-fvb7cl"><meta name="robots" content="index, follow" data-svelte="svelte-fvb7cl"><meta property="og:site_name" content="PRGM Dev" data-svelte="svelte-fvb7cl"><meta property="og:url" content="https://prgm.dev/blog/posts/our-tech-stack-2021/" data-svelte="svelte-fvb7cl">
-		<script defer data-domain="prgm.dev" src="https://plausible.io/js/plausible.js" data-svelte="svelte-fvb7cl"></script><meta name="title" property="title" content="PRGM Dev / Blog / Our tech stack for 2021" data-svelte="svelte-1myjf27"><meta property="og:title" content="PRGM Dev / Blog / Our tech stack for 2021" data-svelte="svelte-1myjf27"><meta property="og:type" content="article" data-svelte="svelte-1myjf27"><meta name="description" property="og:description" content="Through our experience building many projects in the span of a few months, we’ve completely revamped our 2020 stack to improve our efficiency at testing new ideas faster than before." data-svelte="svelte-1myjf27"><meta property="og:article:published_time" content="2021-07-06T00:00:00.000Z" data-svelte="svelte-1myjf27">
+		<title>Our tech stack for 2021 | prgm.dev</title><meta name="keywords" content="prgm.dev, PRGM DEV SAS, Software Design, Paris" data-svelte="svelte-1q8bytr"><meta name="robots" content="index, follow" data-svelte="svelte-1q8bytr"><meta property="og:site_name" content="prgm.dev" data-svelte="svelte-1q8bytr"><meta property="og:url" content="https://prgm.dev/blog/posts/our-tech-stack-2021/" data-svelte="svelte-1q8bytr">
+		<script defer data-domain="prgm.dev" src="https://plausible.io/js/plausible.js" data-svelte="svelte-1q8bytr"></script><meta property="og:image" content="https://prgm.dev/favicon/opengraph.png" data-svelte="svelte-1nqxusc"><meta property="og:image:alt" content="prgm.dev logo with monogram" data-svelte="svelte-1nqxusc"><meta property="og:image:type" content="image/png" data-svelte="svelte-1nqxusc"><meta property="og:image:width" content="1200" data-svelte="svelte-1nqxusc"><meta property="og:image:height" content="630" data-svelte="svelte-1nqxusc"><meta name="twitter:card" content="summary_large_image" data-svelte="svelte-1nqxusc"><meta name="title" property="title" content="prgm.dev / Blog / Our tech stack for 2021" data-svelte="svelte-gx6k9t"><meta property="og:title" content="prgm.dev / Blog / Our tech stack for 2021" data-svelte="svelte-gx6k9t"><meta property="og:type" content="article" data-svelte="svelte-gx6k9t"><meta name="description" property="og:description" content="Through our experience building many projects in the span of a few months, we’ve completely revamped our 2020 stack to improve our efficiency at testing new ideas faster than before." data-svelte="svelte-gx6k9t"><meta property="og:article:published_time" content="2021-07-06T00:00:00.000Z" data-svelte="svelte-gx6k9t">
 
 		
 
-		<link rel="modulepreload" href="/./_app/start-908210fa.js">
-		<link rel="modulepreload" href="/./_app/chunks/vendor-17dca76f.js">
-		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-385d71f3.js">
-		<link rel="modulepreload" href="/./_app/chunks/stores-4c1aac46.js">
-		<link rel="modulepreload" href="/./_app/pages/blog/__layout.svelte-27353eb3.js">
-		<link rel="modulepreload" href="/./_app/chunks/Logo-027bdf70.js">
-		<link rel="modulepreload" href="/./_app/chunks/routes-c138df12.js">
-		<link rel="modulepreload" href="/./_app/pages/blog/posts/our-tech-stack-2021.svelte.md-802fb938.js">
-		<link rel="modulepreload" href="/./_app/chunks/BlogLayout-eca0b3b4.js">
-		<link rel="stylesheet" href="/./_app/assets/start-0826e215.css">
-		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-9db74cd6.css">
-		<link rel="stylesheet" href="/./_app/assets/pages/blog/__layout.svelte-1be26e1a.css">
-		<link rel="stylesheet" href="/./_app/assets/BlogLayout-136e8ed2.css">
+		<link rel="modulepreload" href="/_app/start-cd1859c6.js">
+		<link rel="modulepreload" href="/_app/chunks/vendor-fd4b7359.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-e4302bed.js">
+		<link rel="modulepreload" href="/_app/chunks/stores-27caff06.js">
+		<link rel="modulepreload" href="/_app/pages/blog/__layout.svelte-c38b5ad5.js">
+		<link rel="modulepreload" href="/_app/chunks/Logo-26d5e580.js">
+		<link rel="modulepreload" href="/_app/chunks/routes-c138df12.js">
+		<link rel="modulepreload" href="/_app/pages/blog/posts/our-tech-stack-2021.svelte.md-b345bbac.js">
+		<link rel="modulepreload" href="/_app/chunks/BlogLayout-f24d300a.js">
+		<link rel="stylesheet" href="/_app/assets/start-464e9d0a.css">
+		<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-9a134d36.css">
+		<link rel="stylesheet" href="/_app/assets/pages/blog/__layout.svelte-515b4397.css">
+		<link rel="stylesheet" href="/_app/assets/Logo-be526a00.css">
+		<link rel="stylesheet" href="/_app/assets/BlogLayout-216c651e.css">
 
 		<script type="module">
-			import { start } from "/./_app/start-908210fa.js";
+			import { start } from "/_app/start-cd1859c6.js";
 			start({
 				target: document.querySelector("#svelte"),
-				paths: {"base":"","assets":"/."},
+				paths: {"base":"","assets":""},
 				session: {},
 				host: location.host,
 				route: true,
@@ -37,9 +70,9 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/./_app/pages/__layout.svelte-385d71f3.js"),
-						import("/./_app/pages/blog/__layout.svelte-27353eb3.js"),
-						import("/./_app/pages/blog/posts/our-tech-stack-2021.svelte.md-802fb938.js")
+						import("/_app/pages/__layout.svelte-e4302bed.js"),
+						import("/_app/pages/blog/__layout.svelte-c38b5ad5.js"),
+						import("/_app/pages/blog/posts/our-tech-stack-2021.svelte.md-b345bbac.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -60,21 +93,26 @@
 
 
 
-<div role="banner" class="w-full sticky top-0 h-20 px-4 py-2 bg-light dark:bg-dark shadow-none z-40 transition-all"><div class="mx-auto max-w-screen-md w-full h-full flex items-center justify-between"><a sveltekit:prefetch aria-label="PRGM Logo" href="/" class="text-xl font-semibold"><span class="tracking-wide uppercase">PRGM</span><span class="text-accent tracking-tight uppercase text-base">.dev</span></a>
-<div></div>
-<nav class="svelte-180cmrq"><a href="/blog/" class="svelte-180cmrq selected">Blog</a></nav></div></div>
+
+
+<div role="banner" class="w-full sticky top-0 h-20 px-4 py-2 bg-light dark:bg-dark shadow-none z-40 transition-all"><div class="mx-auto max-w-screen-md w-full h-full flex items-center justify-between"><span class="text-3xl" role="presentation"><a sveltekit:prefetch aria-label="prgm Logo" href="/" class="hoverable:hover:opacity-80 hoverable:active:opacity-100 transition-opacity font-rounded"><span class="inline-block h-text svelte-th5wn2" role="img" aria-label="prgm.dev monogram logo">
+		<svg height="100%" viewBox="0 0 360 300" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M230.2 179.9H129.7C124.3 179.9 120 175.5 120 170.2V129.7C120 124.3 124.4 120 129.7 120H230.2C235.6 120 239.9 124.4 239.9 129.7V170.2C240 175.6 235.6 179.9 230.2 179.9Z" fill="currentColor"></path><path d="M350.2 59.9H9.70001C4.30001 59.9 0 55.5 0 50.2V9.69998C0 4.29998 4.40001 0 9.70001 0H350.2C355.6 0 359.9 4.39998 359.9 9.69998V50.2C359.9 55.6 355.6 59.9 350.2 59.9Z" fill="currentColor"></path><path d="M350.2 179.9H309.7C304.3 179.9 300 175.5 300 170.2V129.7C300 124.3 304.4 120 309.7 120H350.2C355.6 120 359.9 124.4 359.9 129.7V170.2C359.9 175.6 355.6 179.9 350.2 179.9Z" fill="currentColor"></path><path d="M350.2 299.9H129.7C124.3 299.9 120 295.5 120 290.2V249.7C120 244.3 124.4 240 129.7 240H350.2C355.6 240 359.9 244.4 359.9 249.7V290.2C359.9 295.6 355.6 299.9 350.2 299.9Z" fill="currentColor"></path><path d="M50.3 179.9H9.79999C4.39999 179.9 0.100006 175.5 0.100006 170.2V129.7C0.100006 124.3 4.49999 120 9.79999 120H50.3C55.7 120 60 124.4 60 129.7V170.2C60 175.6 55.6 179.9 50.3 179.9Z" fill="currentColor"></path><path d="M50.3 299.9H9.79999C4.39999 299.9 0.100006 295.5 0.100006 290.2V249.7C0.100006 244.3 4.49999 240 9.79999 240H50.3C55.7 240 60 244.4 60 249.7V290.2C60 295.6 55.6 299.9 50.3 299.9Z" fill="currentColor"></path></svg>
+	</span><span>prgm</span><span class="text-accent">.dev</span>
+</a></span>
+		<div></div>
+		<nav class="svelte-19vtrwt"><a href="/blog/" class="svelte-19vtrwt selected">Blog</a></nav></div></div>
 
 
 
 <div class="mx-auto w-full max-w-screen-md z-0">
 	<div class="w-full max-w-screen-lg px-5 sm:px-2 lg:px-0 pt-5 pb-20"><nav id="path-nav" aria-label="/blog/posts/our-tech-stack-2021/" class="text-3xl font-bold"><a href="/blog/">Blog
-<span>Posts
-<a href="/blog/posts/our-tech-stack-2021/">
-<br>
-	<h1 id="article-title" class="text-4xl font-bold">Our tech stack for 2021</h1></a></span></a>
+		<span>Posts
+		<a href="/blog/posts/our-tech-stack-2021/">
+		<br>
+			<h1 id="article-title" class="text-4xl font-bold">Our tech stack for 2021</h1></a></span></a>
 </nav>
-<article class="prose numbered" aria-labelledby="article-title"><div id="article-header" role="heading" aria-labelledby="article-title" class="mt-2"><p class="text-sm"><span class="font-normal">July 6, 2021</span></p></div>
-	<p><strong>TL;DR:</strong> This year, we are trying <strong>Apollo GraphQL</strong> on the Backend, and <strong>Svelte Kit</strong> on the Frontend,
+		<article class="prose numbered" aria-labelledby="article-title"><div id="article-header" role="heading" aria-labelledby="article-title" class="mt-2"><p class="text-sm"><span class="font-normal">July 6, 2021</span></p></div>
+			<p><strong>TL;DR:</strong> This year, we are trying <strong>Apollo GraphQL</strong> on the Backend, and <strong>Svelte Kit</strong> on the Frontend,
 both with <strong>Typescript</strong>.</p>
 <p>Want to know how it’s working out for us? Read on!</p>
 <p><strong>Note:</strong> If you’re more into REST APIs, our tech stack last year achieved that very efficiently with Python’s <strong>FastAPI</strong>.
@@ -123,7 +161,7 @@ and uses Nuxt.JS on the frontend.</p></article></div>
 
 
 
-	
-</div>
+			
+		</div>
 	</body>
 </html>

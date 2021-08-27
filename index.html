@@ -1,31 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="/favicon-colored-dark-32x32.png" />
+		<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+		<link rel="icon" type="image/png" href="/favicon/high-res-favicon.png" />
+		<!-- Safari pinned icon doesn't work well in dark mode -->
+		<!-- <link rel="mask-icon" href="/favicon/mask-icon.svg" color="#334061" /> -->
+		<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
+		<!-- Note: the `favicon.ico` is not referenced and will be found automatically by browsers
+							 See https://dev.to/masakudamatsu/favicon-nightmare-how-to-maintain-sanity-3al7
+		-->
+
+		<!-- Fonts preload/pre-connect -->
+		<link
+			rel="preload"
+			as="font"
+			href="/fonts/BrahmaRoundedBold/font.woff2"
+			type="font/woff2"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="preload"
+			as="font"
+			href="/fonts/BrahmaRoundedBold/font.woff"
+			type="font/woff"
+			crossorigin="anonymous"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+		<!-- Roboto Web Font -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>PRGM Dev</title><meta name="keywords" content="PRGM Dev, PRGM Dev SAS, Software Design, Paris" data-svelte="svelte-fvb7cl"><meta name="robots" content="index, follow" data-svelte="svelte-fvb7cl"><meta property="og:site_name" content="PRGM Dev" data-svelte="svelte-fvb7cl"><meta property="og:url" content="https://prgm.dev/" data-svelte="svelte-fvb7cl">
-		<script defer data-domain="prgm.dev" src="https://plausible.io/js/plausible.js" data-svelte="svelte-fvb7cl"></script><meta name="title" property="title" content="PRGM Dev" data-svelte="svelte-157ybml"><meta property="og:title" content="PRGM Dev" data-svelte="svelte-157ybml"><meta name="description" property="og:description" content="Official website of PRGM Dev, a Paris-based company crafting delightful software." data-svelte="svelte-157ybml">
+		<title>prgm.dev</title><meta name="keywords" content="prgm.dev, PRGM DEV SAS, Software Design, Paris" data-svelte="svelte-1q8bytr"><meta name="robots" content="index, follow" data-svelte="svelte-1q8bytr"><meta property="og:site_name" content="prgm.dev" data-svelte="svelte-1q8bytr"><meta property="og:url" content="https://prgm.dev/" data-svelte="svelte-1q8bytr">
+		<script defer data-domain="prgm.dev" src="https://plausible.io/js/plausible.js" data-svelte="svelte-1q8bytr"></script><meta name="title" property="title" content="prgm.dev" data-svelte="svelte-qat5el"><meta property="og:title" content="prgm.dev" data-svelte="svelte-qat5el"><meta name="description" property="og:description" content="Official website of prgm.dev, a Paris-based company crafting delightful software." data-svelte="svelte-qat5el"><meta property="og:type" content="website" data-svelte="svelte-qat5el"><meta property="og:image" content="https://prgm.dev/favicon/opengraph.png" data-svelte="svelte-qat5el"><meta property="og:image:alt" content="prgm.dev logo with monogram" data-svelte="svelte-qat5el"><meta property="og:image:type" content="image/png" data-svelte="svelte-qat5el"><meta property="og:image:width" content="1200" data-svelte="svelte-qat5el"><meta property="og:image:height" content="630" data-svelte="svelte-qat5el"><meta name="twitter:card" content="summary_large_image" data-svelte="svelte-qat5el">
 
 		
 
-		<link rel="modulepreload" href="/./_app/start-908210fa.js">
-		<link rel="modulepreload" href="/./_app/chunks/vendor-17dca76f.js">
-		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-385d71f3.js">
-		<link rel="modulepreload" href="/./_app/chunks/stores-4c1aac46.js">
-		<link rel="modulepreload" href="/./_app/pages/index.svelte-957d63bb.js">
-		<link rel="modulepreload" href="/./_app/chunks/founders-97749bb8.js">
-		<link rel="modulepreload" href="/./_app/chunks/routes-c138df12.js">
-		<link rel="modulepreload" href="/./_app/chunks/Logo-027bdf70.js">
-		<link rel="stylesheet" href="/./_app/assets/start-0826e215.css">
-		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-9db74cd6.css">
-		<link rel="stylesheet" href="/./_app/assets/pages/index.svelte-e39934ba.css">
+		<link rel="modulepreload" href="/_app/start-cd1859c6.js">
+		<link rel="modulepreload" href="/_app/chunks/vendor-fd4b7359.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-e4302bed.js">
+		<link rel="modulepreload" href="/_app/chunks/stores-27caff06.js">
+		<link rel="modulepreload" href="/_app/pages/index.svelte-3ca77b64.js">
+		<link rel="modulepreload" href="/_app/chunks/founders-97749bb8.js">
+		<link rel="modulepreload" href="/_app/chunks/routes-c138df12.js">
+		<link rel="modulepreload" href="/_app/chunks/Logo-26d5e580.js">
+		<link rel="stylesheet" href="/_app/assets/start-464e9d0a.css">
+		<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-9a134d36.css">
+		<link rel="stylesheet" href="/_app/assets/pages/index.svelte-058b26fa.css">
+		<link rel="stylesheet" href="/_app/assets/Logo-be526a00.css">
 
 		<script type="module">
-			import { start } from "/./_app/start-908210fa.js";
+			import { start } from "/_app/start-cd1859c6.js";
 			start({
 				target: document.querySelector("#svelte"),
-				paths: {"base":"","assets":"/."},
+				paths: {"base":"","assets":""},
 				session: {},
 				host: location.host,
 				route: true,
@@ -35,8 +68,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/./_app/pages/__layout.svelte-385d71f3.js"),
-						import("/./_app/pages/index.svelte-957d63bb.js")
+						import("/_app/pages/__layout.svelte-e4302bed.js"),
+						import("/_app/pages/index.svelte-3ca77b64.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -57,104 +90,115 @@
 
 
 
-<div role="banner" class="w-full sticky top-0 h-20 px-4 py-2 z-40 bg-light dark:bg-dark border-b dark:border-dark-alt"><div class="mx-auto max-w-screen-md w-full h-full flex items-center justify-between"><a sveltekit:prefetch aria-label="PRGM Logo" href="/" class="text-xl font-semibold"><span class="tracking-wide uppercase">PRGM</span><span class="text-accent tracking-tight uppercase text-base">.dev</span></a>
-<div></div>
-<nav class="svelte-19u54b8"><a href="/blog/" class="svelte-19u54b8">Blog</a></nav></div></div>
 
-<main class="z-0">
-	<section id="hello" class="mx-auto w-full max-w-screen-md flex px-4 md:px-5 my-10 svelte-19u54b8" aria-labelledby="slogan" aria-describedby="slogan-description"><div class="w-11/12 sm:w-9/12 flex flex-col space-y-3 px-5"><h1 id="slogan" class="text-4xl sm:text-5xl font-semibold svelte-19u54b8">Let&#39;s build something <span class="sm:whitespace-nowrap"><span class="text-5xl sm:text-6xl small-caps text-accent font-bold">big</span> together</span>.
-	</h1>
-	<p id="slogan-description" class="text-sm sm:text-base svelte-19u54b8">We are committed to producing excellent quality interactive software. We
-		specialise in developing real time solutions for real world problems
-		with a strong focus on software reliability and user experience.
-	</p>
-	
-	<a href="mailto:contact@prgm.dev?subject=Hello%21" class="block w-max bg-accent rounded-lg py-3 px-4 text-xl sm:text-2xl font-medium text-white dark:text-dark">Work with us!</a></div></section>
+<div class="dark svelte-19rtawf" role="presentation">
+	<div role="banner" class="w-full sticky top-0 h-20 px-4 py-2 bg-dark shadow-none z-40 transition-all"><div class="mx-auto max-w-screen-md w-full h-full flex items-center justify-between"><span class="text-3xl" role="presentation"><a sveltekit:prefetch aria-label="prgm Logo" href="/" class="hoverable:hover:opacity-80 hoverable:active:opacity-100 transition-opacity font-rounded"><span class="inline-block h-text svelte-th5wn2" role="img" aria-label="prgm.dev monogram logo">
+		<svg height="100%" viewBox="0 0 360 300" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M230.2 179.9H129.7C124.3 179.9 120 175.5 120 170.2V129.7C120 124.3 124.4 120 129.7 120H230.2C235.6 120 239.9 124.4 239.9 129.7V170.2C240 175.6 235.6 179.9 230.2 179.9Z" fill="currentColor"></path><path d="M350.2 59.9H9.70001C4.30001 59.9 0 55.5 0 50.2V9.69998C0 4.29998 4.40001 0 9.70001 0H350.2C355.6 0 359.9 4.39998 359.9 9.69998V50.2C359.9 55.6 355.6 59.9 350.2 59.9Z" fill="currentColor"></path><path d="M350.2 179.9H309.7C304.3 179.9 300 175.5 300 170.2V129.7C300 124.3 304.4 120 309.7 120H350.2C355.6 120 359.9 124.4 359.9 129.7V170.2C359.9 175.6 355.6 179.9 350.2 179.9Z" fill="currentColor"></path><path d="M350.2 299.9H129.7C124.3 299.9 120 295.5 120 290.2V249.7C120 244.3 124.4 240 129.7 240H350.2C355.6 240 359.9 244.4 359.9 249.7V290.2C359.9 295.6 355.6 299.9 350.2 299.9Z" fill="currentColor"></path><path d="M50.3 179.9H9.79999C4.39999 179.9 0.100006 175.5 0.100006 170.2V129.7C0.100006 124.3 4.49999 120 9.79999 120H50.3C55.7 120 60 124.4 60 129.7V170.2C60 175.6 55.6 179.9 50.3 179.9Z" fill="currentColor"></path><path d="M50.3 299.9H9.79999C4.39999 299.9 0.100006 295.5 0.100006 290.2V249.7C0.100006 244.3 4.49999 240 9.79999 240H50.3C55.7 240 60 244.4 60 249.7V290.2C60 295.6 55.6 299.9 50.3 299.9Z" fill="currentColor"></path></svg>
+	</span><span>prgm</span><span class="text-accent">.dev</span>
+</a></span>
+			<div></div>
+			<nav class="svelte-19rtawf"><a href="/blog/" class="svelte-19rtawf">Blog</a></nav></div></div>
 
-	
-	<section class="mx-auto w-full max-w-screen-md my-5 px-4 md:px-5" aria-labelledby="expertise-heading" aria-describedby="expertise-subheading"><h2 id="expertise-heading" class="text-3xl ml-5 mb-2 svelte-19u54b8">Our expertise</h2>
-<h3 id="expertise-subheading" class="text-base ml-5 mb-5 w-3/4 svelte-19u54b8">At PRGM.dev, we are like minded engineers and researchers who share the
-	same passion for technological challenge.
-</h3>
-<div class="mx-auto w-3/4 sm:w-full grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-3 md:gap-x-6"><div class="w-full" aria-labelledby="skill-card-0-title" aria-describedby="skill-card-0-description"><div class="flex flex-row w-full space-x-1 items-center" role="presentation"><div class="w-1/6 flex-shrink-0" role="presentation"><div class="text-accent w-max mx-auto"><svg id="" class="" style="height:1em;font-size:1.2em;vertical-align:-.125em;overflow:visible;" viewBox="0 0 640 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(256 256)"><g transform=""><path d="M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z" fill="currentColor" transform="translate(-256 -256)"></path></g></g></svg>
-		</div></div>
-<h4 id="skill-card-0-title" class="text-lg font-semibold col-span-5 flex-grow">Coding</h4></div>
-	<div class="flex flex-row w-full space-x-1" role="presentation"><div class="w-1/6 flex-shrink-0" aria-hidden="true" role="presentation"></div>
-<p id="skill-card-0-description" class="text-sm col-span-5">We have very high standards with regards to code. Our code is backed by
-		robust theory, follows the best practices from various industries, is
-		tested in real-world conditions, and scales appropriately.
-	</p></div></div>
-	<div class="w-full" aria-labelledby="skill-card-1-title" aria-describedby="skill-card-1-description"><div class="flex flex-row w-full space-x-1 items-center" role="presentation"><div class="w-1/6 flex-shrink-0" role="presentation"><div class="text-accent w-max mx-auto"><svg id="" class="" style="height:1em;font-size:1.2em;vertical-align:-.125em;overflow:visible;" viewBox="0 0 576 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(256 256)"><g transform=""><path d="M208 0c-29.9 0-54.7 20.5-61.8 48.2-.8 0-1.4-.2-2.2-.2-35.3 0-64 28.7-64 64 0 4.8.6 9.5 1.7 14C52.5 138 32 166.6 32 200c0 12.6 3.2 24.3 8.3 34.9C16.3 248.7 0 274.3 0 304c0 33.3 20.4 61.9 49.4 73.9-.9 4.6-1.4 9.3-1.4 14.1 0 39.8 32.2 72 72 72 4.1 0 8.1-.5 12-1.2 9.6 28.5 36.2 49.2 68 49.2 39.8 0 72-32.2 72-72V64c0-35.3-28.7-64-64-64zm368 304c0-29.7-16.3-55.3-40.3-69.1 5.2-10.6 8.3-22.3 8.3-34.9 0-33.4-20.5-62-49.7-74 1-4.5 1.7-9.2 1.7-14 0-35.3-28.7-64-64-64-.8 0-1.5.2-2.2.2C422.7 20.5 397.9 0 368 0c-35.3 0-64 28.6-64 64v376c0 39.8 32.2 72 72 72 31.8 0 58.4-20.7 68-49.2 3.9.7 7.9 1.2 12 1.2 39.8 0 72-32.2 72-72 0-4.8-.5-9.5-1.4-14.1 29-12 49.4-40.6 49.4-73.9z" fill="currentColor" transform="translate(-256 -256)"></path></g></g></svg>
-		</div></div>
-<h4 id="skill-card-1-title" class="text-lg font-semibold col-span-5 flex-grow">Artificial Intelligence</h4></div>
-	<div class="flex flex-row w-full space-x-1" role="presentation"><div class="w-1/6 flex-shrink-0" aria-hidden="true" role="presentation"></div>
-<p id="skill-card-1-description" class="text-sm col-span-5">We have expertise in multiple AI fields, such as computer vision,
-		natural language processing, and machine learning. Our experience is
-		extensive, and we leverage it to solve real world problem.
-	</p></div></div>
-	<div class="w-full" aria-labelledby="skill-card-2-title" aria-describedby="skill-card-2-description"><div class="flex flex-row w-full space-x-1 items-center" role="presentation"><div class="w-1/6 flex-shrink-0" role="presentation"><div class="text-accent w-max mx-auto"><svg id="" class="" style="height:1em;font-size:1.2em;vertical-align:-.125em;overflow:visible;" viewBox="0 0 512 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(256 256)"><g transform=""><path d="M457.01 344.42c-25.05 20.33-52.63 37.18-82.54 49.05l54.38 94.19 53.95 23.04c9.81 4.19 20.89-2.21 22.17-12.8l7.02-58.25-54.98-95.23zm42.49-94.56c4.86-7.67 1.89-17.99-6.05-22.39l-28.07-15.57c-7.48-4.15-16.61-1.46-21.26 5.72C403.01 281.15 332.25 320 256 320c-23.93 0-47.23-4.25-69.41-11.53l67.36-116.68c.7.02 1.34.21 2.04.21s1.35-.19 2.04-.21l51.09 88.5c31.23-8.96 59.56-25.75 82.61-48.92l-51.79-89.71C347.39 128.03 352 112.63 352 96c0-53.02-42.98-96-96-96s-96 42.98-96 96c0 16.63 4.61 32.03 12.05 45.66l-68.3 118.31c-12.55-11.61-23.96-24.59-33.68-39-4.79-7.1-13.97-9.62-21.38-5.33l-27.75 16.07c-7.85 4.54-10.63 14.9-5.64 22.47 15.57 23.64 34.69 44.21 55.98 62.02L0 439.66l7.02 58.25c1.28 10.59 12.36 16.99 22.17 12.8l53.95-23.04 70.8-122.63C186.13 377.28 220.62 384 256 384c99.05 0 190.88-51.01 243.5-134.14zM256 64c17.67 0 32 14.33 32 32s-14.33 32-32 32-32-14.33-32-32 14.33-32 32-32z" fill="currentColor" transform="translate(-256 -256)"></path></g></g></svg>
-		</div></div>
-<h4 id="skill-card-2-title" class="text-lg font-semibold col-span-5 flex-grow">Product design</h4></div>
-	<div class="flex flex-row w-full space-x-1" role="presentation"><div class="w-1/6 flex-shrink-0" aria-hidden="true" role="presentation"></div>
-<p id="skill-card-2-description" class="text-sm col-span-5">We have built multiple products, with our own funds and from the ground
-		up, learning product design, testing and evaluation. We have a deep
-		understanding of product design, and how to make our products reach
-		their potential.
-	</p></div></div></div></section>
+	<main class="z-0">
+		<section id="hello" class="mx-auto w-full max-w-screen-md flex px-4 md:px-5 my-10 svelte-19rtawf" aria-labelledby="slogan" aria-describedby="slogan-description"><div class="w-full xs:w-11/12 sm:w-10/12 flex flex-col space-y-8 px-5"><h1 id="slogan" class="text-4xl sm:text-5xl font-rounded svelte-19rtawf">Let’s build something
+					<span class="sm:whitespace-nowrap"><span class="text-5xl sm:text-6xl small-caps text-accent">big
+						</span>
+						together.
+					</span></h1>
+				<p id="slogan-description" class="text-sm sm:text-base svelte-19rtawf">We are committed to producing excellent quality interactive software.
+					We specialise in developing real time solutions for real world
+					problems with a strong focus on software reliability and user
+					experience.
+				</p>
+				
+				<a href="mailto:contact@prgm.dev?subject=Hello%21" class="block w-max bg-accent rounded-lg py-3 px-4 text-xl sm:text-2xl font-rounded text-dark">Work with us!</a></div></section>
 
-	
-	<section class="mx-auto w-full max-w-screen-md my-5 px-4 md:px-5 z-0"><h2 class="text-3xl ml-5 mb-2">Our brainchilds</h2>
-<h3 class="text-base ml-5 mb-5 w-3/4">Aside from our consulting work, we like to work on projects of our own.
-	They have enabled us to deepen our knowledge of modern technologies, and
-	taught us about many non-technical aspects of business projects.
-</h3>
-<div class="w-full flex flex-row flex-wrap items-start justify-around"><a href="https://surveyhouse.app" rel="noopener noreferrer" target="_blank" class="block w-full xs:w-1/2 sm:w-1/3 flex-shrink-0 text-center px-1 py-2"><h4 class="text-lg font-bold"><span slot="title">SurveyHouse</span></h4>
+		
+		<section class="mx-auto w-full max-w-screen-md my-5 px-4 md:px-5" aria-labelledby="expertise-heading" aria-describedby="expertise-subheading"><h2 id="expertise-heading" class="text-3xl font-rounded ml-5 mb-2 svelte-19rtawf">Our expertise
+			</h2>
+			<h3 id="expertise-subheading" class="text-base ml-5 mb-5 w-3/4 svelte-19rtawf">At prgm.dev, we are like minded engineers and researchers who share the
+				same passion for technological challenge.
+			</h3>
+			<div class="mx-auto w-3/4 sm:w-full grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-3 md:gap-x-6"><div class="w-full" aria-labelledby="skill-card-0-title" aria-describedby="skill-card-0-description"><div class="flex flex-row w-full space-x-1 items-center" role="presentation"><div class="w-1/6 flex-shrink-0" role="presentation"><div class="text-accent w-max mx-auto"><svg id="" class="" style="height:1em;font-size:1.2em;vertical-align:-.125em;overflow:visible;" viewBox="0 0 640 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(256 256)"><g transform=""><path d="M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z" fill="currentColor" transform="translate(-256 -256)"></path></g></g></svg>
+					</div></div>
+		<h4 id="skill-card-0-title" class="text-lg font-semibold col-span-5 flex-grow">Coding</h4></div>
+	<div class="flex flex-row w-full space-x-1" role="presentation"><div class="w-1/6 flex-shrink-0" aria-hidden="true" role="presentation"></div>
+		<p id="skill-card-0-description" class="text-sm col-span-5">We have very high standards with regards to code. Our code is backed
+					by robust theory, follows the best practices from various industries,
+					is tested in real-world conditions, and scales appropriately.
+				</p></div></div>
+				<div class="w-full" aria-labelledby="skill-card-1-title" aria-describedby="skill-card-1-description"><div class="flex flex-row w-full space-x-1 items-center" role="presentation"><div class="w-1/6 flex-shrink-0" role="presentation"><div class="text-accent w-max mx-auto"><svg id="" class="" style="height:1em;font-size:1.2em;vertical-align:-.125em;overflow:visible;" viewBox="0 0 576 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(256 256)"><g transform=""><path d="M208 0c-29.9 0-54.7 20.5-61.8 48.2-.8 0-1.4-.2-2.2-.2-35.3 0-64 28.7-64 64 0 4.8.6 9.5 1.7 14C52.5 138 32 166.6 32 200c0 12.6 3.2 24.3 8.3 34.9C16.3 248.7 0 274.3 0 304c0 33.3 20.4 61.9 49.4 73.9-.9 4.6-1.4 9.3-1.4 14.1 0 39.8 32.2 72 72 72 4.1 0 8.1-.5 12-1.2 9.6 28.5 36.2 49.2 68 49.2 39.8 0 72-32.2 72-72V64c0-35.3-28.7-64-64-64zm368 304c0-29.7-16.3-55.3-40.3-69.1 5.2-10.6 8.3-22.3 8.3-34.9 0-33.4-20.5-62-49.7-74 1-4.5 1.7-9.2 1.7-14 0-35.3-28.7-64-64-64-.8 0-1.5.2-2.2.2C422.7 20.5 397.9 0 368 0c-35.3 0-64 28.6-64 64v376c0 39.8 32.2 72 72 72 31.8 0 58.4-20.7 68-49.2 3.9.7 7.9 1.2 12 1.2 39.8 0 72-32.2 72-72 0-4.8-.5-9.5-1.4-14.1 29-12 49.4-40.6 49.4-73.9z" fill="currentColor" transform="translate(-256 -256)"></path></g></g></svg>
+					</div></div>
+		<h4 id="skill-card-1-title" class="text-lg font-semibold col-span-5 flex-grow">Artificial Intelligence</h4></div>
+	<div class="flex flex-row w-full space-x-1" role="presentation"><div class="w-1/6 flex-shrink-0" aria-hidden="true" role="presentation"></div>
+		<p id="skill-card-1-description" class="text-sm col-span-5">We have expertise in multiple AI fields, such as computer vision,
+					natural language processing, and machine learning. Our experience is
+					extensive, and we leverage it to solve real world problem.
+				</p></div></div>
+				<div class="w-full" aria-labelledby="skill-card-2-title" aria-describedby="skill-card-2-description"><div class="flex flex-row w-full space-x-1 items-center" role="presentation"><div class="w-1/6 flex-shrink-0" role="presentation"><div class="text-accent w-max mx-auto"><svg id="" class="" style="height:1em;font-size:1.2em;vertical-align:-.125em;overflow:visible;" viewBox="0 0 512 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(256 256)"><g transform=""><path d="M457.01 344.42c-25.05 20.33-52.63 37.18-82.54 49.05l54.38 94.19 53.95 23.04c9.81 4.19 20.89-2.21 22.17-12.8l7.02-58.25-54.98-95.23zm42.49-94.56c4.86-7.67 1.89-17.99-6.05-22.39l-28.07-15.57c-7.48-4.15-16.61-1.46-21.26 5.72C403.01 281.15 332.25 320 256 320c-23.93 0-47.23-4.25-69.41-11.53l67.36-116.68c.7.02 1.34.21 2.04.21s1.35-.19 2.04-.21l51.09 88.5c31.23-8.96 59.56-25.75 82.61-48.92l-51.79-89.71C347.39 128.03 352 112.63 352 96c0-53.02-42.98-96-96-96s-96 42.98-96 96c0 16.63 4.61 32.03 12.05 45.66l-68.3 118.31c-12.55-11.61-23.96-24.59-33.68-39-4.79-7.1-13.97-9.62-21.38-5.33l-27.75 16.07c-7.85 4.54-10.63 14.9-5.64 22.47 15.57 23.64 34.69 44.21 55.98 62.02L0 439.66l7.02 58.25c1.28 10.59 12.36 16.99 22.17 12.8l53.95-23.04 70.8-122.63C186.13 377.28 220.62 384 256 384c99.05 0 190.88-51.01 243.5-134.14zM256 64c17.67 0 32 14.33 32 32s-14.33 32-32 32-32-14.33-32-32 14.33-32 32-32z" fill="currentColor" transform="translate(-256 -256)"></path></g></g></svg>
+					</div></div>
+		<h4 id="skill-card-2-title" class="text-lg font-semibold col-span-5 flex-grow">Product design</h4></div>
+	<div class="flex flex-row w-full space-x-1" role="presentation"><div class="w-1/6 flex-shrink-0" aria-hidden="true" role="presentation"></div>
+		<p id="skill-card-2-description" class="text-sm col-span-5">We have built multiple products, with our own funds and from the
+					ground up, learning product design, testing and evaluation. We have a
+					deep understanding of product design, and how to make our products
+					reach their potential.
+				</p></div></div></div></section>
+
+		
+		<section class="mx-auto w-full max-w-screen-md my-5 px-4 md:px-5 z-0"><h2 class="text-3xl font-rounded ml-5 mb-2">Our ventures</h2>
+			<h3 class="text-base ml-5 mb-5 w-3/4">Aside from our consulting work, we like to work on projects of our own.
+				They have enabled us to deepen our knowledge of modern technologies, and
+				taught us about many non-technical aspects of business projects.
+			</h3>
+			<div class="w-full flex flex-row flex-wrap items-start justify-around"><a href="https://surveyhouse.app" rel="noopener noreferrer" target="_blank" class="block w-full xs:w-1/2 sm:w-1/3 flex-shrink-0 text-center px-1 py-2"><h4 class="text-lg font-bold"><span slot="title">SurveyHouse</span></h4>
 	<p class="opacity-60 text-sm"><span slot="description">Building surveying software</span></p></a>
-	<a href="https://stake.green" rel="noopener noreferrer" target="_blank" class="block w-full xs:w-1/2 sm:w-1/3 flex-shrink-0 text-center px-1 py-2"><h4 class="text-lg font-bold"><span slot="title">Stake.Green</span></h4>
+				<a href="https://stake.green" rel="noopener noreferrer" target="_blank" class="block w-full xs:w-1/2 sm:w-1/3 flex-shrink-0 text-center px-1 py-2"><h4 class="text-lg font-bold"><span slot="title">Stake.Green</span></h4>
 	<p class="opacity-60 text-sm"><span slot="description">Energy-friendly
-			<span class="whitespace-nowrap">cryptocurrency mining</span></span></p></a>
-	<a href="https://codepro.ie/revision" rel="noopener noreferrer" target="_blank" class="block w-full xs:w-1/2 sm:w-1/3 flex-shrink-0 text-center px-1 py-2"><h4 class="text-lg font-bold"><span slot="title">Codepro Revision</span></h4>
+						<span class="whitespace-nowrap">cryptocurrency mining</span></span></p></a>
+				<a href="https://codepro.ie/revision" rel="noopener noreferrer" target="_blank" class="block w-full xs:w-1/2 sm:w-1/3 flex-shrink-0 text-center px-1 py-2"><h4 class="text-lg font-bold"><span slot="title">Codepro Revision</span></h4>
 	<p class="opacity-60 text-sm"><span slot="description">Online Revision Courses for students in Maths and Chemistry</span></p></a>
-	<a href="https://joule.host" rel="noopener noreferrer" target="_blank" class="block w-full xs:w-1/2 sm:w-1/3 flex-shrink-0 text-center px-1 py-2"><h4 class="text-lg font-bold"><span slot="title">Joule.Host</span></h4>
+				<a href="https://joule.host" rel="noopener noreferrer" target="_blank" class="block w-full xs:w-1/2 sm:w-1/3 flex-shrink-0 text-center px-1 py-2"><h4 class="text-lg font-bold"><span slot="title">Joule.Host</span></h4>
 	<p class="opacity-60 text-sm"><span slot="description">AI-Dataset hosting made simple</span></p></a>
-	<a href="#hello" class="block w-full xs:w-1/2 sm:w-1/3 flex-shrink-0 text-center px-1 py-2"><h4 class="text-lg font-bold"><span slot="title" class="opacity-40">Your Project?</span></h4>
+				<a href="#hello" class="block w-full xs:w-1/2 sm:w-1/3 flex-shrink-0 text-center px-1 py-2"><h4 class="text-lg font-bold"><span slot="title" class="opacity-40">Your Project?</span></h4>
 	<p class="opacity-60 text-sm"><span slot="description" class="opacity-40"><span class="whitespace-nowrap">Let&#39;s add another one to that list.
-			</span> <span class="whitespace-nowrap">Get in touch with us!</span></span></p></a></div></section>
+						</span> <span class="whitespace-nowrap">Get in touch with us!</span></span></p></a></div></section>
 
-	
-	<section class="mx-auto w-full max-w-screen-md my-5 px-4 md:px-5" aria-labelledby="founders-heading"><h2 id="founders-heading" class="text-3xl ml-5 mb-5 svelte-19u54b8">Our founders</h2>
-<div class="mx-auto w-3/4 sm:w-full grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-3 md:gap-x-8"><a href="/sebastien" aria-labelledby="founderLabelOhleyer" aria-describedby="founderDescriptionOhleyer" class="rounded-lg w-full h-full bg-light-alt dark:bg-dark-alt p-4 shadow-lg dark:shadow-none">
-<div role="presentation" class="mx-auto w-3/4 rounded-full overflow-hidden border dark:border-dark"><div role="presentation" class="aspect-w-1 aspect-h-1"><img src="/img/sebastien.jpg" alt="Sébastien"></div></div>
+		
+		<section class="mx-auto w-full max-w-screen-md my-5 px-4 md:px-5" aria-labelledby="founders-heading"><h2 id="founders-heading" class="text-3xl font-rounded ml-5 mb-5 svelte-19rtawf">Our founders
+			</h2>
+			<div class="mx-auto w-3/4 sm:w-full grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-3 md:gap-x-8"><a href="/sebastien" aria-labelledby="founderLabelOhleyer" aria-describedby="founderDescriptionOhleyer" class="rounded-lg w-full h-full bg-dark-alt p-4">
+		<div role="presentation" class="mx-auto w-3/4 rounded-full overflow-hidden border border-dark"><div role="presentation" class="aspect-w-1 aspect-h-1"><img src="/img/sebastien.jpg" alt="Sébastien"></div></div>
 
+		
+		<div class="mt-3"><h1 id="founderLabelOhleyer" class="text-center font-medium">Sébastien
+				<span class="small-caps">Ohleyer</span></h1>
+			<h2 id="founderDescriptionOhleyer" class="text-center opacity-50"><span class="uppercase">CEO</span></h2></div></a><a href="/alexandre" aria-labelledby="founderLabelJouandin" aria-describedby="founderDescriptionJouandin" class="rounded-lg w-full h-full bg-dark-alt p-4">
+		<div role="presentation" class="mx-auto w-3/4 rounded-full overflow-hidden border border-dark"><div role="presentation" class="aspect-w-1 aspect-h-1"><img src="https://www.gravatar.com/avatar/daf8a0f2457da63e3c2e15cc2e4319e3?size=384" alt="Alexandre"></div></div>
 
-<div class="mt-3"><h1 id="founderLabelOhleyer" class="text-center font-medium">Sébastien
-		<span class="small-caps">Ohleyer</span></h1>
-	<h2 id="founderDescriptionOhleyer" class="text-center opacity-50"><span class="uppercase">CEO</span></h2></div></a><a href="/alexandre" aria-labelledby="founderLabelJouandin" aria-describedby="founderDescriptionJouandin" class="rounded-lg w-full h-full bg-light-alt dark:bg-dark-alt p-4 shadow-lg dark:shadow-none">
-<div role="presentation" class="mx-auto w-3/4 rounded-full overflow-hidden border dark:border-dark"><div role="presentation" class="aspect-w-1 aspect-h-1"><img src="https://www.gravatar.com/avatar/daf8a0f2457da63e3c2e15cc2e4319e3?size=384" alt="Alexandre"></div></div>
+		
+		<div class="mt-3"><h1 id="founderLabelJouandin" class="text-center font-medium">Alexandre
+				<span class="small-caps">Jouandin</span></h1>
+			<h2 id="founderDescriptionJouandin" class="text-center opacity-50"><span class="uppercase">CTO</span></h2></div></a><a href="/tristan" aria-labelledby="founderLabelStérin" aria-describedby="founderDescriptionStérin" class="rounded-lg w-full h-full bg-dark-alt p-4">
+		<div role="presentation" class="mx-auto w-3/4 rounded-full overflow-hidden border border-dark"><div role="presentation" class="aspect-w-1 aspect-h-1"><img src="/img/tristan-512.jpg" alt="Tristan"></div></div>
 
+		
+		<div class="mt-3"><h1 id="founderLabelStérin" class="text-center font-medium">Tristan
+				<span class="small-caps">Stérin</span></h1>
+			<h2 id="founderDescriptionStérin" class="text-center opacity-50"><span class="uppercase">COO</span></h2></div></a></div></section></main>
 
-<div class="mt-3"><h1 id="founderLabelJouandin" class="text-center font-medium">Alexandre
-		<span class="small-caps">Jouandin</span></h1>
-	<h2 id="founderDescriptionJouandin" class="text-center opacity-50"><span class="uppercase">CTO</span></h2></div></a><a href="/tristan" aria-labelledby="founderLabelStérin" aria-describedby="founderDescriptionStérin" class="rounded-lg w-full h-full bg-light-alt dark:bg-dark-alt p-4 shadow-lg dark:shadow-none">
-<div role="presentation" class="mx-auto w-3/4 rounded-full overflow-hidden border dark:border-dark"><div role="presentation" class="aspect-w-1 aspect-h-1"><img src="/img/tristan-512.jpg" alt="Tristan"></div></div>
-
-
-<div class="mt-3"><h1 id="founderLabelStérin" class="text-center font-medium">Tristan
-		<span class="small-caps">Stérin</span></h1>
-	<h2 id="founderDescriptionStérin" class="text-center opacity-50"><span class="uppercase">COO</span></h2></div></a></div></section></main>
-
-<footer class="mt-20 mb-10 opacity-25 w-full"><div class="mx-auto max-w-screen-md w-full h-full flex flex-col text-center items-center justify-center space-y-3 py-2 px-4"><h2 class="text-sm">PRGM DEV <br>
-	SAS au capital de 999,99 € <br>
-	9, rue des Colonnes, 75002 Paris <br>
-	901 331 264 R.C.S. PARIS
-</h2>
-<h3 class="text-sm"><span class="whitespace-nowrap">© 2021 PRGM DEV SAS.</span>
-	<span class="whitespace-nowrap">All rights reserved.</span></h3></div>
-</footer>
-
-
-
-	
+	<footer class="mt-20 pb-10 opacity-25 w-full"><div class="mx-auto max-w-screen-md w-full h-full flex flex-col text-center items-center justify-center space-y-3 py-2 px-4"><h2 class="text-sm">PRGM DEV <br>
+				SAS au capital de 999,99 € <br>
+				9, rue des Colonnes, 75002 Paris <br>
+				901 331 264 R.C.S. PARIS
+			</h2>
+			<h3 class="text-sm"><span class="whitespace-nowrap">© 2021 PRGM DEV SAS.</span>
+				<span class="whitespace-nowrap">All rights reserved.</span></h3></div></footer>
 </div>
+
+
+
+			
+		</div>
 	</body>
 </html>
