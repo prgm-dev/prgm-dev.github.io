@@ -16,6 +16,18 @@
 	let scrollY = 0;
 </script>
 
+<svelte:head>
+	<!-- Wide OpenGraph image -->
+	<meta property="og:image" content="https://prgm.dev/favicon/opengraph.png" />
+	<meta property="og:image:alt" content="prgm.dev logo with monogram" />
+	<meta property="og:image:type" content="image/png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+
+	<!-- Twitter OpenGraph constants -->
+	<meta name="twitter:card" content="summary_large_image" />
+</svelte:head>
+
 <svelte:window bind:scrollY />
 
 <!-- Top bar -->
