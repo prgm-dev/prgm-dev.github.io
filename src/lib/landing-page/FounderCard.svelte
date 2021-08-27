@@ -15,12 +15,12 @@
 		href="/{founder.identifier}"
 		aria-labelledby="founderLabel{founder.name.last}"
 		aria-describedby="founderDescription{founder.name.last}"
-		class="rounded-lg w-full h-full bg-light-alt dark:bg-dark-alt p-4 shadow-lg dark:shadow-none"
+		class="rounded-lg w-full h-full bg-dark-alt p-4"
 	>
 		<!-- Centered rounded image -->
 		<div
 			role="presentation"
-			class="mx-auto w-3/4 rounded-full overflow-hidden border dark:border-dark"
+			class="mx-auto w-3/4 rounded-full overflow-hidden border border-dark"
 		>
 			<div role="presentation" class="aspect-w-1 aspect-h-1">
 				<img src={imageSrc} alt={imageAlt} />
