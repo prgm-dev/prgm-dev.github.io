@@ -224,9 +224,9 @@
 				<a href="https://panorama.group" target="_blank"
 					><img class="rounded-sm" width="400" src="/img/panorama.png" /></a
 				>
-				<a href="https://321founded.com/en/" target="_blank"
+				<!-- <a href="https://321founded.com/en/" target="_blank"
 					><img class="rounded-sm" width="200" src="/img/321.png" /></a
-				>
+				> -->
 			</div>
 		</section>
 	</main>
