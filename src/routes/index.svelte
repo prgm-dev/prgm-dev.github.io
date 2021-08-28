@@ -213,6 +213,22 @@
 				{/each}
 			</div>
 		</section>
+
+		<!-- They trust us -->
+		<section>
+			<header><h2>They trust us</h2></header>
+			<div class="w-full flex space-x-10 items-center">
+				<a href="https://devor.me" target="_blank"
+					><img class="rounded-sm" width="200px" src="/img/devor.png" /></a
+				>
+				<a href="https://panorama.group" target="_blank"
+					><img class="rounded-sm" width="400" src="/img/panorama.png" /></a
+				>
+				<a href="https://321founded.com/en/" target="_blank"
+					><img class="rounded-sm" width="200" src="/img/321.png" /></a
+				>
+			</div>
+		</section>
 	</main>
 
 	<footer class="mt-20 pb-10 opacity-25">
