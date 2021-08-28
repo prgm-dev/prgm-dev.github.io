@@ -127,7 +127,7 @@
 				</p>
 			</header>
 			<div
-				class="grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-3 md:gap-x-6 lg:-ml-11"
+				class="grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-3 md:gap-x-8 lg:-ml-11"
 			>
 				<SkillCard>
 					<svelte:fragment slot="title">Coding</svelte:fragment>
