@@ -9,6 +9,7 @@
 		"davidanson.vscode-markdownlint",
 		"bpruitt-goddard.mermaid-markdown-syntax-highlighting",
 		"esbenp.prettier-vscode",
-		"visualstudioexptteam.vscodeintellicode"
+		"visualstudioexptteam.vscodeintellicode",
+		"github.vscode-pull-request-github"
 	]
 }
