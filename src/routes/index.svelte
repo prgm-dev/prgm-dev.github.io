@@ -203,11 +203,11 @@
 		<!-- Founders -->
 		<section aria-labelledby="founders-heading">
 			<header>
-				<h2 id="founders-heading" class="text-3xl font-rounded">
-					Our founders
-				</h2>
+				<h2 id="founders-heading">Our founders</h2>
 			</header>
-			<div class="grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-3 md:gap-x-8">
+			<div
+				class="lg:-mt-4 grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-3 md:gap-x-8"
+			>
 				{#each founders as founder (founder.name.last)}
 					<FounderCard {founder} />
 				{/each}
