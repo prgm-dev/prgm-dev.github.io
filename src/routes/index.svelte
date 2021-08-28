@@ -127,7 +127,7 @@
 				</p>
 			</header>
 			<div
-				class="grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-3 md:gap-x-6 -ml-11"
+				class="grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-3 md:gap-x-6 lg:-ml-11"
 			>
 				<SkillCard>
 					<svelte:fragment slot="title">Coding</svelte:fragment>
@@ -255,16 +255,20 @@
 		@apply bg-dark text-light border-dark-alt;
 	}
 
+	section {
+		@apply px-4 lg:px-0;
+	}
+
 	section:first-child {
 		@apply mt-10;
 	}
 
 	section:not(:first-child) {
-		@apply my-14;
+		@apply my-8 lg:my-14;
 	}
 
 	section header {
-		@apply mb-10;
+		@apply mb-5 lg:mb-10;
 	}
 
 	section header h2 {
