@@ -1,14 +1,11 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Build and Deploy
+name: Build and Deploy to Production
 
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches:
-      - main
-  pull_request:
     branches:
       - main
 
@@ -17,27 +14,35 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  deploy:
+    name: "Netlify Deployment"
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      # Check out project
+      - name: Checkout repo 📦
+        uses: actions/checkout@v2
         with:
           lfs: true
-
-      - name: Checkout LFS objects
+      - name: Checkout LFS objects 🚚
         run: git lfs checkout
 
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
-        run: |
-          yarn install
-          yarn build
+      # Set the branch name as environment variable
+      # and ensures the branch name is clean
+      - name: Inject slug/short variables 💉
+        uses: rlespinasse/github-slug-action@v3.x
 
-      - name: Deploy 🚀
+      # Build & Deploy to Netlify
+      - name: Install, Build & Deploy to Netlify 🔧
+        uses: jsmrcaga/action-netlify-deploy@master
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_DEPLOY_MESSAGE: "GitHub deployment of ${{ env.GITHUB_REF_SLUG_URL }}"
+          NETLIFY_DEPLOY_TO_PROD: true
+
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
@@ -45,5 +50,25 @@ jobs:
           clean: true
           clean-exclude: |
             .nojekyll
-          git-config-name: 'GitHub Actions'
-          git-config-email: 'github-actions@prgm.dev'
+          git-config-name: "GitHub Actions"
+          git-config-email: "github-actions@prgm.dev"
+
+      # Create a status check with link to preview
+      - name: Status check
+        uses: Sibz/github-status-action@v1.1.1
+        with:
+          authToken: ${{ secrets.GITHUB_TOKEN }}
+          context: Netlify Deploy
+          state: success
+          target_url: https://prgm.dev/
+
+      # Create a new GitHub deployment
+      - uses: chrnorm/deployment-action@v1.2.0
+        name: Create GitHub deployment
+        id: deployment
+        with:
+          initial_status: success
+          token: "${{ github.token }}"
+          target_url: https://prgm.dev/
+          environment: production
+          ref: "${{ github.ref }}"
