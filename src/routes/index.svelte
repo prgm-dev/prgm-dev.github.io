@@ -117,11 +117,11 @@
 		<!-- Expertise -->
 		<section
 			aria-labelledby="expertise-heading"
-			aria-describedby="expertise-subheading"
+			aria-describedby="expertise-description"
 		>
 			<header>
 				<h2 id="expertise-heading">Our expertise</h2>
-				<p id="expertise-subheading">
+				<p id="expertise-description">
 					At prgm.dev, we are like minded engineers and researchers who share
 					the same passion for technological challenges.
 				</p>
@@ -164,10 +164,14 @@
 		</section>
 
 		<!-- Ventures -->
-		<section class="z-0">
+		<section
+			class="z-0"
+			aria-labelledby="ventures-heading"
+			aria-describedby="ventures-description"
+		>
 			<header>
-				<h2>Our ventures</h2>
-				<p>
+				<h2 id="ventures-heading">Our ventures</h2>
+				<p id="ventures-description">
 					Aside from our consulting work, we also build projects of our own. We
 					team up with ambitious entrepreneurs of various industries to solve
 					the problems that they face.
