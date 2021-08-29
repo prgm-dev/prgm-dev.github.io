@@ -25,7 +25,10 @@ export const sebastien: Founder = {
 export const tristan: Founder = {
 	identifier: 'tristan',
 	name: { first: 'Tristan', last: 'Stérin' },
-	social: { linkedIn: 'tristan-stérin-4b37b9107' },
+	social: {
+		linkedIn: 'tristan-stérin-4b37b9107',
+		github: 'tcosmo',
+	},
 	title: 'COO',
 	image: { src: '/img/tristan-512.jpg' },
 };

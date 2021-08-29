@@ -3,7 +3,7 @@
 	"license": "UNLICENSED",
 	"version": "1.0.0",
 	"scripts": {
-		"dev": "TAILWIND_MODE=watch svelte-kit dev",
+		"dev": "svelte-kit dev",
 		"build": "rm -r build; svelte-kit build",
 		"preview": "svelte-kit preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
