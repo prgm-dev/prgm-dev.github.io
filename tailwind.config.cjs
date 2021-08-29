@@ -36,7 +36,7 @@ const config = {
 			colors: {
 				// Palette: https://coolors.co/5ed394-1c2335-334061-eeeeee-ffffff
 				accent: { DEFAULT: '#5ED394', dark: '#5ED394' },
-				light: { DEFAULT: colors.white, alt: '#EEEEEE' },
+				light: { DEFAULT: '#EEEEEE', alt: colors.white },
 				dark: { DEFAULT: '#334061', alt: '#1C2335' },
 			},
 		},
