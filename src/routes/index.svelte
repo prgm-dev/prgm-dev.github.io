@@ -206,7 +206,7 @@
 				<h2 id="founders-heading">Our founders</h2>
 			</header>
 			<div
-				class="lg:-mt-4 grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-3 md:gap-x-8"
+				class="lg:-mt-4 mx-auto w-3/4 grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-3 md:gap-x-8"
 			>
 				{#each founders as founder (founder.name.last)}
 					<FounderCard {founder} />
