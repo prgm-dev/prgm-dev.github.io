@@ -215,18 +215,36 @@
 		</section>
 
 		<!-- They trust us -->
-		<section>
-			<header><h2>They trust us</h2></header>
-			<div class="w-full flex space-x-10 items-center">
-				<a href="https://devor.me" target="_blank"
-					><img class="rounded-sm" width="200px" src="/img/devor.png" /></a
+		<section aria-labelledby="testimonials-heading">
+			<header>
+				<h2 id="testimonials-heading">They trust us</h2>
+			</header>
+			<div
+				class="w-full flex flex-nowrap space-x-4 md:space-x-10 items-center justify-around md:justify-start"
+			>
+				<a href="https://devor.me" title="Devor" target="_blank" rel="noopener">
+					<div class="bg-[#F7EEE7] rounded p-3 md:p-4">
+						<img
+							class="max-h-10"
+							src="/img/devor-logo-nobg.svg"
+							alt="Devor Logo"
+						/>
+					</div>
+				</a>
+				<a
+					href="https://panorama.group"
+					title="Panorama Group"
+					target="_blank"
+					rel="noopener"
 				>
-				<a href="https://panorama.group" target="_blank"
-					><img class="rounded-sm" width="400" src="/img/panorama.png" /></a
-				>
-				<!-- <a href="https://321founded.com/en/" target="_blank"
-					><img class="rounded-sm" width="200" src="/img/321.png" /></a
-				> -->
+					<div class="bg-[#EAEEF6] rounded p-3 md:p-4">
+						<img
+							class="max-h-10"
+							src="/img/panorama-logo-nobg.svg"
+							alt="Panorama Logo"
+						/>
+					</div>
+				</a>
 			</div>
 		</section>
 	</main>
