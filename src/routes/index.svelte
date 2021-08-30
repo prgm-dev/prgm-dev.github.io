@@ -197,8 +197,10 @@
 					href="mailto:contact@prgm.dev?subject=Hello%21"
 					opensInNewTab={false}
 				>
-					<span slot="title" class="opacity-40">Our Project Together?</span>
-					<span slot="description" class="opacity-40">
+					<span slot="title" class=""
+						>Our Project <span class="text-accent">Together</span>?</span
+					>
+					<span slot="description" class="">
 						<span class="whitespace-nowrap">
 							Let's add another one to that list.
 						</span> <span class="whitespace-nowrap">Get in touch with us!</span>
