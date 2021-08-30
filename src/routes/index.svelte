@@ -189,8 +189,8 @@
 						<span class="whitespace-nowrap">cryptocurrency mining</span>
 					</span>
 				</ProjectCell>
-				<ProjectCell href="https://joule.host">
-					<span slot="title">Joule.Host</span>
+				<ProjectCell href="https://joule.prgm.studio/">
+					<span slot="title">Joule</span>
 					<span slot="description">AI-Dataset hosting made simple</span>
 				</ProjectCell>
 				<ProjectCell href="#hello" opensInNewTab={false}>
