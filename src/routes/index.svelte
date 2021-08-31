@@ -193,9 +193,14 @@
 					<span slot="title">Joule</span>
 					<span slot="description">AI-Dataset hosting made simple</span>
 				</ProjectCell>
-				<ProjectCell href="#hello" opensInNewTab={false}>
-					<span slot="title" class="opacity-40">Our Project Together?</span>
-					<span slot="description" class="opacity-40">
+				<ProjectCell
+					href="mailto:contact@prgm.dev?subject=Hello%21"
+					opensInNewTab={false}
+				>
+					<span slot="title" class=""
+						>Our Project <span class="text-accent">Together</span>?</span
+					>
+					<span slot="description" class="">
 						<span class="whitespace-nowrap">
 							Let's add another one to that list.
 						</span> <span class="whitespace-nowrap">Get in touch with us!</span>
@@ -210,7 +215,7 @@
 				<h2 id="founders-heading">Our founders</h2>
 			</header>
 			<div
-				class="lg:-mt-4 mx-auto w-3/4 grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-3 md:gap-x-8"
+				class="lg:w-10/12 mx-auto w-3/4 grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-3 md:gap-x-8"
 			>
 				{#each founders as founder (founder.name.last)}
 					<FounderCard {founder} />
