@@ -2,7 +2,7 @@
 	import type { Founder } from '$/types/founder';
 
 	// Components
-	import Fa from 'svelte-fa/src/fa.svelte';
+	import Fa from 'svelte-fa';
 	import Logo from './Logo.svelte';
 
 	// Svelte
