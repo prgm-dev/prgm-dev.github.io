@@ -14,8 +14,6 @@ html {
 	}
 }
 
-@tailwind base;
-
 @layer base {
 	body {
 		@apply bg-light dark:bg-dark text-dark dark:text-light dark:border-dark-alt;
@@ -33,8 +31,6 @@ html {
 		font-display: swap;
 	}
 }
-@tailwind components;
-@tailwind utilities;
 
 /* Progress bar settings */
 #nprogress .bar {

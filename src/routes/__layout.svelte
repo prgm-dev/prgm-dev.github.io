@@ -2,7 +2,8 @@
 	import { dev } from '$app/env';
 	import { page } from '$app/stores';
 	// Import global CSS
-	import '../app.postcss';
+	import 'virtual:windi.css';
+	import '$/app.windi.css';
 
 	// Using NProgress, show a loading bar on navigation
 	import NProgress from 'nprogress';

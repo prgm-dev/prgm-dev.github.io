@@ -89,6 +89,6 @@
 
 	#path-nav > a:before,
 	.offset-slash:before {
-		@apply lg:absolute lg:top-0 lg:-translate-x-5 hidden lg:inline;
+		@apply lg:absolute lg:top-0 transform lg:-translate-x-5 hidden lg:inline;
 	}
 </style>

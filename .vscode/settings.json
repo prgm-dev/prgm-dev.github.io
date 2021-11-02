@@ -1,4 +1,8 @@
 {
 	"editor.formatOnSave": true,
-	"cSpell.words": ["Nuxt"]
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"css.validate": false,
+	"editor.quickSuggestions": {
+		"strings": true
+	}
 }
