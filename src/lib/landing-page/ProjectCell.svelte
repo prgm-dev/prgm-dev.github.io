@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let href;
+	export let href: string;
 	/** Set to `true` when the destination link is trusted */
 	export let referrer = true;
 	export let opensInNewTab = true;

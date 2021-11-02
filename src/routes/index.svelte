@@ -193,6 +193,10 @@
 					<span slot="title">Joule</span>
 					<span slot="description">AI-Dataset hosting made simple</span>
 				</ProjectCell>
+				<ProjectCell href="https://alerty.fr/">
+					<span slot="title">Alerty</span>
+					<span slot="description">Automated property-hunter</span>
+				</ProjectCell>
 				<ProjectCell
 					href="mailto:contact@prgm.dev?subject=Hello%21"
 					opensInNewTab={false}
