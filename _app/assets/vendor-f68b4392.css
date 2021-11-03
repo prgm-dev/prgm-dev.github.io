@@ -1,0 +1,1 @@
+.spin.svelte-25hsle{animation:svelte-25hsle-spin 2s 0s infinite linear}.pulse.svelte-25hsle{animation:svelte-25hsle-spin 1s infinite steps(8)}@keyframes svelte-25hsle-spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}

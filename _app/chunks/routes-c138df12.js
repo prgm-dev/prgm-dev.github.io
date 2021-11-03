@@ -1,1 +1,1 @@
-const e=[{name:"Blog",href:"/blog/"}];function n(e){return function(e){return e.replace(/\/$/,"")}(e).toLocaleLowerCase()}Object.fromEntries(e.map((e=>[e.name,e])));const r=new Set(e.map((({href:e})=>e)).map(n));function t(e){return r.has(n(e))}export{n,t as p,e as r};
+const r=[{name:"Blog",href:"/blog/"}];Object.fromEntries(r.map(e=>[e.name,e]));function n(e){return e.replace(/\/$/,"")}function t(e){return n(e).toLocaleLowerCase()}const a=new Set(r.map(({href:e})=>e).map(t));function o(e){return a.has(t(e))}export{t as n,o as p,r};
