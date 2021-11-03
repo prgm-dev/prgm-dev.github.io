@@ -7,12 +7,9 @@ ports:
 
 tasks:
   - name: "Vite"
-    before: |
-      brew install git-lfs
+    init: |
       yarn install
     command: |
-      git lfs install
-      git lfs pull
       export HMR_HOST=`gp url 3000`
       yarn run dev
 
