@@ -9,10 +9,10 @@ tasks:
   - name: "Vite"
     before: |
       brew install git-lfs
-      git lfs install
-      git lfs pull
       yarn install
     command: |
+      git lfs install
+      git lfs pull
       export HMR_HOST=`gp url 3000`
       yarn run dev
 
