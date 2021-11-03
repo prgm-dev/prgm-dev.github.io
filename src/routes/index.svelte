@@ -11,7 +11,7 @@
 
 <script lang="ts">
 	// Components
-	import Fa from 'svelte-fa/src/fa.svelte';
+	import Fa from 'svelte-fa';
 	import FounderCard from '$lib/landing-page/FounderCard.svelte';
 	import SkillCard from '$lib/landing-page/SkillCard.svelte';
 	import Logo from '$lib/Logo.svelte';
@@ -75,7 +75,7 @@
 			<div />
 			<nav>
 				{#each routesOrdered as { href, name }}
-					<a {href}>{name}</a>
+					<a sveltekit:prefetch {href}>{name}</a>
 				{/each}
 			</nav>
 		</div>
@@ -132,7 +132,7 @@
 				<SkillCard>
 					<svelte:fragment slot="title">Coding</svelte:fragment>
 					<svelte:fragment slot="icon">
-						<Fa icon={faCode} size="1.2x" />
+						<Fa icon={faCode} size="lg" />
 					</svelte:fragment>
 
 					We have very high standards with regards to code. Our code is backed
@@ -143,7 +143,7 @@
 					<svelte:fragment slot="title">Artificial Intelligence</svelte:fragment
 					>
 					<svelte:fragment slot="icon">
-						<Fa icon={faBrain} size="1.2x" />
+						<Fa icon={faBrain} size="lg" />
 					</svelte:fragment>
 
 					We have expertise in multiple AI fields, such as computer vision,
@@ -153,7 +153,7 @@
 				<SkillCard>
 					<svelte:fragment slot="title">Product design</svelte:fragment>
 					<svelte:fragment slot="icon">
-						<Fa icon={faDraftingCompass} size="1.2x" />
+						<Fa icon={faDraftingCompass} size="lg" />
 					</svelte:fragment>
 
 					We have built multiple products from the ground up. We have a deep
@@ -192,6 +192,10 @@
 				<ProjectCell href="https://joule.prgm.studio/">
 					<span slot="title">Joule</span>
 					<span slot="description">AI-Dataset hosting made simple</span>
+				</ProjectCell>
+				<ProjectCell href="https://alerty.fr/">
+					<span slot="title">Alerty</span>
+					<span slot="description">Automated property-hunter</span>
 				</ProjectCell>
 				<ProjectCell
 					href="mailto:contact@prgm.dev?subject=Hello%21"
