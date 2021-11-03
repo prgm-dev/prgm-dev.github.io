@@ -75,7 +75,7 @@
 			<div />
 			<nav>
 				{#each routesOrdered as { href, name }}
-					<a {href}>{name}</a>
+					<a sveltekit:prefetch {href}>{name}</a>
 				{/each}
 			</nav>
 		</div>
