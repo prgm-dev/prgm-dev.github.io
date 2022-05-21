@@ -29,7 +29,7 @@ export const tristan: Founder = {
 		linkedIn: 'tristan-stérin-4b37b9107',
 		github: 'tcosmo',
 	},
-	title: 'COO',
+	title: 'CRO',
 	image: { src: '/img/tristan-512.jpg' },
 };
 
