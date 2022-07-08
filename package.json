@@ -50,5 +50,8 @@
 		"vite-plugin-windicss": "^1.4.12",
 		"windicss": "^3.2.1"
 	},
-	"type": "module"
+	"type": "module",
+	"engines": {
+		"node": ">=18.4 <19"
+	}
 }
