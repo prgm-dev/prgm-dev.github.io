@@ -33,10 +33,7 @@
 	<title>{websiteTitle}</title>
 
 	<!-- Constant meta tags -->
-	<meta
-		name="keywords"
-		content="prgm.dev, PRGM DEV SAS, Software Design, Paris"
-	/>
+	<meta name="keywords" content="prgm.dev, PRGM DEV SAS, Software Design, Paris" />
 	<meta name="robots" content="index, follow" />
 
 	<!-- OpenGraph constants -->
@@ -45,10 +42,7 @@
 
 	{#if !dev}
 		<!-- Cookie-free, privacy-preserving analytics by https://plausible.io -->
-		<script
-			defer
-			data-domain="prgm.dev"
-			src="https://plausible.io/js/plausible.js"></script>
+		<script defer data-domain="prgm.dev" src="https://plausible.io/js/plausible.js"></script>
 	{/if}
 </svelte:head>
 

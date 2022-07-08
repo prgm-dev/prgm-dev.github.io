@@ -52,9 +52,6 @@ export function imageURLForFounder(
 	forceAbsoluteURL = false
 ): string {
 	if ('src' in founder.image)
-		return forceAbsoluteURL
-			? `https://prgm.dev${founder.image.src}`
-			: founder.image.src;
-	else
-		return `https://www.gravatar.com/avatar/${founder.image.gravatarHash}?size=${size}`;
+		return forceAbsoluteURL ? `https://prgm.dev${founder.image.src}` : founder.image.src;
+	else return `https://www.gravatar.com/avatar/${founder.image.gravatarHash}?size=${size}`;
 }

@@ -1,12 +1,12 @@
-name: "Netlify Preview"
+name: 'Netlify Preview'
 
 on:
   pull_request:
-    types: ["opened", "edited", "synchronize"]
+    types: ['opened', 'edited', 'synchronize']
 
 jobs:
   deploy:
-    name: "Build & Deploy"
+    name: 'Build & Deploy'
     runs-on: ubuntu-latest
 
     permissions:
@@ -33,7 +33,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: "pnpm"
+          cache: 'pnpm'
       - name: Install build dependencies 🧰
         run: pnpm install
 
@@ -42,7 +42,7 @@ jobs:
         uses: rlespinasse/github-slug-action@v4.x
 
       # Install & Build
-      - name: "Build app 🛠"
+      - name: 'Build app 🛠'
         run: pnpm build
         env:
           VITE_BUILD_ID: ${{ env.GITHUB_EVENT_PULL_REQUEST_HEAD_SHA_SHORT }}
@@ -56,7 +56,7 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_DEPLOY_MESSAGE: "GitHub deployment of ${{ env.GITHUB_HEAD_REF_SLUG_URL }}"
+          NETLIFY_DEPLOY_MESSAGE: 'GitHub deployment of ${{ env.GITHUB_HEAD_REF_SLUG_URL }}'
           CI_ENVIRONMENT_SLUG: ${{ env.GITHUB_HEAD_REF_SLUG_URL }}
 
       # Create a status check with link to preview
@@ -75,6 +75,6 @@ jobs:
         id: deployment
         with:
           initial-status: success
-          token: "${{ github.token }}"
+          token: '${{ github.token }}'
           environment-url: ${{ steps.netlify-deploy.outputs.NETLIFY_PREVIEW_URL }}
           environment: pre-production

@@ -10,9 +10,7 @@
 	export let keepTrailingSlash: boolean = false;
 
 	// Split path into path components, removing empty components
-	$: stringPathComponents = $page.url.pathname
-		.split('/')
-		.filter((s) => s.length > 0);
+	$: stringPathComponents = $page.url.pathname.split('/').filter((s) => s.length > 0);
 
 	let pathComponents: {
 		pathComponent: string;
@@ -21,22 +19,19 @@
 		isValid: boolean;
 	}[] = [];
 	$: {
-		let partialPathComponents: typeof pathComponents = stringPathComponents.map(
-			(pathString) => ({
-				pathComponent: pathString,
-				name: uppercaseFirstLetter(pathString),
-				relativePath: '',
-				isValid: false,
-			})
-		);
+		let partialPathComponents: typeof pathComponents = stringPathComponents.map((pathString) => ({
+			pathComponent: pathString,
+			name: uppercaseFirstLetter(pathString),
+			relativePath: '',
+			isValid: false,
+		}));
 
 		// For each path component, compute the full path to the component
 		let fullPath = '/';
 		partialPathComponents.forEach(({ pathComponent }, idx) => {
 			fullPath += pathComponent + '/';
 			partialPathComponents[idx]['isValid'] =
-				pathIsRegistered(fullPath) ||
-				normalizePath(fullPath) === normalizePath($page.url.pathname);
+				pathIsRegistered(fullPath) || normalizePath(fullPath) === normalizePath($page.url.pathname);
 			partialPathComponents[idx]['relativePath'] = fullPath;
 		});
 
@@ -48,10 +43,7 @@
 			partialPathComponents =
 				actualRemoveLast >= partialPathComponents.length
 					? []
-					: partialPathComponents.slice(
-							0,
-							partialPathComponents.length - actualRemoveLast
-					  );
+					: partialPathComponents.slice(0, partialPathComponents.length - actualRemoveLast);
 			if (keepTrailingSlash && partialPathComponents.length > 0)
 				partialPathComponents[partialPathComponents.length - 1].name = '';
 		}

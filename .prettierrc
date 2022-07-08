@@ -1,10 +1,9 @@
 {
+	"bracketSameLine": false,
+	"printWidth": 100,
 	"singleQuote": true,
-	"svelteBracketNewLine": true,
 	"svelteIndentScriptAndStyle": true,
 	"svelteSortOrder": "options-scripts-markup-styles",
 	"svelteStrictMode": false,
-	"tabWidth": 2,
-	"trailingComma": "es5",
-	"useTabs": true
+	"tabWidth": 2
 }

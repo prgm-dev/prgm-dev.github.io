@@ -1,2 +1,4 @@
-/*-lock.yaml
-/.vscode
+/pnpm-lock.yaml
+.DS_Store
+node_modules
+/.svelte-kit

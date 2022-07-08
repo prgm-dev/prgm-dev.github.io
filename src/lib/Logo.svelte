@@ -8,18 +8,9 @@
 	class="hoverable:hover:opacity-80 hoverable:active:opacity-100 transition-opacity font-rounded"
 >
 	<span class="flex items-center">
-		<span
-			class="inline-block h-text"
-			role="img"
-			aria-label="prgm.dev monogram logo"
-		>
+		<span class="inline-block h-text" role="img" aria-label="prgm.dev monogram logo">
 			<!-- The Monogram logo -->
-			<svg
-				height="100%"
-				viewBox="0 0 360 300"
-				fill="none"
-				xmlns="http://www.w3.org/2000/svg"
-			>
+			<svg height="100%" viewBox="0 0 360 300" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path
 					d="M230.2 179.9H129.7C124.3 179.9 120 175.5 120 170.2V129.7C120 124.3 124.4 120 129.7 120H230.2C235.6 120 239.9 124.4 239.9 129.7V170.2C240 175.6 235.6 179.9 230.2 179.9Z"
 					fill="currentColor"

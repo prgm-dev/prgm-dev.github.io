@@ -10,10 +10,7 @@ const config = {
 	extensions: ['.svelte', ...mdsvexConfig.extensions],
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
-	preprocess: [
-		mdsvex(mdsvexConfig),
-		preprocess({ sourceMap: enableSourceMap }),
-	],
+	preprocess: [mdsvex(mdsvexConfig), preprocess({ sourceMap: enableSourceMap })],
 
 	kit: {
 		adapter: adapter({

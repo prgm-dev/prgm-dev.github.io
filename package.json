@@ -11,7 +11,7 @@
 		"check:watch": "pnpm check:base --watch",
 		"lint": "eslint --ignore-path .gitignore --fix .",
 		"lint-ci": "eslint --ignore-path .gitignore --no-fix .",
-		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
+		"format": "prettier --write --plugin-search-dir=. .",
 		"prepare": "husky install"
 	},
 	"lint-staged": {
