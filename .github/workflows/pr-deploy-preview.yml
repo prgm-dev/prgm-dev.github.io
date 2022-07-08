@@ -1,4 +1,4 @@
-name: "Netlify Preview Deploy"
+name: "Netlify Preview"
 
 on:
   pull_request:
@@ -9,19 +9,20 @@ jobs:
     name: "Build & Deploy"
     runs-on: ubuntu-latest
 
+    permissions:
+      actions: write
+      checks: write
+      deployments: write
+      statuses: write
+
     steps:
       # Check out project
       - name: Checkout repo 📦
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           lfs: true
       - name: Checkout LFS objects 🚚
         run: git lfs checkout
-
-      # Set the branch name as environment variable
-      # and ensures the branch name is clean
-      - name: Inject slug/short variables 💉
-        uses: rlespinasse/github-slug-action@v3.x
 
       # Install pnpm, Node 18, and dependencies
       - name: Install pnpm
@@ -29,12 +30,16 @@ jobs:
         with:
           version: 7
       - name: Use Node.js 18
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: "pnpm"
       - name: Install build dependencies 🧰
         run: pnpm install
+
+      # Sets various environment variables
+      - name: Inject slug/short variables 💉
+        uses: rlespinasse/github-slug-action@v4.x
 
       # Install & Build
       - name: "Build app 🛠"
@@ -44,6 +49,7 @@ jobs:
 
       # Build & Deploy to Netlify
       - name: Deploy to Netlify 🚀
+        id: netlify-deploy
         uses: jsmrcaga/action-netlify-deploy@v1.8.0
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -59,36 +65,18 @@ jobs:
         if: success()
         uses: Sibz/github-status-action@v1.1.1
         with:
-          authToken: ${{ secrets.GITHUB_TOKEN }}
+          authToken: ${{ github.token }}
           context: Netlify Preview
           state: success
-          target_url: https://${{ env.GITHUB_HEAD_REF_SLUG_URL }}--prgm-dev.netlify.app
+          target_url: ${{ steps.netlify-deploy.outputs.NETLIFY_PREVIEW_URL }}
 
       # Create a new GitHub deployment
-      - uses: chrnorm/deployment-action@v1.2.0
-        name: Create GitHub deployment
+      - name: Create GitHub deployment
+        uses: chrnorm/deployment-action@v2.0.3
         id: deployment
         with:
-          initial_status: success
+          initial-status: success
           token: "${{ github.token }}"
-          target_url: https://${{ env.GITHUB_HEAD_REF_SLUG_URL }}--prgm-dev.netlify.app
+          environment-url: ${{ steps.netlify-deploy.outputs.NETLIFY_PREVIEW_URL }}
           environment: pre-production
-          ref: "${{ github.head_ref }}"
-      # TODO: Use the following to update status
-      #       (at the moment it has an issue)
-      # # Update deployment status
-      # - name: Update deployment status (success)
-      #   if: success()
-      #   uses: chrnorm/deployment-status@v1.0.0
-      #   with:
-      #     token: "${{ github.token }}"
-      #     state: "success"
-      #     target_url: https://${{ env.GITHUB_HEAD_REF_SLUG_URL }}--prgm-dev.netlify.app
-      #     deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-      # - name: Update deployment status (failure)
-      #   if: failure()
-      #   uses: chrnorm/deployment-status@v1.0.0
-      #   with:
-      #     token: "${{ github.token }}"
-      #     state: "failure"
-      #     deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          log-url: ${{ steps.netlify-deploy.outputs.NETLIFY_LOGS_URL }}
