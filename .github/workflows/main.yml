@@ -19,7 +19,10 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
+      actions: write
+      checks: write
       deployments: write
+      statuses: write
 
     steps:
       # Check out project
@@ -54,18 +57,16 @@ jobs:
         env:
           VITE_BUILD_ID: ${{ env.GITHUB_SHA_SHORT }}
 
-      # Build & Deploy to Netlify
+      # Deploy to Netlify
       - name: Deploy to Netlify 🚀
         id: netlify-deploy
-        uses: jsmrcaga/action-netlify-deploy@v1.8.0
-        with:
+        run: |
+          pnpm netlify deploy --site="$NETLIFY_SITE_ID" --auth="$NETLIFY_AUTH_TOKEN" --prod --message "${NETLIFY_DEPLOY_MESSAGE}"
+          echo "::set-output name=NETLIFY_PREVIEW_URL::https://prgm.dev"
+        env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_DEPLOY_MESSAGE: "GitHub deployment of ${{ env.GITHUB_REF_SLUG_URL }}"
-          NETLIFY_DEPLOY_TO_PROD: true
-          # We have already built everything we need in the previous step:
-          install_command: "echo Skipping install..."
-          build_command: "echo Skipping build..."
+          NETLIFY_DEPLOY_MESSAGE: "Production deployment of commit ${{ env.GITHUB_SHA_SHORT }}"
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages 🚀
@@ -83,7 +84,7 @@ jobs:
       - name: Status check
         uses: Sibz/github-status-action@v1.1.1
         with:
-          authToken: ${{ secrets.GITHUB_TOKEN }}
+          authToken: "${{ github.token }}"
           context: Netlify Deploy
           state: success
           target_url: ${{ steps.netlify-deploy.outputs.NETLIFY_LIVE_URL }}
@@ -97,4 +98,3 @@ jobs:
           token: "${{ github.token }}"
           environment-url: ${{ steps.netlify-deploy.outputs.NETLIFY_LIVE_URL }}
           environment: production
-          log-url: ${{ steps.netlify-deploy.outputs.NETLIFY_LOGS_URL }}

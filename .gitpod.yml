@@ -32,4 +32,5 @@ vscode:
     - streetsidesoftware.code-spell-checker-french
     - streetsidesoftware.code-spell-checker
     - svelte.svelte-vscode
+    - tamasfe.even-better-toml
     - voorjaar.windicss-intellisense
