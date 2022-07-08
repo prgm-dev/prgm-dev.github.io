@@ -1,4 +1,6 @@
----
+image:
+  file: .gitpod.Dockerfile
+
 ports:
   - port: 3000
     onOpen: open-preview
@@ -24,6 +26,7 @@ vscode:
     - editorconfig.editorconfig
     - esbenp.prettier-vscode
     - fivethree.vscode-svelte-snippets
+    - GitHub.copilot
     - github.vscode-pull-request-github
     - mhutchie.git-graph
     - streetsidesoftware.code-spell-checker
