@@ -47,18 +47,17 @@ jobs:
         env:
           VITE_BUILD_ID: ${{ env.GITHUB_EVENT_PULL_REQUEST_HEAD_SHA_SHORT }}
 
-      # Build & Deploy to Netlify
+      # Deploy to Netlify
       - name: Deploy to Netlify 🚀
         id: netlify-deploy
-        uses: jsmrcaga/action-netlify-deploy@v1.8.0
-        with:
+        run: |
+          pnpm netlify deploy --site="$NETLIFY_SITE_ID" --auth="$NETLIFY_AUTH_TOKEN" --alias="$CI_ENVIRONMENT_SLUG" --message "${NETLIFY_DEPLOY_MESSAGE}"
+          echo "::set-output name=NETLIFY_PREVIEW_URL::https://${{ env.GITHUB_HEAD_REF_SLUG_URL }}--prgm-dev.netlify.app"
+        env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_DEPLOY_MESSAGE: "GitHub deployment of ${{ env.GITHUB_HEAD_REF_SLUG_URL }}"
-          deploy_alias: ${{ env.GITHUB_HEAD_REF_SLUG_URL }}
-          # We have already built everything we need in the previous step:
-          install_command: "echo Skipping install..."
-          build_command: "echo Skipping build..."
+          CI_ENVIRONMENT_SLUG: ${{ env.GITHUB_HEAD_REF_SLUG_URL }}
 
       # Create a status check with link to preview
       - name: Update Status check
@@ -79,4 +78,3 @@ jobs:
           token: "${{ github.token }}"
           environment-url: ${{ steps.netlify-deploy.outputs.NETLIFY_PREVIEW_URL }}
           environment: pre-production
-          log-url: ${{ steps.netlify-deploy.outputs.NETLIFY_LOGS_URL }}
