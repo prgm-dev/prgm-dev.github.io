@@ -1,20 +1,14 @@
 import colors from 'windicss/colors';
 import defaultTheme from 'windicss/defaultTheme';
 import { defineConfig } from 'windicss/helpers';
+// Plugins
 import aspectRatioPlugin from 'windicss/plugin/aspect-ratio';
 import typographyPlugin from 'windicss/plugin/typography';
 
 const config = defineConfig({
 	extract: {
 		include: ['./src/**/*.{html,js,svelte,ts}'],
-		exclude: [
-			'node_modules',
-			'.git',
-			'excluded',
-			'dist',
-			'windi.config.{ts,js}',
-			'tailwind.config.{ts,js}',
-		],
+		exclude: ['node_modules', '.git', 'excluded', 'dist', '*.config.{ts,js}'],
 	},
 	theme: {
 		fontFamily: {
@@ -41,7 +35,7 @@ const config = defineConfig({
 		},
 	},
 	darkMode: 'media',
-	plugins: [typographyPlugin, aspectRatioPlugin],
+	plugins: [typographyPlugin(), aspectRatioPlugin],
 });
 
 module.exports = config;

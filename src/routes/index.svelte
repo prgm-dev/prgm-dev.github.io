@@ -1,22 +1,10 @@
 <script context="module" lang="ts">
-	import { routesOrdered } from '$/globals/routes';
-
-	// Ensure content is pre-rendered
-	export const prerender = true;
-
-	// Constants
-	import { copyrightStartYear } from '$/globals/constants';
-	import { founders } from '$/globals/founders';
-</script>
-
-<script lang="ts">
 	// Components
 	import Fa from 'svelte-fa';
 	import FounderCard from '$lib/landing-page/FounderCard.svelte';
 	import SkillCard from '$lib/landing-page/SkillCard.svelte';
 	import Logo from '$lib/Logo.svelte';
 	import ProjectCell from '$lib/landing-page/ProjectCell.svelte';
-
 	// Icons
 	import {
 		faBrain,
@@ -24,6 +12,14 @@
 		faDraftingCompass,
 	} from '@fortawesome/free-solid-svg-icons';
 
+	import { routesOrdered } from '$/globals/routes';
+
+	// Constants
+	import { copyrightStartYear } from '$/globals/constants';
+	import { founders } from '$/globals/founders';
+</script>
+
+<script lang="ts">
 	const pageTitle = 'prgm.dev';
 	const currentYear = new Date().getFullYear();
 	const copyrightString =
@@ -303,7 +299,11 @@
 	}
 
 	section {
-		@apply px-4 lg:px-0;
+		@apply px-4;
+
+		@screen lg {
+			@apply px-0;
+		}
 	}
 
 	section:first-child {
@@ -311,11 +311,19 @@
 	}
 
 	section:not(:first-child) {
-		@apply my-8 lg:my-14;
+		@apply my-8;
+
+		@screen lg {
+			@apply my-14;
+		}
 	}
 
 	section header {
-		@apply mb-5 lg:mb-10;
+		@apply mb-5;
+
+		@screen lg {
+			@apply mb-10;
+		}
 	}
 
 	section header h2 {

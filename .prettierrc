@@ -1,10 +1,10 @@
 {
-	"useTabs": true,
 	"singleQuote": true,
-	"trailingComma": "es5",
 	"svelteBracketNewLine": true,
 	"svelteIndentScriptAndStyle": true,
 	"svelteSortOrder": "options-scripts-markup-styles",
 	"svelteStrictMode": false,
-	"tabWidth": 2
+	"tabWidth": 2,
+	"trailingComma": "es5",
+	"useTabs": true
 }

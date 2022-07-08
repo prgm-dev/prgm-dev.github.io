@@ -9,6 +9,7 @@
 		"esbenp.prettier-vscode",
 		"visualstudioexptteam.vscodeintellicode",
 		"github.vscode-pull-request-github",
-		"voorjaar.windicss-intellisense"
+		"voorjaar.windicss-intellisense",
+		"tamasfe.even-better-toml"
 	]
 }

@@ -3,11 +3,12 @@
 
 	export let founder: Founder | null = null;
 
-	const imageSrc: string =
-		'src' in founder.image
+	$: imageSrc = founder
+		? 'src' in founder.image
 			? founder.image.src
-			: `https://www.gravatar.com/avatar/${founder.image.gravatarHash}?size=384`;
-	const imageAlt: string = founder.image.alt ?? founder.name.first;
+			: `https://www.gravatar.com/avatar/${founder.image.gravatarHash}?size=384`
+		: '';
+	$: imageAlt = founder?.image.alt ?? founder?.name.first ?? '';
 </script>
 
 {#if founder}

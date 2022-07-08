@@ -10,7 +10,9 @@
 	export let keepTrailingSlash: boolean = false;
 
 	// Split path into path components, removing empty components
-	$: stringPathComponents = $page.path.split('/').filter((s) => s.length > 0);
+	$: stringPathComponents = $page.url.pathname
+		.split('/')
+		.filter((s) => s.length > 0);
 
 	let pathComponents: {
 		pathComponent: string;
@@ -34,7 +36,7 @@
 			fullPath += pathComponent + '/';
 			partialPathComponents[idx]['isValid'] =
 				pathIsRegistered(fullPath) ||
-				normalizePath(fullPath) === normalizePath($page.path);
+				normalizePath(fullPath) === normalizePath($page.url.pathname);
 			partialPathComponents[idx]['relativePath'] = fullPath;
 		});
 
@@ -63,7 +65,7 @@
 	}));
 </script>
 
-<nav id="path-nav" aria-label={$page.path} class="text-3xl font-bold">
+<nav id="path-nav" aria-label={$page.url.pathname} class="text-3xl font-bold">
 	<RecursiveAnchor {links}>
 		<slot />
 	</RecursiveAnchor>

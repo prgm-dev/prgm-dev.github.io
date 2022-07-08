@@ -1,4 +1,2 @@
-.svelte-kit/**
-static/**
-build/**
-node_modules/**
+/*-lock.yaml
+/.vscode

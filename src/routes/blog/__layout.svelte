@@ -10,7 +10,7 @@
 
 	$: routesOrderedAugmented = routesOrdered.map((r) => ({
 		...r,
-		active: $page.path.startsWith(r.href),
+		active: $page.url.pathname.startsWith(r.href),
 	}));
 
 	let scrollY = 0;
