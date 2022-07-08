@@ -13,10 +13,10 @@ tasks:
       brew install git-lfs
       git lfs install
       git lfs pull
-      yarn install
+    init: pnpm install
     command: |
       export HMR_HOST=`gp url 3000`
-      yarn run dev
+      pnpm run dev
 
 vscode:
   extensions:
@@ -29,7 +29,7 @@ vscode:
     - GitHub.copilot
     - github.vscode-pull-request-github
     - mhutchie.git-graph
-    - streetsidesoftware.code-spell-checker
     - streetsidesoftware.code-spell-checker-french
+    - streetsidesoftware.code-spell-checker
     - svelte.svelte-vscode
     - voorjaar.windicss-intellisense

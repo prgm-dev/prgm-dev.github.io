@@ -6,5 +6,6 @@
 		"strings": true
 	},
 	"cSpell.language": "en-GB,fr",
-	"cSpell.dictionaries": ["typescript", "html", "css", "node"]
+	"cSpell.dictionaries": ["typescript", "html", "css", "node"],
+	"cSpell.words": ["pnpm"]
 }
