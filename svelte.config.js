@@ -1,35 +1,34 @@
 import adapter from '@sveltejs/adapter-static';
 import { mdsvex } from 'mdsvex';
-import { resolve } from 'path';
 import preprocess from 'svelte-preprocess';
-import WindiCSS from 'vite-plugin-windicss';
 import { mdsvexConfig } from './mdsvex.config.js';
 
-/** @type {function(): import('vite').UserConfig} */
-const viteConfig = () => ({
-	resolve: {
-		alias: {
-			$: resolve('./src'),
-		},
-	},
-	plugins: [WindiCSS({ transformCSS: 'pre' })],
-});
+const enableSourceMap = process.env.WITH_SOURCEMAPS === 'true';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	extensions: ['.svelte', ...mdsvexConfig.extensions],
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
-	preprocess: [mdsvex(mdsvexConfig), preprocess()],
+	preprocess: [
+		mdsvex(mdsvexConfig),
+		preprocess({ sourceMap: enableSourceMap }),
+	],
 
 	kit: {
-		// hydrate the <div id="svelte"> element in src/app.html
-		adapter: adapter(),
-		target: '#svelte',
-		// Use a trailing slash as GitHub pages
-		// redirects `/abc` to `/abc/` if it's a folder.
-		trailingSlash: 'always',
-		vite: viteConfig,
+		adapter: adapter({
+			fallback: '200.html',
+		}),
+		// Note: 'always' is not supported with `fallback: '200.html'`
+		trailingSlash: 'never',
+		prerender: {
+			default: true, // Prerender all pages by default
+		},
+		version: {
+			name: process.env.VITE_APP_VERSION || Date.now().toString(),
+			// Poll every 10 minutes for a new version
+			pollInterval: 10 * 60_000,
+		},
 	},
 };
 

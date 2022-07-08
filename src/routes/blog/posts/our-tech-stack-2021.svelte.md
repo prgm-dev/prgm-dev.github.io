@@ -12,7 +12,7 @@ both with **Typescript**.
 Want to know how it's working out for us? Read on!
 
 **Note:** If you're more into REST APIs, our tech stack last year achieved that very efficiently with Python's **FastAPI**.
-See our [article here](../our-tech-stack-2020)
+See our [article here](./our-tech-stack-2020)
 
 ## Backend: GraphQL + Apollo Server
 
@@ -43,7 +43,7 @@ which makes Apollo Server feel like a breath of fresh air.
 
 ## Frontend: SvelteKit
 
-Nuxt.JS from [our stack last year](../our-tech-stack-2020) was great, but we wanted something faster to iterate.
+Nuxt.JS from [our stack last year](./our-tech-stack-2020) was great, but we wanted something faster to iterate.
 
 We are eagerly [waiting for Nuxt 3 to come out](https://unofficial-nuxt3-countdown.netlify.app),
 as it would leverage the many improvements of Vue 3, like the improved
@@ -67,5 +67,5 @@ We're lucky to have many projects to try many different technologies, and
 so far this year, this is what we have decided to go with. We'll keep this article updated
 as we get more familiar with the technologies.
 
-In the meantime, you can find out more about our [2020 Tech Stack](../our-tech-stack-2020), which focuses on REST APIs
+In the meantime, you can find out more about our [2020 Tech Stack](./our-tech-stack-2020), which focuses on REST APIs
 and uses Nuxt.JS on the frontend.

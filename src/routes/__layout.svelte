@@ -41,7 +41,7 @@
 
 	<!-- OpenGraph constants -->
 	<meta property="og:site_name" content={websiteTitle} />
-	<meta property="og:url" content="https://prgm.dev{$page.path}" />
+	<meta property="og:url" content="https://prgm.dev{$page.url.pathname}" />
 
 	{#if !dev}
 		<!-- Cookie-free, privacy-preserving analytics by https://plausible.io -->

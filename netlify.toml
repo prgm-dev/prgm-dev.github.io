@@ -20,13 +20,6 @@ cache-control = '''
 	max-age=21600,
 	stale-while-revalidate=604800'''
 
-[[headers]]
-for = "/icons/*"
-[headers.values]
-cache-control = '''
-	public,
-	max-age=21600,
-	stale-while-revalidate=604800'''
 
 [[redirects]]
 from   = "https://alexandre.prgm.dev/*"
@@ -46,5 +39,5 @@ to     = "https://prgm.dev/tristan"
 
 [[redirects]]
 from   = "/*"
-status = 302
-to     = "https://prgm.dev/"
+status = 200
+to     = "200.html"

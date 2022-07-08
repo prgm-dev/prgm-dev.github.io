@@ -3,25 +3,28 @@ image:
 
 ports:
   - port: 3000
+    name: Vite Dev Server
     onOpen: open-preview
     # The port is visible to allow sharing of the preview
     visibility: public
 
 tasks:
-  - name: "Vite"
+  - name: 'Vite'
     before: |
       brew install git-lfs
       git lfs install
       git lfs pull
     init: pnpm install
     command: |
-      export HMR_HOST=`gp url 3000`
+      export GITPOD_HMR_HOST=`gp url 3000`
       pnpm run dev
 
 vscode:
   extensions:
+    - ardenivanov.svelte-intellisense
     - bpruitt-goddard.mermaid-markdown-syntax-highlighting
     - davidanson.vscode-markdownlint
+    - dbaeumer.vscode-eslint
     - eamodio.gitlens
     - editorconfig.editorconfig
     - esbenp.prettier-vscode

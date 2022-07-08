@@ -1,15 +1,26 @@
-<script lang="ts">
+<script lang="ts" context="module">
+	import { isValidFounderIdentifier, type Founder } from '$/types/founder';
 	import FounderPage from '$lib/FounderPage.svelte';
-	import { page } from '$app/stores';
-
 	import { foundersMapping } from '$/globals/founders';
-	import type { Founder } from '$/types/founder';
+	import type { Load } from './__types/[founderID]';
 
-	$: founder =
-		foundersMapping.get($page.params.founderID as Founder['identifier']) ??
-		null;
+	export const load: Load = ({ params }) => {
+		const redirectResponse: ReturnType<Load> = { redirect: '/', status: 301 };
+		if (!isValidFounderIdentifier(params.founderID)) {
+			return redirectResponse;
+		}
+
+		const founder = foundersMapping.get(params.founderID) ?? null;
+		if (!founder) return redirectResponse;
+
+		return {
+			props: { founder },
+		};
+	};
 </script>
 
-{#if !!founder}
-	<FounderPage {founder} />
-{/if}
+<script lang="ts">
+	export let founder: Founder;
+</script>
+
+<FounderPage {founder} />

@@ -9,7 +9,7 @@
 <script lang="ts">
 	export let post: PostMetadata | null = null;
 
-	$: formattedTitle = post.title ?? '—';
+	$: formattedTitle = post?.title ?? '—';
 </script>
 
 {#if post}

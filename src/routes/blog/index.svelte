@@ -1,7 +1,4 @@
 <script context="module" lang="ts">
-	// Ensure content is pre-rendered
-	export const prerender = true;
-
 	// Import articles
 	import { metadata as cardanoArticle } from './posts/understanding-cardano-rewards.svelte.md';
 	import { metadata as ourTechStack2020Article } from './posts/our-tech-stack-2020.svelte.md';

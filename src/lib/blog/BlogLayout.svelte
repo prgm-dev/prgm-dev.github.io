@@ -1,6 +1,4 @@
 <script>
-	import { page } from '$app/stores';
-
 	import NavigationPath from '$lib/NavigationPath.svelte';
 
 	export let longTitle;
