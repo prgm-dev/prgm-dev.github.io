@@ -22,10 +22,7 @@
 				<slot name="icon" />
 			</div>
 		</div>
-		<h3
-			id="{componentID}-title"
-			class="text-lg font-semibold col-span-5 flex-grow"
-		>
+		<h3 id="{componentID}-title" class="text-lg font-semibold col-span-5 flex-grow">
 			<slot name="title" />
 		</h3>
 	</div>

@@ -1,8 +1,4 @@
-export const foundersIdentifiers = [
-	'alexandre',
-	'sebastien',
-	'tristan',
-] as const;
+export const foundersIdentifiers = ['alexandre', 'sebastien', 'tristan'] as const;
 
 export type FounderIdentifier = typeof foundersIdentifiers[number];
 export interface Founder {
@@ -23,8 +19,6 @@ export interface Founder {
 	image: ({ gravatarHash: string } | { src: string }) & { alt?: string };
 }
 
-export function isValidFounderIdentifier(
-	identifier: string
-): identifier is FounderIdentifier {
+export function isValidFounderIdentifier(identifier: string): identifier is FounderIdentifier {
 	return (foundersIdentifiers as readonly string[]).includes(identifier);
 }

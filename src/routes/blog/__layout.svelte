@@ -37,9 +37,7 @@
 		? 'shadow-none'
 		: 'shadow-md'} z-40 transition-all"
 >
-	<div
-		class="mx-auto max-w-screen-md w-full h-full flex items-center justify-between"
-	>
+	<div class="mx-auto max-w-screen-md w-full h-full flex items-center justify-between">
 		<span class="text-3xl" role="presentation">
 			<Logo />
 		</span>

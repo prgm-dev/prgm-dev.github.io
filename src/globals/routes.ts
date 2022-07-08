@@ -10,9 +10,7 @@ export function normalizePath(path: string): string {
 	return removeTrailingSlash(path).toLocaleLowerCase();
 }
 
-const registeredRoutes = new Set(
-	routesOrdered.map(({ href }) => href).map(normalizePath)
-);
+const registeredRoutes = new Set(routesOrdered.map(({ href }) => href).map(normalizePath));
 
 export function pathIsRegistered(p: string): boolean {
 	return registeredRoutes.has(normalizePath(p));

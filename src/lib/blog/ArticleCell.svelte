@@ -29,9 +29,7 @@
 			</p>
 		{/if}
 		<div class="flex-grow" />
-		<a href="/blog/posts/{post.slug}/" class="mt-2 highlight-on-hover"
-			>Read on...</a
-		>
+		<a href="/blog/posts/{post.slug}/" class="mt-2 highlight-on-hover">Read on...</a>
 	</a>
 {/if}
 

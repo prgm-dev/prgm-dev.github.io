@@ -23,15 +23,7 @@ export async function generateVCard(founder: Founder): Promise<VCard> {
 	const founderVCard = new VCard();
 	founderVCard
 		.addName(founder.name.last, founder.name.first)
-		.addAddress(
-			'Paris',
-			undefined,
-			undefined,
-			'Paris',
-			undefined,
-			undefined,
-			'France'
-		)
+		.addAddress('Paris', undefined, undefined, 'Paris', undefined, undefined, 'France')
 		.addCompany('prgm.dev')
 		.addJobtitle(founder.title)
 		.addEmail(`${founder.identifier}@prgm.dev`, 'WORK')
@@ -49,15 +41,9 @@ export async function generateVCard(founder: Founder): Promise<VCard> {
 			const mimeType = matches[1].toUpperCase();
 			founderVCard.addPhoto(urlEncodedPhotoData, mimeType);
 		} else
-			console.error(
-				'Expected URL-encoded photo header to contain the MIME Type. Got:',
-				{ header }
-			);
+			console.error('Expected URL-encoded photo header to contain the MIME Type. Got:', { header });
 	} else {
-		console.error(
-			'Expected exactly two parts in URL-encoded photo data. Got:',
-			{ urlParts }
-		);
+		console.error('Expected exactly two parts in URL-encoded photo data. Got:', { urlParts });
 	}
 
 	return founderVCard;

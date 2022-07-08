@@ -15,7 +15,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   deploy:
-    name: "Build & Deploy"
+    name: 'Build & Deploy'
     runs-on: ubuntu-latest
 
     permissions:
@@ -47,12 +47,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: "pnpm"
+          cache: 'pnpm'
       - name: Install build dependencies 🧰
         run: pnpm install
 
       # Install & Build
-      - name: "Build app 🛠"
+      - name: 'Build app 🛠'
         run: pnpm build
         env:
           VITE_BUILD_ID: ${{ env.GITHUB_SHA_SHORT }}
@@ -66,7 +66,7 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_DEPLOY_MESSAGE: "Production deployment of commit ${{ env.GITHUB_SHA_SHORT }}"
+          NETLIFY_DEPLOY_MESSAGE: 'Production deployment of commit ${{ env.GITHUB_SHA_SHORT }}'
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages 🚀
@@ -77,14 +77,14 @@ jobs:
           clean: true
           clean-exclude: |
             .nojekyll
-          git-config-name: "GitHub Actions"
-          git-config-email: "github-actions@prgm.dev"
+          git-config-name: 'GitHub Actions'
+          git-config-email: 'github-actions@prgm.dev'
 
       # Create a status check with link to preview
       - name: Status check
         uses: Sibz/github-status-action@v1.1.1
         with:
-          authToken: "${{ github.token }}"
+          authToken: '${{ github.token }}'
           context: Netlify Deploy
           state: success
           target_url: ${{ steps.netlify-deploy.outputs.NETLIFY_LIVE_URL }}
@@ -95,6 +95,6 @@ jobs:
         id: deployment
         with:
           initial-status: success
-          token: "${{ github.token }}"
+          token: '${{ github.token }}'
           environment-url: ${{ steps.netlify-deploy.outputs.NETLIFY_LIVE_URL }}
           environment: production

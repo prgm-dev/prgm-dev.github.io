@@ -7,17 +7,8 @@
 	import { onMount } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
 	// Icons
-	import {
-		faGithub,
-		faGitlab,
-		faKeybase,
-		faLinkedin,
-	} from '@fortawesome/free-brands-svg-icons';
-	import {
-		faAt,
-		faDownload,
-		faIdCard,
-	} from '@fortawesome/free-solid-svg-icons';
+	import { faGithub, faGitlab, faKeybase, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+	import { faAt, faDownload, faIdCard } from '@fortawesome/free-solid-svg-icons';
 
 	import { imageURLForFounder } from '$/globals/founders';
 	import type { VCardT } from '$/helpers/vcard';
@@ -78,17 +69,11 @@
 </svelte:head>
 
 <div class="mx-auto w-full max-w-screen-sm p-5 sm:p-0">
-	<div
-		class="mx-auto text-2xl xxs:text-4xl xs:text-4xl w-max sm:pt-5"
-		role="banner"
-	>
+	<div class="mx-auto text-2xl xxs:text-4xl xs:text-4xl w-max sm:pt-5" role="banner">
 		<Logo />
 	</div>
 
-	<main
-		class="w-full"
-		aria-label="{founder.name.first}'s virtual business card"
-	>
+	<main class="w-full" aria-label="{founder.name.first}'s virtual business card">
 		<!-- Card -->
 		<div
 			class="w-full flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-5 mb-10"
@@ -117,19 +102,13 @@
 					in:fade={{ duration: 250, delay: delays.header }}
 				>
 					<div class="flex-shrink-0">
-						<h1
-							id="{founder.identifier}-name"
-							class="text-2xl xxs:text-3xl sm:text-2xl"
-						>
+						<h1 id="{founder.identifier}-name" class="text-2xl xxs:text-3xl sm:text-2xl">
 							{founder.name.first}
 							<span class="small-caps">
 								{founder.name.last}
 							</span>
 						</h1>
-						<h2
-							id="{founder.identifier}-title"
-							class="text-lg xxs:text-2xl sm:text-lg opacity-50"
-						>
+						<h2 id="{founder.identifier}-title" class="text-lg xxs:text-2xl sm:text-lg opacity-50">
 							{founder.title} at
 							<a href="/" class="hover:underline">prgm.dev</a>
 						</h2>
@@ -140,8 +119,7 @@
 							<button
 								class="bg-light-alt dark:bg-dark-alt rounded-md disabled:opacity-50 transition-opacity w-max h-full p-2"
 								disabled={businessCardGenerating}
-								on:click={loadBusinessCard}
-								><Fa icon={faIdCard} fw class="inline" /></button
+								on:click={loadBusinessCard}><Fa icon={faIdCard} fw class="inline" /></button
 							>
 						{:else}
 							<a
@@ -166,10 +144,7 @@
 						in:fade={{ duration: 250, delay: delays.links }}
 					>
 						<Fa icon={faAt} fw class="inline" />
-						<span
-							><span>{founder.identifier}</span><span class="low-contrast"
-								>@prgm.dev</span
-							></span
+						<span><span>{founder.identifier}</span><span class="low-contrast">@prgm.dev</span></span
 						>
 					</a>
 					<!-- FIXME: the `whitespace-nowrap` is a workaround for Tristan's LinkedIn
@@ -184,10 +159,7 @@
 						in:fade={{ duration: 250, delay: delays.links }}
 					>
 						<Fa icon={faLinkedin} fw class="inline" />
-						<span
-							><span class="low-contrast">/</span>{founder.social
-								.linkedIn}</span
-						>
+						<span><span class="low-contrast">/</span>{founder.social.linkedIn}</span>
 					</a>
 					{#if founder.social.github}
 						<a
@@ -198,10 +170,7 @@
 							in:fade={{ duration: 250, delay: delays.links }}
 						>
 							<Fa icon={faGithub} fw class="inline" />
-							<span
-								><span class="low-contrast">@</span>{founder.social
-									.github}</span
-							>
+							<span><span class="low-contrast">@</span>{founder.social.github}</span>
 						</a>
 					{/if}
 					{#if founder.social.gitlab}
@@ -213,10 +182,7 @@
 							in:fade={{ duration: 250, delay: delays.links }}
 						>
 							<Fa icon={faGitlab} fw class="inline" />
-							<span
-								><span class="low-contrast">@</span>{founder.social
-									.gitlab}</span
-							>
+							<span><span class="low-contrast">@</span>{founder.social.gitlab}</span>
 						</a>
 					{/if}
 					{#if founder.social.keybase}
@@ -228,16 +194,12 @@
 							in:fade={{ duration: 250, delay: delays.links }}
 						>
 							<Fa icon={faKeybase} fw class="inline" />
-							<span
-								><span class="low-contrast">/</span>{founder.social
-									.keybase}</span
-							>
+							<span><span class="low-contrast">/</span>{founder.social.keybase}</span>
 						</a>
 					{/if}
 					{#if !!businessCard}
 						<a
-							download="{founder.name.first}_{founder.name
-								.last}.{businessCard.getFileExtension()}"
+							download="{founder.name.first}_{founder.name.last}.{businessCard.getFileExtension()}"
 							href="data:{businessCard.getContentType()};charset=utf-8,{encodeURI(
 								businessCard.toString()
 							)}"
@@ -246,9 +208,8 @@
 						>
 							<Fa icon={faIdCard} fw class="inline" />
 							<span
-								>{founder.name.first}<span class="low-contrast">_</span>{founder
-									.name.last}<span class="low-contrast"
-									>.{businessCard.getFileExtension()}</span
+								>{founder.name.first}<span class="low-contrast">_</span>{founder.name.last}<span
+									class="low-contrast">.{businessCard.getFileExtension()}</span
 								></span
 							>
 						</a>

@@ -19,10 +19,7 @@
 		class="rounded-lg w-full h-full bg-dark-alt p-4"
 	>
 		<!-- Centered rounded image -->
-		<div
-			role="presentation"
-			class="mx-auto w-3/4 rounded-full overflow-hidden border border-dark"
-		>
+		<div role="presentation" class="mx-auto w-3/4 rounded-full overflow-hidden border border-dark">
 			<div role="presentation" class="aspect-w-1 aspect-h-1">
 				<img src={imageSrc} alt={imageAlt} />
 			</div>
@@ -34,10 +31,7 @@
 				{founder.name.first}
 				<span class="small-caps">{founder.name.last}</span>
 			</h1>
-			<h2
-				id="founderDescription{founder.name.last}"
-				class="text-center opacity-50"
-			>
+			<h2 id="founderDescription{founder.name.last}" class="text-center opacity-50">
 				<span class="uppercase">{founder.title}</span>
 			</h2>
 		</div>

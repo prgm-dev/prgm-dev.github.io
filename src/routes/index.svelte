@@ -6,11 +6,7 @@
 	import Logo from '$lib/Logo.svelte';
 	import ProjectCell from '$lib/landing-page/ProjectCell.svelte';
 	// Icons
-	import {
-		faBrain,
-		faCode,
-		faDraftingCompass,
-	} from '@fortawesome/free-solid-svg-icons';
+	import { faBrain, faCode, faDraftingCompass } from '@fortawesome/free-solid-svg-icons';
 
 	import { routesOrdered } from '$/globals/routes';
 
@@ -62,9 +58,7 @@
 			? 'shadow-none'
 			: 'shadow-md'} z-40 transition-all"
 	>
-		<div
-			class="mx-auto max-w-screen-md h-full flex items-center justify-between"
-		>
+		<div class="mx-auto max-w-screen-md h-full flex items-center justify-between">
 			<span class="text-3xl" role="presentation">
 				<Logo />
 			</span>
@@ -89,17 +83,14 @@
 				<h1 id="slogan" class="text-4xl sm:text-5xl font-rounded">
 					Let’s build something
 					<span class="sm:whitespace-nowrap">
-						<span class="text-5xl sm:text-6xl small-caps text-accent">
-							big
-						</span>
+						<span class="text-5xl sm:text-6xl small-caps text-accent"> big </span>
 						together.
 					</span>
 				</h1>
 				<p id="slogan-description" class="text-lg w-4/5">
-					We provide software consulting and development services by
-					specialising in the construction of real time solutions for real world
-					problems with a strong focus on software reliability and user
-					experience.
+					We provide software consulting and development services by specialising in the
+					construction of real time solutions for real world problems with a strong focus on
+					software reliability and user experience.
 				</p>
 				<!-- Call to action with email -->
 				<a
@@ -111,40 +102,34 @@
 		</section>
 
 		<!-- Expertise -->
-		<section
-			aria-labelledby="expertise-heading"
-			aria-describedby="expertise-description"
-		>
+		<section aria-labelledby="expertise-heading" aria-describedby="expertise-description">
 			<header>
 				<h2 id="expertise-heading">Our expertise</h2>
 				<p id="expertise-description">
-					At prgm.dev, we are like minded engineers and researchers who share
-					the same passion for technological challenges.
+					At prgm.dev, we are like minded engineers and researchers who share the same passion for
+					technological challenges.
 				</p>
 			</header>
-			<div
-				class="grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-3 md:gap-x-8 lg:-ml-11"
-			>
+			<div class="grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-3 md:gap-x-8 lg:-ml-11">
 				<SkillCard>
 					<svelte:fragment slot="title">Coding</svelte:fragment>
 					<svelte:fragment slot="icon">
 						<Fa icon={faCode} size="lg" />
 					</svelte:fragment>
 
-					We have very high standards with regards to code. Our code is backed
-					by robust theory, follows the best practices from various industries,
-					is tested in real-world conditions, and scales appropriately.
+					We have very high standards with regards to code. Our code is backed by robust theory,
+					follows the best practices from various industries, is tested in real-world conditions,
+					and scales appropriately.
 				</SkillCard>
 				<SkillCard>
-					<svelte:fragment slot="title">Artificial Intelligence</svelte:fragment
-					>
+					<svelte:fragment slot="title">Artificial Intelligence</svelte:fragment>
 					<svelte:fragment slot="icon">
 						<Fa icon={faBrain} size="lg" />
 					</svelte:fragment>
 
-					We have expertise in multiple AI fields, such as computer vision,
-					natural language processing, and machine learning. Our experience is
-					extensive, and we leverage it to solve real world problem.
+					We have expertise in multiple AI fields, such as computer vision, natural language
+					processing, and machine learning. Our experience is extensive, and we leverage it to solve
+					real world problem.
 				</SkillCard>
 				<SkillCard>
 					<svelte:fragment slot="title">Product design</svelte:fragment>
@@ -152,25 +137,19 @@
 						<Fa icon={faDraftingCompass} size="lg" />
 					</svelte:fragment>
 
-					We have built multiple products from the ground up. We have a deep
-					understanding of product design, and on how to make software products
-					reach their full potential.
+					We have built multiple products from the ground up. We have a deep understanding of
+					product design, and on how to make software products reach their full potential.
 				</SkillCard>
 			</div>
 		</section>
 
 		<!-- Ventures -->
-		<section
-			class="z-0"
-			aria-labelledby="ventures-heading"
-			aria-describedby="ventures-description"
-		>
+		<section class="z-0" aria-labelledby="ventures-heading" aria-describedby="ventures-description">
 			<header>
 				<h2 id="ventures-heading">Our ventures</h2>
 				<p id="ventures-description">
-					Aside from our consulting work, we also build projects of our own. We
-					team up with ambitious entrepreneurs of various industries to solve
-					the problems that they face.
+					Aside from our consulting work, we also build projects of our own. We team up with
+					ambitious entrepreneurs of various industries to solve the problems that they face.
 				</p>
 			</header>
 			<div class="flex flex-row flex-wrap items-start justify-around">
@@ -193,17 +172,11 @@
 					<span slot="title">Alerty</span>
 					<span slot="description">Automated property-hunter</span>
 				</ProjectCell>
-				<ProjectCell
-					href="mailto:contact@prgm.dev?subject=Hello%21"
-					opensInNewTab={false}
-				>
-					<span slot="title" class=""
-						>Our Project <span class="text-accent">Together</span>?</span
-					>
+				<ProjectCell href="mailto:contact@prgm.dev?subject=Hello%21" opensInNewTab={false}>
+					<span slot="title" class="">Our Project <span class="text-accent">Together</span>?</span>
 					<span slot="description" class="">
-						<span class="whitespace-nowrap">
-							Let's add another one to that list.
-						</span> <span class="whitespace-nowrap">Get in touch with us!</span>
+						<span class="whitespace-nowrap"> Let's add another one to that list. </span>
+						<span class="whitespace-nowrap">Get in touch with us!</span>
 					</span>
 				</ProjectCell>
 			</div>
@@ -233,25 +206,12 @@
 			>
 				<a href="https://devor.me" title="Devor" target="_blank" rel="noopener">
 					<div class="bg-[#F7EEE7] rounded p-3 md:p-4">
-						<img
-							class="max-h-10"
-							src="/img/devor-logo-nobg.svg"
-							alt="Devor Logo"
-						/>
+						<img class="max-h-10" src="/img/devor-logo-nobg.svg" alt="Devor Logo" />
 					</div>
 				</a>
-				<a
-					href="https://panorama.group"
-					title="Panorama Group"
-					target="_blank"
-					rel="noopener"
-				>
+				<a href="https://panorama.group" title="Panorama Group" target="_blank" rel="noopener">
 					<div class="bg-[#EAEEF6] rounded p-3 md:p-4">
-						<img
-							class="max-h-10"
-							src="/img/panorama-logo-nobg.svg"
-							alt="Panorama Logo"
-						/>
+						<img class="max-h-10" src="/img/panorama-logo-nobg.svg" alt="Panorama Logo" />
 					</div>
 				</a>
 			</div>
@@ -259,9 +219,7 @@
 	</main>
 
 	<footer class="mt-20 pb-10 opacity-25">
-		<div
-			class="flex flex-col text-center items-center justify-center space-y-3 py-2"
-		>
+		<div class="flex flex-col text-center items-center justify-center space-y-3 py-2">
 			<h2 class="text-sm">
 				PRGM DEV <br />
 				SAS au capital de 999,99&nbsp;€ <br />
@@ -269,9 +227,7 @@
 				901 331 264 R.C.S. PARIS
 			</h2>
 			<h3 class="text-sm">
-				<span class="whitespace-nowrap"
-					>&copy;&nbsp;{copyrightString} PRGM DEV SAS.</span
-				>
+				<span class="whitespace-nowrap">&copy;&nbsp;{copyrightString} PRGM DEV SAS.</span>
 				<span class="whitespace-nowrap">All rights reserved.</span>
 			</h3>
 		</div>

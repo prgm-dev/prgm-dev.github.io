@@ -53,15 +53,9 @@
 			</h1></NavigationPath
 		>
 		<article class="prose numbered" aria-labelledby="article-title">
-			<div
-				id="article-header"
-				role="heading"
-				aria-labelledby="article-title"
-				class="mt-2"
-			>
+			<div id="article-header" role="heading" aria-labelledby="article-title" class="mt-2">
 				<p class="text-sm">
-					<span class="font-normal">{dataCreatedFormatted}</span
-					>{#if dateLastUpdatedFormatted}
+					<span class="font-normal">{dataCreatedFormatted}</span>{#if dateLastUpdatedFormatted}
 						<span class="font-light">
 							&nbsp;(last updated on
 							{dateLastUpdatedFormatted})</span
