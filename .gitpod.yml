@@ -18,13 +18,15 @@ tasks:
 
 vscode:
   extensions:
-    - svelte.svelte-vscode
-    - fivethree.vscode-svelte-snippets
-    - editorconfig.editorconfig
-    - davidanson.vscode-markdownlint
     - bpruitt-goddard.mermaid-markdown-syntax-highlighting
-    - esbenp.prettier-vscode
-    - github.vscode-pull-request-github
+    - davidanson.vscode-markdownlint
     - eamodio.gitlens
+    - editorconfig.editorconfig
+    - esbenp.prettier-vscode
+    - fivethree.vscode-svelte-snippets
+    - github.vscode-pull-request-github
+    - mhutchie.git-graph
     - streetsidesoftware.code-spell-checker
+    - streetsidesoftware.code-spell-checker-french
+    - svelte.svelte-vscode
     - voorjaar.windicss-intellisense
