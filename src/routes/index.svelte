@@ -152,10 +152,31 @@
 				</p>
 			</header>
 			<div class="flex flex-row flex-wrap items-start justify-around">
-				<ProjectCell href="https://surveyhouse.app">
+				<ProjectCell href="https://Pome.gr/">
+					<span slot="title">Pome</span>
+					<span slot="description">Large-scale document generation</span>
+				</ProjectCell>
+
+				<ProjectCell href="https://BbChallenge.org/">
+					<span slot="title">Busy Beaver Challenge</span>
+					<span slot="description"
+						>Community-driven research on the <a
+							href="https://en.wikipedia.org/wiki/Busy_beaver"
+							class="underline hover:text-white whitespace-nowrap">Busy Beaver</a
+						> challenge</span
+					>
+				</ProjectCell>
+
+				<ProjectCell href="https://SurveyHouse.app">
 					<span slot="title">SurveyHouse</span>
 					<span slot="description">House surveying software and app</span>
 				</ProjectCell>
+
+				<ProjectCell href="https://joule.prgm.studio/">
+					<span slot="title">Joule</span>
+					<span slot="description">AI-Dataset hosting made simple</span>
+				</ProjectCell>
+
 				<ProjectCell href="https://stake-green.prgm.studio">
 					<span slot="title">Stake.Green</span>
 					<span slot="description">
@@ -163,18 +184,12 @@
 						<span class="whitespace-nowrap">cryptocurrency mining</span>
 					</span>
 				</ProjectCell>
-				<ProjectCell href="https://pome.gr/">
-					<span slot="title">Pome</span>
-					<span slot="description">Large-scale document generation</span>
-				</ProjectCell>
-				<ProjectCell href="https://joule.prgm.studio/">
-					<span slot="title">Joule</span>
-					<span slot="description">AI-Dataset hosting made simple</span>
-				</ProjectCell>
-				<ProjectCell href="https://alerty.fr/">
+
+				<ProjectCell href="https://Alerty.fr/">
 					<span slot="title">Alerty</span>
 					<span slot="description">Automated property-hunter</span>
 				</ProjectCell>
+
 				<ProjectCell href="mailto:contact@prgm.dev?subject=Hello%21" opensInNewTab={false}>
 					<span slot="title" class="">Our Project <span class="text-accent">Together</span>?</span>
 					<span slot="description" class="">
