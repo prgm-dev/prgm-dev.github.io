@@ -47,6 +47,13 @@ module.exports = {
 		es2022: true,
 	},
 	rules: {
+		// ESLint
+		eqeqeq: 'error',
+		'no-console': ['warn', { allow: ['warn', 'error'] }],
+		'no-return-await': 'warn',
+		'no-undef-init': 'error',
+		'no-useless-return': 'error',
+		// Typescript
 		'@typescript-eslint/naming-convention': [
 			'error',
 			{
