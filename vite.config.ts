@@ -2,6 +2,7 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 // Plugins
 import { sveltekit } from '@sveltejs/kit/vite';
+import { imagetools } from 'vite-imagetools';
 import WindiCSS from 'vite-plugin-windicss';
 
 const enableSourceMap = process.env.WITH_SOURCEMAPS === 'true';
@@ -11,7 +12,7 @@ export default defineConfig({
 	resolve: {
 		alias: { $: resolve('./src') },
 	},
-	plugins: [WindiCSS({ transformCSS: 'pre' }), sveltekit()],
+	plugins: [WindiCSS({ transformCSS: 'pre' }), imagetools({ removeMetadata: true }), sveltekit()],
 	server: {
 		// Use Gitpod proxy in the HMR URL when appropriate
 		hmr: process.env.GITPOD_HMR_HOST

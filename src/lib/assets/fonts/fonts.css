@@ -1,0 +1,6 @@
+@font-face {
+	font-family: 'Brahma Rounded Bold';
+	src: local('Brahma Rounded Bold'), url('BrahmaRoundedBold/font.woff2') format('woff2'),
+		url('BrahmaRoundedBold/font.woff') format('woff');
+	font-display: swap;
+}

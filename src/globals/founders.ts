@@ -1,4 +1,6 @@
 import type { Founder } from '$/types/founder';
+import SebastienImgSrc from '$lib/assets/images/founders/sebastien.jpg';
+import TristanImgSrc from '$lib/assets/images/founders/tristan.jpg?h=512&imagetools';
 
 export const alexandre: Founder = {
 	identifier: 'alexandre',
@@ -19,7 +21,7 @@ export const sebastien: Founder = {
 	name: { first: 'Sébastien', last: 'Ohleyer' },
 	social: { linkedIn: 'sebastien-ohleyer' },
 	title: 'CEO',
-	image: { src: '/img/sebastien.jpg' },
+	image: { src: SebastienImgSrc },
 };
 
 export const tristan: Founder = {
@@ -30,7 +32,7 @@ export const tristan: Founder = {
 		github: 'tcosmo',
 	},
 	title: 'CRO',
-	image: { src: '/img/tristan-512.jpg' },
+	image: { src: TristanImgSrc },
 };
 
 export const founders: Founder[] = [sebastien, alexandre, tristan];
@@ -51,7 +53,11 @@ export function imageURLForFounder(
 	size = 1024,
 	forceAbsoluteURL = false
 ): string {
-	if ('src' in founder.image)
-		return forceAbsoluteURL ? `https://prgm.dev${founder.image.src}` : founder.image.src;
-	else return `https://www.gravatar.com/avatar/${founder.image.gravatarHash}?size=${size}`;
+	return founder.image.src !== undefined
+		? // Return an image URL
+		  forceAbsoluteURL
+			? `https://prgm.dev${founder.image.src}`
+			: founder.image.src
+		: // Return a Gravatar image
+		  `https://www.gravatar.com/avatar/${founder.image.gravatarHash}?size=${size}`;
 }

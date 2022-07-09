@@ -10,6 +10,7 @@
 			"$/*": ["src/*"]
 		},
 		"useUnknownInCatchVariables": true,
-		"strict": true
+		"strict": true,
+		"allowSyntheticDefaultImports": true
 	}
 }
