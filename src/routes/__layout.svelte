@@ -2,6 +2,9 @@
 	import { dev } from '$app/env';
 	import { page } from '$app/stores';
 	// Import global CSS
+	import '$lib/assets/fonts/fonts.css';
+	import BrahmaRoundedBoldWoff2Src from '$lib/assets/fonts/BrahmaRoundedBold/font.woff2';
+	import BrahmaRoundedBoldWoffSrc from '$lib/assets/fonts/BrahmaRoundedBold/font.woff';
 	import 'virtual:windi.css';
 	import '$/app.windi.css';
 
@@ -30,6 +33,11 @@
 </script>
 
 <svelte:head>
+	<!-- Fonts preload/pre-connect -->
+	<link href={BrahmaRoundedBoldWoff2Src} type="font/woff2" rel="preload" as="font" crossorigin="" />
+	<link href={BrahmaRoundedBoldWoffSrc} type="font/woff" rel="preload" as="font" crossorigin="" />
+
+	<!-- Website Title -->
 	<title>{websiteTitle}</title>
 
 	<!-- Constant meta tags -->

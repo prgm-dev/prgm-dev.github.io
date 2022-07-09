@@ -16,7 +16,9 @@ export interface Founder {
 		};
 	};
 	title: string;
-	image: ({ gravatarHash: string } | { src: string }) & { alt?: string };
+	image: ({ gravatarHash: string; src?: undefined } | { gravatarHash?: undefined; src: string }) & {
+		alt?: string;
+	};
 }
 
 export function isValidFounderIdentifier(identifier: string): identifier is FounderIdentifier {

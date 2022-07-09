@@ -36,6 +36,11 @@ const config = defineConfig({
 	},
 	darkMode: 'media',
 	plugins: [typographyPlugin(), aspectRatioPlugin],
+	shortcuts: {
+		'small-caps': {
+			'font-variant': 'small-caps',
+		},
+	},
 });
 
 module.exports = config;

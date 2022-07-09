@@ -1,24 +1,23 @@
 <script context="module" lang="ts">
 	// Components
-	import Fa from 'svelte-fa';
 	import FounderCard from '$lib/landing-page/FounderCard.svelte';
+	import ProjectCell from '$lib/landing-page/ProjectCell.svelte';
 	import SkillCard from '$lib/landing-page/SkillCard.svelte';
 	import Logo from '$lib/Logo.svelte';
-	import ProjectCell from '$lib/landing-page/ProjectCell.svelte';
+	import Fa from 'svelte-fa';
 	// Icons
 	import { faBrain, faCode, faDraftingCompass } from '@fortawesome/free-solid-svg-icons';
-
-	import { routesOrdered } from '$/globals/routes';
-
 	// Constants
 	import { copyrightStartYear } from '$/globals/constants';
 	import { founders } from '$/globals/founders';
+	import { partners } from '$/globals/partners';
+	import { routesOrdered } from '$/globals/routes';
 </script>
 
 <script lang="ts">
 	const pageTitle = 'prgm.dev';
 	const currentYear = new Date().getFullYear();
-	const copyrightString =
+	$: copyrightString =
 		currentYear === copyrightStartYear
 			? `${copyrightStartYear}`
 			: `${copyrightStartYear} — ${currentYear}`;
@@ -157,12 +156,16 @@
 					<span slot="title">SurveyHouse</span>
 					<span slot="description">House surveying software and app</span>
 				</ProjectCell>
-				<ProjectCell href="https://stake.green">
+				<ProjectCell href="https://stake-green.prgm.studio">
 					<span slot="title">Stake.Green</span>
 					<span slot="description">
 						Energy-friendly
 						<span class="whitespace-nowrap">cryptocurrency mining</span>
 					</span>
+				</ProjectCell>
+				<ProjectCell href="https://pome.gr/">
+					<span slot="title">Pome</span>
+					<span slot="description">Large-scale document generation</span>
 				</ProjectCell>
 				<ProjectCell href="https://joule.prgm.studio/">
 					<span slot="title">Joule</span>
@@ -204,16 +207,13 @@
 			<div
 				class="w-full flex flex-nowrap space-x-4 md:space-x-10 items-center justify-around md:justify-start"
 			>
-				<a href="https://devor.me" title="Devor" target="_blank" rel="noopener">
-					<div class="bg-[#F7EEE7] rounded p-3 md:p-4">
-						<img class="max-h-10" src="/img/devor-logo-nobg.svg" alt="Devor Logo" />
-					</div>
-				</a>
-				<a href="https://panorama.group" title="Panorama Group" target="_blank" rel="noopener">
-					<div class="bg-[#EAEEF6] rounded p-3 md:p-4">
-						<img class="max-h-10" src="/img/panorama-logo-nobg.svg" alt="Panorama Logo" />
-					</div>
-				</a>
+				{#each partners as { name, href, img: { src, alt }, backgroundCssColor }}
+					<a {href} title={name} target="_blank" rel="noopener">
+						<div class="rounded p-3 md:p-4" style="background-color: {backgroundCssColor};">
+							<img class="max-h-10" {src} {alt} />
+						</div>
+					</a>
+				{/each}
 			</div>
 		</section>
 	</main>
