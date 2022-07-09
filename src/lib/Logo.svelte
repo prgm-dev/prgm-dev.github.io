@@ -1,6 +1,3 @@
-<script lang="ts">
-</script>
-
 <a
 	sveltekit:prefetch
 	aria-label="prgm Logo"
