@@ -6,7 +6,7 @@ on:
 
 jobs:
   eslint:
-    name: 'Lint'
+    name: 'Automated Review'
     runs-on: ubuntu-latest
     steps:
       # Check out project
@@ -31,12 +31,15 @@ jobs:
         run: |
           pnpm install
           pnpm svelte-kit sync
-      - uses: sibiraj-s/action-eslint@v2
-        env:
-          NODE_OPTIONS: '--max_old_space_size=4096'
+      - uses: reviewdog/action-eslint@v1
+      - uses: get-woke/woke-action-reviewdog@v0
         with:
-          extensions: 'js,ts,svelte'
-          annotations: true
+          reporter: github-pr-review
+      - uses: reviewdog/action-languagetool@v1
+        with:
+          reporter: github-pr-review
+          language: en-GB
+          level: info
 
   deploy:
     name: 'Build & Deploy Preview'
