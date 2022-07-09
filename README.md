@@ -7,7 +7,7 @@ that compiles to [prgm.dev](https://prgm.dev).
 
 [GitPod](https://www.gitpod.io) is the preferred way to get up and running.
 
-Just open this repository in GitPod and you'll be good to go:
+Just open this repository in GitPod, and you'll be good to go:
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/prgm-dev/prgm-dev.github.io)
 
