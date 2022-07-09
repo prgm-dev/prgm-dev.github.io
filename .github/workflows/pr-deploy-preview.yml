@@ -1,16 +1,48 @@
-name: 'Netlify Preview'
+name: 'Pull Request'
 
 on:
   pull_request:
     types: ['opened', 'edited', 'synchronize']
 
 jobs:
+  eslint:
+    name: 'Lint'
+    runs-on: ubuntu-latest
+    steps:
+      # Check out project
+      - name: Checkout repo 📦
+        uses: actions/checkout@v3
+        with:
+          lfs: true
+      - name: Checkout LFS objects 🚚
+        run: git lfs checkout
+
+      # Install pnpm, Node 18, and dependencies
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
+      - name: Install build dependencies 🧰
+        run: |
+          pnpm install
+          pnpm svelte-kit sync
+      - uses: sibiraj-s/action-eslint@v2
+        env:
+          NODE_OPTIONS: '--max_old_space_size=4096'
+        with:
+          extensions: 'js,ts,svelte'
+          annotations: true
+
   deploy:
-    name: 'Build & Deploy'
+    name: 'Build & Deploy Preview'
     runs-on: ubuntu-latest
 
     permissions:
-      actions: write
       checks: write
       deployments: write
       statuses: write
