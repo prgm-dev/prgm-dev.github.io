@@ -2,7 +2,7 @@ name: 'Pull Request'
 
 on:
   pull_request:
-    types: ['opened', 'edited', 'synchronize']
+    types: ['opened', 'edited', 'reopened', 'synchronize']
 
 jobs:
   eslint:
@@ -31,7 +31,15 @@ jobs:
         run: |
           pnpm install
           pnpm svelte-kit sync
-      - uses: reviewdog/action-eslint@v1
+      - uses: Maggi64/eslint-plus-action@master
+        name: Run ESLint 🕵️
+        env:
+          NODE_OPTIONS: '--max_old_space_size=4096'
+        with:
+          extensions: '.js,.ts,.svelte'
+          npmInstall: false
+          reportIgnoredFiles: true
+      # ReviewDog actions
       - uses: get-woke/woke-action-reviewdog@v0
         with:
           reporter: github-pr-review
