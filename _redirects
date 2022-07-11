@@ -1,7 +1,0 @@
-# Founders redirects
-https://alexandre.prgm.dev/* https://prgm.dev/alexandre 301!
-https://sebastien.prgm.dev/* https://prgm.dev/sebastien 301!
-https://tristan.prgm.dev/* https://prgm.dev/tristan 301!
-
-# Fallback redirect
-/* https://prgm.dev/ 302

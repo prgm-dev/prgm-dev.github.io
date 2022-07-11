@@ -1,0 +1,6 @@
+Contact: mailto:security-txt-2022@prgm.dev
+Expires: 2024-03-16T23:00:00.000Z
+Encryption: openpgp4fpr:d61d9ac64cbf4c8cb9b0a9f36093ef7238e6790c
+Encryption: https://prgm.dev/.well-known/prgm-team.asc
+Preferred-Languages: en,fr
+Canonical: https://prgm.dev/.well-known/security.txt
