@@ -38,6 +38,7 @@
 		"mdsvex": "^0.10.6",
 		"netlify-cli": "^10.10.0",
 		"nprogress": "^0.2.0",
+		"plausible-tracker": "^0.3.8",
 		"prettier": "~2.7.1",
 		"prettier-plugin-svelte": "^2.7.0",
 		"rehype-autolink-headings": "^5.1.0",

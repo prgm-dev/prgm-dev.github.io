@@ -17,6 +17,7 @@ specifiers:
   mdsvex: ^0.10.6
   netlify-cli: ^10.10.0
   nprogress: ^0.2.0
+  plausible-tracker: ^0.3.8
   prettier: ~2.7.1
   prettier-plugin-svelte: ^2.7.0
   rehype-autolink-headings: ^5.1.0
@@ -54,6 +55,7 @@ devDependencies:
   mdsvex: 0.10.6_svelte@3.49.0
   netlify-cli: 10.10.0
   nprogress: 0.2.0
+  plausible-tracker: 0.3.8
   prettier: 2.7.1
   prettier-plugin-svelte: 2.7.0_o3ioganyptcsrh6x4hnxvjkpqi
   rehype-autolink-headings: 5.1.0
@@ -7163,6 +7165,11 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       find-up: 6.3.0
+    dev: true
+
+  /plausible-tracker/0.3.8:
+    resolution: {integrity: sha512-lmOWYQ7s9KOUJ1R+YTOR3HrjdbxIS2Z4de0P/Jx2dQPteznJl2eX3tXxKClpvbfyGP59B5bbhW8ftN59HbbFSg==}
+    engines: {node: '>=10'}
     dev: true
 
   /posix-character-classes/0.1.1:
