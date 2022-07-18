@@ -1,5 +1,4 @@
 import type { Founder } from '$/types/founder';
-import SebastienImgSrc from '$lib/assets/images/founders/sebastien.jpg';
 import TristanImgSrc from '$lib/assets/images/founders/tristan.jpg?h=512&imagetools';
 
 export const alexandre: Founder = {
@@ -21,7 +20,7 @@ export const sebastien: Founder = {
 	name: { first: 'Sébastien', last: 'Ohleyer' },
 	social: { linkedIn: 'sebastien-ohleyer' },
 	title: 'CEO',
-	image: { src: SebastienImgSrc },
+	image: { gravatarHash: '47918935b83faf2346844e44c9d48e3b' },
 };
 
 export const tristan: Founder = {
