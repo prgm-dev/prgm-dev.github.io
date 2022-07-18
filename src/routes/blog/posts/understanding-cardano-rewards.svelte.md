@@ -103,7 +103,8 @@ $$
 f(s,\sigma) := R \frac{ \sigma' + s' \cdot a_0}{{1+a_0}}
 $$
 
-In this case, we have that $\text{lim}_{a_0 = +\infty} f(s, \sigma) = Rs'$. Meaning that the_only_ thing that matters when $a_0 = +\infty$ is the pledge and that someone looking for delegating her coins would always go to the non-saturated pool with the highest pledge in order to maximise staking rewards. This would be bad news for miners as organic growth of the delegated stake would be useless: only initial wealth, materialised in the pool's pledged would matter.
+In this case, we have that $\text{lim}_{a_0 = +\infty} f(s, \sigma) = Rs'$. Meaning that the
+_only_ thing that matters when $a_0 = +\infty$ is the pledge and that someone looking for delegating her coins would always go to the non-saturated pool with the highest pledge in order to maximise staking rewards. This would be bad news for miners as organic growth of the delegated stake would be useless: only initial wealth, materialised in the pool's pledged would matter.
 
 Hence, we understand how the value of $0 \leq a_0 \leq \infty$ allows to compromise between "only delegated stake matters" and "only pledged stake matters" scenarios.
 
