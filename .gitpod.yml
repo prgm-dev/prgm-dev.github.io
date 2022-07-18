@@ -23,6 +23,13 @@ tasks:
     command: |
       export GITPOD_HMR_HOST=`gp url 5173`
       pnpm run dev
+  - name: 'URLs'
+    command: |
+      clear
+      gp ports await 5173
+      echo
+      echo -e "\033[1;30m  PREVIEW:" "\033[1;36m"`gp url 5173`"\033[0m\n\n"
+    openMode: split-right
 
 vscode:
   extensions:
