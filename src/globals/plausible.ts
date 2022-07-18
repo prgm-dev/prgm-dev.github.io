@@ -1,5 +1,6 @@
 import { browser, prod } from '$app/env';
 import Plausible from 'plausible-tracker';
+import { disablePlausible } from './constants';
 
 /**
  * The domain to log on Plausible.
@@ -8,7 +9,7 @@ import Plausible from 'plausible-tracker';
 export const plausibleDomain = 'prgm.dev' as const;
 /** The global Plausible instance */
 export const plausible =
-	prod && browser
+	!disablePlausible && prod && browser
 		? Plausible({
 				domain: plausibleDomain,
 		  })
@@ -18,7 +19,7 @@ export const plausible =
 export const cleanup = plausible?.enableAutoPageviews() ?? null;
 
 if (!plausible) {
-	console.warn('No Plausible instance created.', { prod, browser });
+	console.warn('No Plausible instance created.', { prod, browser, disablePlausible });
 }
 
 export default plausible;

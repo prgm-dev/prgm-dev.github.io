@@ -88,6 +88,7 @@ jobs:
       - name: 'Build app 🛠'
         run: pnpm build
         env:
+          VITE_DISABLE_PLAUSIBLE: 'true'
           VITE_BUILD_ID: ${{ env.GITHUB_EVENT_PULL_REQUEST_HEAD_SHA_SHORT }}
 
       # Deploy to Netlify
