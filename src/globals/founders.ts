@@ -7,9 +7,9 @@ export const alexandre: Founder = {
 	social: {
 		linkedIn: 'alexandrejouandin',
 		github: 'Allezxandre',
-		gitlab: 'Allezxandre',
 		keybase: 'allezxandre',
 		iMessage: { username: 'first.last' },
+		telegram: '@allezxandre',
 	},
 	title: 'CTO',
 	image: { gravatarHash: 'daf8a0f2457da63e3c2e15cc2e4319e3' },
@@ -18,7 +18,7 @@ export const alexandre: Founder = {
 export const sebastien: Founder = {
 	identifier: 'sebastien',
 	name: { first: 'Sébastien', last: 'Ohleyer' },
-	social: { linkedIn: 'sebastien-ohleyer' },
+	social: { linkedIn: 'sebastien-ohleyer', telegram: '@soehbl' },
 	title: 'CEO',
 	image: { gravatarHash: '47918935b83faf2346844e44c9d48e3b' },
 };
@@ -59,4 +59,12 @@ export function imageURLForFounder(
 			: founder.image.src
 		: // Return a Gravatar image
 		  `https://www.gravatar.com/avatar/${founder.image.gravatarHash}?size=${size}`;
+}
+
+/**
+ * Given a string that starts with '@',
+ * returns the same string without the '@' at the start.
+ */
+export function removeAtPrefix<T extends string>(str: `@${T}`): T {
+	return str.slice(1) as T;
 }
