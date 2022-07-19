@@ -7,10 +7,16 @@
 	import { onMount } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
 	// Icons
-	import { faGithub, faGitlab, faKeybase, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+	import {
+		faGithub,
+		faGitlab,
+		faKeybase,
+		faLinkedin,
+		faTelegramPlane,
+	} from '@fortawesome/free-brands-svg-icons';
 	import { faAt, faDownload, faIdCard } from '@fortawesome/free-solid-svg-icons';
 
-	import { imageURLForFounder } from '$/globals/founders';
+	import { imageURLForFounder, removeAtPrefix } from '$/globals/founders';
 	import type { VCardT } from '$/helpers/vcard';
 	import { generateVCard } from '$/helpers/vcard';
 
@@ -161,6 +167,19 @@
 						<Fa icon={faLinkedin} fw class="inline" />
 						<span><span class="low-contrast">/</span>{founder.social.linkedIn}</span>
 					</a>
+					{#if founder.social.telegram}
+						{@const telegramUserNameWithoutAt = removeAtPrefix(founder.social.telegram)}
+						<a
+							title="Telegram"
+							href="https://t.me/{telegramUserNameWithoutAt}/"
+							target="_blank"
+							rel="noopener noreferrer"
+							in:fade={{ duration: 250, delay: delays.links }}
+						>
+							<Fa icon={faTelegramPlane} fw class="inline" />
+							<span><span class="low-contrast">@</span>{telegramUserNameWithoutAt}</span>
+						</a>
+					{/if}
 					{#if founder.social.github}
 						<a
 							title="GitHub profile"

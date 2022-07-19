@@ -3,17 +3,79 @@ module.exports = {
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		project: 'tsconfig.json',
-		extraFileExtensions: ['.svelte'],
+		extraFileExtensions: ['.svelte', '.md'],
 	},
-	extends: [
-		'eslint:recommended',
-		'plugin:@typescript-eslint/recommended',
-		'prettier',
-		'plugin:@typescript-eslint/recommended-requiring-type-checking',
-	],
-	plugins: ['svelte3', '@typescript-eslint'],
 	ignorePatterns: ['*.cjs', '/*.config.ts', '/*.config.js'],
 	overrides: [
+		// TypeScript files
+		{
+			files: ['*.ts', '*.js', '*.svelte'],
+			extends: [
+				'eslint:recommended',
+				'plugin:@typescript-eslint/recommended',
+				'prettier',
+				'plugin:@typescript-eslint/recommended-requiring-type-checking',
+			],
+			plugins: ['svelte3', '@typescript-eslint'],
+			rules: {
+				// ESLint
+				eqeqeq: 'error',
+				'no-console': ['warn', { allow: ['warn', 'error'] }],
+				'no-return-await': 'warn',
+				'no-undef-init': 'error',
+				'no-useless-return': 'error',
+				// Typescript
+				'@typescript-eslint/naming-convention': [
+					'error',
+					{
+						selector: 'default',
+						format: ['camelCase'],
+					},
+
+					{
+						selector: ['objectLiteralProperty', 'typeProperty'],
+						format: ['camelCase', 'PascalCase'],
+					},
+
+					{
+						selector: 'variable',
+						format: ['camelCase', 'UPPER_CASE'],
+						trailingUnderscore: 'allow',
+					},
+					{
+						selector: 'parameter',
+						format: ['camelCase'],
+						leadingUnderscore: 'allow',
+					},
+
+					{
+						selector: 'memberLike',
+						modifiers: ['private'],
+						format: ['camelCase'],
+						leadingUnderscore: 'require',
+					},
+
+					{
+						selector: 'typeLike',
+						format: ['PascalCase'],
+					},
+				],
+				'@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
+				'@typescript-eslint/non-nullable-type-assertion-style': 'error',
+				'@typescript-eslint/prefer-for-of': 'error',
+				'@typescript-eslint/prefer-includes': 'error',
+				'@typescript-eslint/prefer-nullish-coalescing': 'warn',
+				'@typescript-eslint/prefer-optional-chain': 'warn',
+				'@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+				'@typescript-eslint/prefer-reduce-type-parameter': 'error',
+				'@typescript-eslint/prefer-string-starts-ends-with': 'error',
+				'@typescript-eslint/prefer-ts-expect-error': 'error',
+				'@typescript-eslint/switch-exhaustiveness-check': 'error',
+				'@typescript-eslint/unified-signatures': 'error',
+				'@typescript-eslint/no-meaningless-void-operator': 'error',
+			},
+		},
+		// Svelte files
 		{
 			files: ['*.svelte'],
 			processor: 'svelte3/svelte3',
@@ -36,6 +98,16 @@ module.exports = {
 				'@typescript-eslint/prefer-nullish-coalescing': 'off',
 			},
 		},
+		// Markdown files
+		{
+			files: ['src/**/*.md'],
+			parser: 'eslint-plugin-markdownlint/parser',
+			extends: ['plugin:markdownlint/recommended'],
+			rules: {
+				'markdownlint/md013': 'warn',
+				'markdownlint/md042': 'warn',
+			},
+		},
 	],
 	settings: {
 		'svelte3/typescript': () => require('typescript'),
@@ -45,62 +117,5 @@ module.exports = {
 		browser: true,
 		node: true,
 		es2022: true,
-	},
-	rules: {
-		// ESLint
-		eqeqeq: 'error',
-		'no-console': ['warn', { allow: ['warn', 'error'] }],
-		'no-return-await': 'warn',
-		'no-undef-init': 'error',
-		'no-useless-return': 'error',
-		// Typescript
-		'@typescript-eslint/naming-convention': [
-			'error',
-			{
-				selector: 'default',
-				format: ['camelCase'],
-			},
-
-			{
-				selector: ['objectLiteralProperty', 'typeProperty'],
-				format: ['camelCase', 'PascalCase'],
-			},
-
-			{
-				selector: 'variable',
-				format: ['camelCase', 'UPPER_CASE'],
-				trailingUnderscore: 'allow',
-			},
-			{
-				selector: 'parameter',
-				format: ['camelCase'],
-				leadingUnderscore: 'allow',
-			},
-
-			{
-				selector: 'memberLike',
-				modifiers: ['private'],
-				format: ['camelCase'],
-				leadingUnderscore: 'require',
-			},
-
-			{
-				selector: 'typeLike',
-				format: ['PascalCase'],
-			},
-		],
-		'@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
-		'@typescript-eslint/non-nullable-type-assertion-style': 'error',
-		'@typescript-eslint/prefer-for-of': 'error',
-		'@typescript-eslint/prefer-includes': 'error',
-		'@typescript-eslint/prefer-nullish-coalescing': 'warn',
-		'@typescript-eslint/prefer-optional-chain': 'warn',
-		'@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
-		'@typescript-eslint/prefer-reduce-type-parameter': 'error',
-		'@typescript-eslint/prefer-string-starts-ends-with': 'error',
-		'@typescript-eslint/prefer-ts-expect-error': 'error',
-		'@typescript-eslint/switch-exhaustiveness-check': 'error',
-		'@typescript-eslint/unified-signatures': 'error',
-		'@typescript-eslint/no-meaningless-void-operator': 'error',
 	},
 };

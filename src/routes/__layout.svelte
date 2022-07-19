@@ -1,16 +1,17 @@
 <script lang="ts">
-	import { dev } from '$app/env';
-	import { page } from '$app/stores';
-	// Import global CSS
-	import '$lib/assets/fonts/fonts.css';
-	import BrahmaRoundedBoldWoff2Src from '$lib/assets/fonts/BrahmaRoundedBold/font.woff2';
+	import { navigating, page } from '$app/stores';
+	// Import font CSS
 	import BrahmaRoundedBoldWoffSrc from '$lib/assets/fonts/BrahmaRoundedBold/font.woff';
+	import BrahmaRoundedBoldWoff2Src from '$lib/assets/fonts/BrahmaRoundedBold/font.woff2';
+	import '$lib/assets/fonts/fonts.css';
+	// Import Windi Global CSS
 	import 'virtual:windi.css';
+	// Import our CSS
 	import '$/app.windi.css';
-
+	// Import Plausible analytics
+	import '$/globals/plausible';
 	// Using NProgress, show a loading bar on navigation
 	import NProgress from 'nprogress';
-	import { navigating } from '$app/stores';
 
 	const websiteTitle = 'prgm.dev';
 
@@ -47,11 +48,6 @@
 	<!-- OpenGraph constants -->
 	<meta property="og:site_name" content={websiteTitle} />
 	<meta property="og:url" content="https://prgm.dev{$page.url.pathname}" />
-
-	{#if !dev}
-		<!-- Cookie-free, privacy-preserving analytics by https://plausible.io -->
-		<script defer data-domain="prgm.dev" src="https://plausible.io/js/plausible.js"></script>
-	{/if}
 </svelte:head>
 
 <slot />

@@ -14,6 +14,7 @@ export interface Founder {
 			username: 'first.last' | string;
 			domain?: 'icloud.com' | 'me.com';
 		};
+		telegram?: `@${string}`;
 	};
 	title: string;
 	image: ({ gravatarHash: string; src?: undefined } | { gravatarHash?: undefined; src: string }) & {
